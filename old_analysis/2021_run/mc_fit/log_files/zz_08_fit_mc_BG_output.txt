@@ -1,0 +1,88 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_08) importing dataset zz_08_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_08) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_zz_08_BG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_zz_08_BG   4.98000e+03  2.00000e+00    4.97000e+03  4.99000e+03
+     2 width_1_zz_08_BG   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_2_zz_08_BG   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=99723.4 FROM MIGRAD    STATUS=CONVERGED     162 CALLS         163 TOTAL
+                     EDM=1.63882e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_zz_08_BG   4.97752e+03   2.93019e-01   3.04362e-03   2.81211e-02
+   2  width_1_zz_08_BG   2.02217e+01   2.02584e-01   1.12371e-03   4.27926e-02
+   3  width_2_zz_08_BG   2.01171e+01   1.97685e-01   1.09378e-03  -5.02229e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=99723.4 FROM HESSE     STATUS=OK             16 CALLS         179 TOTAL
+                     EDM=1.64553e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_zz_08_BG   4.97752e+03   2.95560e-01   1.21745e-04   3.39214e+00
+   2  width_1_zz_08_BG   2.02217e+01   2.04101e-01   4.49483e-05  -1.92315e-01
+   3  width_2_zz_08_BG   2.01171e+01   1.98780e-01   4.37513e-05  -1.96579e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_08) importing RooBifurGauss::zz_08_BG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_08) importing RooRealVar::mean_zz_08_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_08) importing RooRealVar::width_1_zz_08_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_08) importing RooRealVar::width_2_zz_08_BG
+
+RooWorkspace(fit_zz_08) fit_zz_08 contents
+
+variables
+---------
+(B_DTF_M,mean_zz_08_BG,width_1_zz_08_BG,width_2_zz_08_BG)
+
+p.d.f.s
+-------
+RooBifurGauss::zz_08_BG_fit[ x=B_DTF_M mean=mean_zz_08_BG sigmaL=width_1_zz_08_BG sigmaR=width_2_zz_08_BG ] = 0.970209
+
+datasets
+--------
+RooDataSet::zz_08_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_zz_08_BG_fit_zz_08_events
+

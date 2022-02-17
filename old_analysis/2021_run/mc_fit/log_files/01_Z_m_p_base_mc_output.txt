@@ -1,0 +1,55 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+RooWorkspace(01_Z_m_p) 01_Z_m_p contents
+
+variables
+---------
+(01_Z_m_p_DG_a_frac,B_DTF_M,mean_01_Z_m_p_DG,width_01_Z_m_p_DG,width_b_01_Z_m_p_DG)
+
+p.d.f.s
+-------
+RooGaussian::01_Z_m_p_DG_a[ x=B_DTF_M mean=mean_01_Z_m_p_DG sigma=width_01_Z_m_p_DG ] = 1
+RooGaussian::01_Z_m_p_DG_b[ x=B_DTF_M mean=mean_01_Z_m_p_DG sigma=width_b_01_Z_m_p_DG ] = 1
+RooAddPdf::01_Z_m_p_DG_fit[ 1 * 01_Z_m_p_DG_a + [%] * 01_Z_m_p_DG_b ] = 1
+
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(01_Z_m_p_events) Skipping event #95 because B_DTF_M cannot accommodate the value 5244.63
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(01_Z_m_p_events) Skipping event #101 because B_DTF_M cannot accommodate the value 5336.92
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(01_Z_m_p_events) Skipping event #153 because B_DTF_M cannot accommodate the value 5244.41
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(01_Z_m_p_events) Skipping event #201 because B_DTF_M cannot accommodate the value 5224.37
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(01_Z_m_p_events) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(01_Z_m_p_events) Ignored 42 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(01_Z_m_p) importing dataset 01_Z_m_p_events
+
+RooWorkspace(01_Z_m_p) 01_Z_m_p contents
+
+variables
+---------
+(01_Z_m_p_DG_a_frac,B_DTF_M,mean_01_Z_m_p_DG,width_01_Z_m_p_DG,width_b_01_Z_m_p_DG)
+
+p.d.f.s
+-------
+RooGaussian::01_Z_m_p_DG_a[ x=B_DTF_M mean=mean_01_Z_m_p_DG sigma=width_01_Z_m_p_DG ] = 1
+RooGaussian::01_Z_m_p_DG_b[ x=B_DTF_M mean=mean_01_Z_m_p_DG sigma=width_b_01_Z_m_p_DG ] = 1
+RooAddPdf::01_Z_m_p_DG_fit[ 1 * 01_Z_m_p_DG_a + [%] * 01_Z_m_p_DG_b ] = 1
+
+datasets
+--------
+RooDataSet::01_Z_m_p_events(B_DTF_M)
+
+mcws is 01_Z_m_p
+01_Z_m_p
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2016/post_d/01_Z_m_p_11198006_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2016/post_d/01_Z_m_p_11198006_T_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2017/post_d/01_Z_m_p_11198006_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2017/post_d/01_Z_m_p_11198006_T_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2018/post_d/01_Z_m_p_11198006_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2018/post_d/01_Z_m_p_11198006_T_postdcuts.root
+Saved: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/mc_fit/base_mc_files/01_Z_m_p.root

@@ -1,0 +1,114 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing dataset 01_Z_m_p_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_01_Z_m_p_DG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (01_Z_m_p_DG_a,01_Z_m_p_DG_b)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_01_Z_m_p_DG   5.28000e+03  2.00000e+00    5.27000e+03  5.29000e+03
+     2 width_01_Z_m_p_DG   1.20000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_b_01_Z_m_p_DG   2.10000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ MINUIT WARNING IN HESSE
+ ============== Second derivative enters zero, param 3
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter3
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=15232 FROM MIGRAD    STATUS=CONVERGED     114 CALLS         115 TOTAL
+                     EDM=1.69953e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_01_Z_m_p_DG   5.27994e+03   1.06150e-01   9.06275e-04  -4.02109e-04
+   2  width_01_Z_m_p_DG   7.12237e+00   7.52123e-02   3.68010e-04   6.75088e-01
+   3  width_b_01_Z_m_p_DG   2.10000e+01   6.97471e+00  -0.00000e+00   0.00000e+00
+                               ERR DEF= 0.5
+ **********
+ **    7 **HESSE        1500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter3
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=15232 FROM HESSE     STATUS=FAILED          9 CALLS         124 TOTAL
+                     EDM=1.69953e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_01_Z_m_p_DG   5.27994e+03   1.06150e-01   9.06275e-04  -6.08333e-03
+   2  width_01_Z_m_p_DG   7.12237e+00   7.52123e-02   3.68010e-04  -7.96775e-01
+   3  width_b_01_Z_m_p_DG   9.46182e+00   1.17013e+01  -0.00000e+00  -1.60691e-01
+                               ERR DEF= 0.5
+ **********
+ **    8 **SET ERR         0.5
+ **********
+ **********
+ **    9 **SET PRINT           0
+ **********
+ **********
+ **   10 **HESSE        1500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter3
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=15232 FROM HESSE     STATUS=FAILED          9 CALLS         133 TOTAL
+                     EDM=1.69953e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_01_Z_m_p_DG   5.27994e+03   1.06150e-01   9.06275e-04  -6.08333e-03
+   2  width_01_Z_m_p_DG   7.12237e+00   7.52123e-02   3.68010e-04  -7.96775e-01
+   3  width_b_01_Z_m_p_DG   9.46182e+00   1.17013e+01  -0.00000e+00  -1.60691e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing RooAddPdf::01_Z_m_p_DG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing RooConstVar::1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing RooGaussian::01_Z_m_p_DG_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing RooRealVar::mean_01_Z_m_p_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing RooRealVar::width_01_Z_m_p_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing RooGaussian::01_Z_m_p_DG_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_01_Z_m_p) importing RooRealVar::width_b_01_Z_m_p_DG
+
+RooWorkspace(fit_01_Z_m_p) fit_01_Z_m_p contents
+
+variables
+---------
+(B_DTF_M,mean_01_Z_m_p_DG,width_01_Z_m_p_DG,width_b_01_Z_m_p_DG)
+
+p.d.f.s
+-------
+RooGaussian::01_Z_m_p_DG_a[ x=B_DTF_M mean=mean_01_Z_m_p_DG sigma=width_01_Z_m_p_DG ] = 0.953358
+RooGaussian::01_Z_m_p_DG_b[ x=B_DTF_M mean=mean_01_Z_m_p_DG sigma=width_b_01_Z_m_p_DG ] = 0.973298
+RooAddPdf::01_Z_m_p_DG_fit[ 1 * 01_Z_m_p_DG_a + [%] * 01_Z_m_p_DG_b ] = 0.953358
+
+datasets
+--------
+RooDataSet::01_Z_m_p_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_01_Z_m_p_DG_fit_01_Z_m_p_events
+

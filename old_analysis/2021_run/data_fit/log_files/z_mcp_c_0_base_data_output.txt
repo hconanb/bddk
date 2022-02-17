@@ -1,0 +1,122 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooAddPdf::z_01_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooGaussian::z_01_DG_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::mean_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::width_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::z_01_DG_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooGaussian::z_01_DG_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::width_b_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooBifurGaussExp::z_02_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::mean_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::width_L_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::width_R_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::alpha_1_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::alpha_2_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooBifurGaussExp::z_03_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::mean_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::width_L_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::width_R_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::alpha_1_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::alpha_2_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooGaussExp::z_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::mean_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::width_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooRealVar::alpha_z_04_GEP
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping event #42 because B_DTF_M cannot accommodate the value 4790.49
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping event #62 because B_DTF_M cannot accommodate the value 4761.68
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping event #87 because B_DTF_M cannot accommodate the value 5617.06
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping event #101 because B_DTF_M cannot accommodate the value 5652.56
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(z_data) Ignored 191 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing RooCategory::all_cats
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_mcp_c_0) importing dataset all_data_sets
+
+RooWorkspace(z_mcp_c_0) z_mcp_c_0 contents
+
+variables
+---------
+(B_DTF_M,all_cats,alpha_1_z_02_BGEP,alpha_1_z_03_BGEP,alpha_2_z_02_BGEP,alpha_2_z_03_BGEP,alpha_z_04_GEP,bf_1,bf_10,bf_11,bf_12,bf_13,bf_14,bf_15,bf_16,bf_2,bf_3,bf_4,bf_5,bf_6,bf_7,bf_8,bf_9,c0_z,c1_z,c2_z,c3_z,mean_z_01_DG,mean_z_02_BGEP,mean_z_03_BGEP,mean_z_04_GEP,n_z_bkg,width_L_z_02_BGEP,width_L_z_03_BGEP,width_R_z_02_BGEP,width_R_z_03_BGEP,width_b_z_01_DG,width_z_01_DG,width_z_04_GEP,z_01_DG_a_frac,z_mcp_c_0_par0,z_mcp_c_0_par1,z_mcp_c_0_par2,z_mcp_c_0_par3)
+
+p.d.f.s
+-------
+RooGaussian::z_01_DG_a[ x=B_DTF_M mean=mean_z_01_DG sigma=width_z_01_DG ] = 3.05579e-16
+RooGaussian::z_01_DG_b[ x=B_DTF_M mean=mean_z_01_DG sigma=width_b_z_01_DG ] = 5.94399e-45
+RooAddPdf::z_01_fit[ z_01_DG_a_frac * z_01_DG_a + [%] * z_01_DG_b ] = 1.07499e-16
+RooBifurGaussExp::z_02_fit[ m=B_DTF_M m0=mean_z_02_BGEP sigmaLo=width_L_z_02_BGEP sigmaHi=width_R_z_02_BGEP alphaLo=alpha_1_z_02_BGEP alphaHi=alpha_2_z_02_BGEP ] = 7.14888e-05
+RooBifurGaussExp::z_03_fit[ m=B_DTF_M m0=mean_z_03_BGEP sigmaLo=width_L_z_03_BGEP sigmaHi=width_R_z_03_BGEP alphaLo=alpha_1_z_03_BGEP alphaHi=alpha_2_z_03_BGEP ] = 7.14888e-05
+RooGaussExp::z_04_fit[ m=B_DTF_M m0=mean_z_04_GEP sigma=width_z_04_GEP alpha=alpha_z_04_GEP ] = 4.12862e-49
+RooAddPdf::z_spectrum_all_fit[ n_01_z * z_01_fit + n_02_z * z_02_fit + n_03_z * z_03_fit + n_04_z * z_04_fit + n_z_bkg * z_spectrum_bkg ] = 0.153367
+RooBernstein::z_spectrum_bkg[ x=B_DTF_M coefList=(c0_z,c1_z,c2_z,c3_z) ] = 1
+
+functions
+--------
+RooFormulaVar::n_01_z[ actualVars=(bf_1,z_mcp_c_0_par0) formula="x[0]*x[1]" ] = 333.359
+RooFormulaVar::n_02_z[ actualVars=(bf_2,z_mcp_c_0_par1) formula="x[0]*x[1]" ] = 97.3825
+RooFormulaVar::n_03_z[ actualVars=(bf_3,z_mcp_c_0_par2) formula="x[0]*x[1]" ] = 97.3825
+RooFormulaVar::n_04_z[ actualVars=(bf_4,z_mcp_c_0_par3) formula="x[0]*x[1]" ] = 23.9957
+
+datasets
+--------
+RooDataSet::all_data_sets(all_cats,B_DTF_M)
+
+made 66671.88843952997
+made 19476.49988098454
+made 19476.49988098454
+made 4799.146204488457
+z_01_DG
+RooRealVar::B_DTF_M = 5200 C  L(4800 - 5600) 
+ is constant
+RooRealVar::mean_z_01_DG = 5279.96 +/- 0.104075 C  L(5270 - 5290) 
+ is constant
+RooRealVar::width_z_01_DG = 9.45938 +/- 0.644983 C  L(0 - 50) 
+ is constant
+RooRealVar::z_01_DG_a_frac = 0.351789 +/- 0.10296 C  L(0 - 1) 
+ is constant
+RooRealVar::width_b_z_01_DG = 5.60271 +/- 0.323312 C  L(0 - 50) 
+ is constant
+z_02_BGEP
+RooRealVar::B_DTF_M = 5200 C  L(4800 - 5600) 
+ is constant
+RooRealVar::mean_z_02_BGEP = 5135.49 +/- 0.754238 C  L(5120 - 5140) 
+ is constant
+RooRealVar::width_L_z_02_BGEP = 16.5189 +/- 0.541132 C  L(4 - 30) 
+ is constant
+RooRealVar::width_R_z_02_BGEP = 7.80969 +/- 0.696596 C  L(4 - 30) 
+ is constant
+RooRealVar::alpha_1_z_02_BGEP = 2.06702 +/- 0.23907 C  L(0.05 - 7) 
+ is constant
+RooRealVar::alpha_2_z_02_BGEP = 1.25018 +/- 0.131338 C  L(0.05 - 7) 
+ is constant
+z_03_BGEP
+RooRealVar::B_DTF_M = 5200 C  L(4800 - 5600) 
+ is constant
+RooRealVar::mean_z_03_BGEP = 5135.49 +/- 0.754238 C  L(5120 - 5140) 
+ is constant
+RooRealVar::width_L_z_03_BGEP = 16.5189 +/- 0.541132 C  L(4 - 30) 
+ is constant
+RooRealVar::width_R_z_03_BGEP = 7.80969 +/- 0.696596 C  L(4 - 30) 
+ is constant
+RooRealVar::alpha_1_z_03_BGEP = 2.06702 +/- 0.23907 C  L(0.05 - 7) 
+ is constant
+RooRealVar::alpha_2_z_03_BGEP = 1.25018 +/- 0.131338 C  L(0.05 - 7) 
+ is constant
+z_04_GEP
+RooRealVar::B_DTF_M = 5200 C  L(4800 - 5600) 
+ is constant
+RooRealVar::mean_z_04_GEP = 4984.36 +/- 0.329037 C  L(4980 - 5000) 
+ is constant
+RooRealVar::width_z_04_GEP = 14.4461 +/- 0.268662 C  L(4 - 30) 
+ is constant
+RooRealVar::alpha_z_04_GEP = 1.59753 +/- 0.182041 C  L(0.05 - 7) 
+ is constant
+Wrote dws to: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/data_fit/base_data_files/z_mcp_c_0.root

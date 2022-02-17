@@ -1,0 +1,217 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing dataset p_48_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_p_48_BG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_p_48_BG   4.99000e+03  2.00000e+00    4.98000e+03  5.00000e+03
+     2 width_1_p_48_BG   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_2_p_48_BG   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.22762 added to diagonal of error matrix
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (64271.6) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_p_48_BG=4980.39, width_1_p_48_BG=9.88245, width_2_p_48_BG=0.37792
+RooBifurGauss::p_48_BG_fit[ x=B_DTF_M mean=mean_p_48_BG sigmaL=width_1_p_48_BG sigmaR=width_2_p_48_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4995.07, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4997.85, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4997.84, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5002.11, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4997.75, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4996.8, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5000.66, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4998.65, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4995.72, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5000.17, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4999.22, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4998.86, mean=mean_p_48_BG=4980.39, sigmaL=width_1_p_48_BG=9.88245, sigmaR=width_2_p_48_BG=0.37792
+    ... (remaining 2038 messages suppressed)
+RooNLLVar::nll_p_48_BG_fit_p_48_events[ paramSet=(mean_p_48_BG,width_1_p_48_BG,width_2_p_48_BG) ]
+     function value is NAN @ paramSet=(mean_p_48_BG = 4980.39,width_1_p_48_BG = 9.88245,width_2_p_48_BG = 0.37792)
+
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (64271.6) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_p_48_BG=4980.04, width_1_p_48_BG=48.2815, width_2_p_48_BG=0.809058
+RooBifurGauss::p_48_BG_fit[ x=B_DTF_M mean=mean_p_48_BG sigmaL=width_1_p_48_BG sigmaR=width_2_p_48_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5020.5, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5034.86, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5012.87, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5014.78, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5015.34, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5021.9, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5034.02, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5023.26, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5019.67, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5013.89, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5018.13, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5018.11, mean=mean_p_48_BG=4980.04, sigmaL=width_1_p_48_BG=48.2815, sigmaR=width_2_p_48_BG=0.809058
+    ... (remaining 582 messages suppressed)
+RooNLLVar::nll_p_48_BG_fit_p_48_events[ paramSet=(mean_p_48_BG,width_1_p_48_BG,width_2_p_48_BG) ]
+     function value is NAN @ paramSet=(mean_p_48_BG = 4980.04,width_1_p_48_BG = 48.2815,width_2_p_48_BG = 0.809058)
+
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (64271.6) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_p_48_BG=5000, width_1_p_48_BG=0.131489, width_2_p_48_BG=2.30424
+RooBifurGauss::p_48_BG_fit[ x=B_DTF_M mean=mean_p_48_BG sigmaL=width_1_p_48_BG sigmaR=width_2_p_48_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4963.79, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4975.38, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4980.57, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4990.98, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4960.81, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4988.03, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4970.4, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4983.09, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4986.02, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4978.6, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4981.22, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4970.4, mean=mean_p_48_BG=5000, sigmaL=width_1_p_48_BG=0.131489, sigmaR=width_2_p_48_BG=2.30424
+    ... (remaining 2038 messages suppressed)
+RooNLLVar::nll_p_48_BG_fit_p_48_events[ paramSet=(mean_p_48_BG,width_1_p_48_BG,width_2_p_48_BG) ]
+     function value is NAN @ paramSet=(mean_p_48_BG = 5000,width_1_p_48_BG = 0.131489,width_2_p_48_BG = 2.30424)
+
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (64271.6) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_p_48_BG=4981.16, width_1_p_48_BG=0.0799607, width_2_p_48_BG=17.2374
+RooBifurGauss::p_48_BG_fit[ x=B_DTF_M mean=mean_p_48_BG sigmaL=width_1_p_48_BG sigmaR=width_2_p_48_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4976.78, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4952.82, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4972.23, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4976.77, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4944.74, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4974.28, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4975.25, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4965.67, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4966.1, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4967.41, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4965.5, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4969.38, mean=mean_p_48_BG=4981.16, sigmaL=width_1_p_48_BG=0.0799607, sigmaR=width_2_p_48_BG=17.2374
+    ... (remaining 2038 messages suppressed)
+RooNLLVar::nll_p_48_BG_fit_p_48_events[ paramSet=(mean_p_48_BG,width_1_p_48_BG,width_2_p_48_BG) ]
+     function value is NAN @ paramSet=(mean_p_48_BG = 4981.16,width_1_p_48_BG = 0.0799607,width_2_p_48_BG = 17.2374)
+
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (312317) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_p_48_BG=4980.09, width_1_p_48_BG=0.491035, width_2_p_48_BG=9.88713
+RooBifurGauss::p_48_BG_fit[ x=B_DTF_M mean=mean_p_48_BG sigmaL=width_1_p_48_BG sigmaR=width_2_p_48_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4946.66, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4958.8, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4956.72, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4956.45, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4951.85, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4957.77, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4960.84, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4956.17, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4960.75, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4947.54, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4960.79, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4947.82, mean=mean_p_48_BG=4980.09, sigmaL=width_1_p_48_BG=0.491035, sigmaR=width_2_p_48_BG=9.88713
+    ... (remaining 1257 messages suppressed)
+RooNLLVar::nll_p_48_BG_fit_p_48_events[ paramSet=(mean_p_48_BG,width_1_p_48_BG,width_2_p_48_BG) ]
+     function value is NAN @ paramSet=(mean_p_48_BG = 4980.09,width_1_p_48_BG = 0.491035,width_2_p_48_BG = 9.88713)
+
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (312317) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_p_48_BG=4992.88, width_1_p_48_BG=1.25241, width_2_p_48_BG=36.6253
+RooBifurGauss::p_48_BG_fit[ x=B_DTF_M mean=mean_p_48_BG sigmaL=width_1_p_48_BG sigmaR=width_2_p_48_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4940.79, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4943.9, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4940.88, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4944.05, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4944.44, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4940.18, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4943.35, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4942.44, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4943.93, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4940.77, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4942.26, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4942.56, mean=mean_p_48_BG=4992.88, sigmaL=width_1_p_48_BG=1.25241, sigmaR=width_2_p_48_BG=36.6253
+    ... (remaining 88 messages suppressed)
+RooNLLVar::nll_p_48_BG_fit_p_48_events[ paramSet=(mean_p_48_BG,width_1_p_48_BG,width_2_p_48_BG) ]
+     function value is NAN @ paramSet=(mean_p_48_BG = 4992.88,width_1_p_48_BG = 1.25241,width_2_p_48_BG = 36.6253)
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=49153.9 FROM MIGRAD    STATUS=CONVERGED     243 CALLS         244 TOTAL
+                     EDM=5.13827e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_p_48_BG   4.98000e+03   9.96740e-02   2.15845e-02** at limit **
+   2  width_1_p_48_BG   1.63268e+01   1.74117e-01   1.10681e-03   9.49796e-01
+   3  width_2_p_48_BG   1.87811e+01   1.62146e-01   9.98268e-04   4.52213e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=49153.9 FROM HESSE     STATUS=OK             16 CALLS         260 TOTAL
+                     EDM=5.26799e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_p_48_BG   4.98000e+03   9.97818e-02   4.31690e-03   4.71267e+00
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+   2  width_1_p_48_BG   1.63268e+01   1.73862e-01   2.21361e-04   3.49589e+00
+   3  width_2_p_48_BG   1.87811e+01   1.61956e-01   3.99307e-05  -2.51394e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooBifurGauss::p_48_BG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::mean_p_48_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::width_1_p_48_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::width_2_p_48_BG
+
+RooWorkspace(fit_p_48) fit_p_48 contents
+
+variables
+---------
+(B_DTF_M,mean_p_48_BG,width_1_p_48_BG,width_2_p_48_BG)
+
+p.d.f.s
+-------
+RooBifurGauss::p_48_BG_fit[ x=B_DTF_M mean=mean_p_48_BG sigmaL=width_1_p_48_BG sigmaR=width_2_p_48_BG ] = 0.507832
+
+datasets
+--------
+RooDataSet::p_48_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_p_48_BG_fit_p_48_events
+

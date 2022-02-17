@@ -1,0 +1,100 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing dataset m_04_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_m_04_GAddBGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (m_04_GAddBGEP_fit_a,m_04_GAddBGEP_fit_b)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_m_04_GAddBGEP_a   4.99000e+03  4.00000e+00    4.97000e+03  5.01000e+03
+     2 mean_m_04_GAddBGEP_b   4.99000e+03  4.00000e+00    4.97000e+03  5.01000e+03
+     3 width_1_m_04_GAddBGEP_a   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     4 width_2_m_04_GAddBGEP_a   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+     5 width_m_04_GAddBGEP_b   5.00000e+00  2.00000e+00    0.00000e+00  2.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=21163.8 FROM MIGRAD    STATUS=CONVERGED     370 CALLS         371 TOTAL
+                     EDM=2.73333e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_m_04_GAddBGEP_a   4.98564e+03   8.08278e-01   1.36775e-03  -1.26042e-01
+   2  mean_m_04_GAddBGEP_b   4.97636e+03   1.29662e+00   4.02128e-03  -8.51591e-02
+   3  width_1_m_04_GAddBGEP_a   1.58988e+01   9.73300e-01   1.49277e-03   7.37815e-02
+   4  width_2_m_04_GAddBGEP_a   8.46471e+00   5.31154e-01   1.13341e-03  -1.91792e-01
+   5  width_m_04_GAddBGEP_b   1.82379e+01   6.49718e-01   7.41260e-03   8.45079e-04
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2500
+ **********
+ FCN=21163.8 FROM HESSE     STATUS=OK             31 CALLS         402 TOTAL
+                     EDM=2.79536e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_m_04_GAddBGEP_a   4.98564e+03   8.22343e-01   2.73551e-04  -2.19845e-01
+   2  mean_m_04_GAddBGEP_b   4.97636e+03   1.31648e+00   1.60851e-04  -7.50234e-01
+   3  width_1_m_04_GAddBGEP_a   1.58988e+01   9.95624e-01   5.97106e-05  -3.72610e-01
+   4  width_2_m_04_GAddBGEP_a   8.46471e+00   5.39886e-01   2.26683e-04  -7.22699e-01
+   5  width_m_04_GAddBGEP_b   1.82379e+01   6.60917e-01   2.96504e-04   9.68069e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooAddPdf::m_04_GAddBGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooBifurGauss::m_04_GAddBGEP_fit_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::mean_m_04_GAddBGEP_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::width_1_m_04_GAddBGEP_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::width_2_m_04_GAddBGEP_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::m_04_GAddBGEP_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooGaussian::m_04_GAddBGEP_fit_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::mean_m_04_GAddBGEP_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::width_m_04_GAddBGEP_b
+
+RooWorkspace(fit_m_04) fit_m_04 contents
+
+variables
+---------
+(B_DTF_M,m_04_GAddBGEP_a_frac,mean_m_04_GAddBGEP_a,mean_m_04_GAddBGEP_b,width_1_m_04_GAddBGEP_a,width_2_m_04_GAddBGEP_a,width_m_04_GAddBGEP_b)
+
+p.d.f.s
+-------
+RooAddPdf::m_04_GAddBGEP_fit[ m_04_GAddBGEP_a_frac * m_04_GAddBGEP_fit_a + [%] * m_04_GAddBGEP_fit_b ] = 0.855283
+RooBifurGauss::m_04_GAddBGEP_fit_a[ x=B_DTF_M mean=mean_m_04_GAddBGEP_a sigmaL=width_1_m_04_GAddBGEP_a sigmaR=width_2_m_04_GAddBGEP_a ] = 0.779434
+RooGaussian::m_04_GAddBGEP_fit_b[ x=B_DTF_M mean=mean_m_04_GAddBGEP_b sigma=width_m_04_GAddBGEP_b ] = 0.994305
+
+datasets
+--------
+RooDataSet::m_04_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_m_04_GAddBGEP_fit_m_04_events
+

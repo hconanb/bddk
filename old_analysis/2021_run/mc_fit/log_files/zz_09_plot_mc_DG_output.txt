@@ -1,0 +1,20 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_09_DG_fit) directly selected PDF components: (zz_09_DG_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_09_DG_fit) indirectly selected PDF components: (zz_09_DG_a,zz_09_DG_b)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_09_DG_fit) directly selected PDF components: (zz_09_DG_a)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_09_DG_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_09_DG_fit) directly selected PDF components: (zz_09_DG_b)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_09_DG_fit) indirectly selected PDF components: ()
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Info in <TCanvas::Print>: png file plots/5_26/mc_fits/zz_09_DG.png has been created
+0.7393168941395182
+saved: zz_09_DG.png in plots/5_26/mc_fits/

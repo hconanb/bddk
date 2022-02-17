@@ -1,0 +1,57 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+RooWorkspace(zz_10) zz_10 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_zz_10_GAddBGEP_a,alpha_2_zz_10_GAddBGEP_a,alpha_zz_10_GAddBGEP_b,mean_zz_10_GAddBGEP_a,width_L_zz_10_GAddBGEP_a,width_R_zz_10_GAddBGEP_a,width_zz_10_GAddBGEP_b,zz_10_GAddBGEP_a_frac)
+
+p.d.f.s
+-------
+RooAddPdf::zz_10_GAddBGEP_fit[ zz_10_GAddBGEP_a_frac * zz_10_GAddBGEP_fit_a + [%] * zz_10_GAddBGEP_fit_b ] = 1
+RooBifurGaussExp::zz_10_GAddBGEP_fit_a[ m=B_DTF_M m0=mean_zz_10_GAddBGEP_a sigmaLo=width_L_zz_10_GAddBGEP_a sigmaHi=width_R_zz_10_GAddBGEP_a alphaLo=alpha_1_zz_10_GAddBGEP_a alphaHi=alpha_2_zz_10_GAddBGEP_a ] = 1
+RooGaussExp::zz_10_GAddBGEP_fit_b[ m=B_DTF_M m0=mean_zz_10_GAddBGEP_a sigma=width_zz_10_GAddBGEP_b alpha=alpha_zz_10_GAddBGEP_b ] = 1
+
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_10_events) Skipping event #12 because B_DTF_M cannot accommodate the value 5065.15
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_10_events) Skipping event #26 because B_DTF_M cannot accommodate the value 5060.13
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_10_events) Skipping event #32 because B_DTF_M cannot accommodate the value 5054.39
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_10_events) Skipping event #45 because B_DTF_M cannot accommodate the value 5191.36
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_10_events) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(zz_10_events) Ignored 244 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_10) importing dataset zz_10_events
+
+RooWorkspace(zz_10) zz_10 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_zz_10_GAddBGEP_a,alpha_2_zz_10_GAddBGEP_a,alpha_zz_10_GAddBGEP_b,mean_zz_10_GAddBGEP_a,width_L_zz_10_GAddBGEP_a,width_R_zz_10_GAddBGEP_a,width_zz_10_GAddBGEP_b,zz_10_GAddBGEP_a_frac)
+
+p.d.f.s
+-------
+RooAddPdf::zz_10_GAddBGEP_fit[ zz_10_GAddBGEP_a_frac * zz_10_GAddBGEP_fit_a + [%] * zz_10_GAddBGEP_fit_b ] = 1
+RooBifurGaussExp::zz_10_GAddBGEP_fit_a[ m=B_DTF_M m0=mean_zz_10_GAddBGEP_a sigmaLo=width_L_zz_10_GAddBGEP_a sigmaHi=width_R_zz_10_GAddBGEP_a alphaLo=alpha_1_zz_10_GAddBGEP_a alphaHi=alpha_2_zz_10_GAddBGEP_a ] = 1
+RooGaussExp::zz_10_GAddBGEP_fit_b[ m=B_DTF_M m0=mean_zz_10_GAddBGEP_a sigma=width_zz_10_GAddBGEP_b alpha=alpha_zz_10_GAddBGEP_b ] = 1
+
+datasets
+--------
+RooDataSet::zz_10_events(B_DTF_M)
+
+mcws is zz_10
+zz_10
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2016_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2016_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2017_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2017_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2018_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2018_T_spectrum_filtered.root
+Saved: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/mc_fit/base_mc_files/zz_10.root

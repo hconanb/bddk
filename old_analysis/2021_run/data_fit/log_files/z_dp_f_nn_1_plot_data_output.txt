@@ -1,0 +1,15 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+Error in <TFile::TFile>: file /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/data_fit/fit_data_files/fit_z_dp_f_nn_1.root does not exist
+Traceback (most recent call last):
+  File "data_fit/data_plot_script.py", line 184, in <module>
+    plot_data(run_name, fit_strat, specs)
+  File "data_fit/data_plot_script.py", line 11, in plot_data
+    b_dtf_m = fws.var("B_DTF_M")
+AttributeError: 'TObject' object has no attribute 'var'

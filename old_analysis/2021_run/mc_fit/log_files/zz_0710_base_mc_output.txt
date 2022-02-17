@@ -1,0 +1,57 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+RooWorkspace(zz_0710) zz_0710 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_zz_0710_BGEP,alpha_2_zz_0710_BGEP,mean_zz_0710_BGEP,width_L_zz_0710_BGEP,width_R_zz_0710_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::zz_0710_BGEP_fit[ m=B_DTF_M m0=mean_zz_0710_BGEP sigmaLo=width_L_zz_0710_BGEP sigmaHi=width_R_zz_0710_BGEP alphaLo=alpha_1_zz_0710_BGEP alphaHi=alpha_2_zz_0710_BGEP ] = 1
+
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_0710_events) Skipping event #245 because B_DTF_M cannot accommodate the value 5064.99
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_0710_events) Skipping event #1175 because B_DTF_M cannot accommodate the value 4892.56
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_0710_events) Skipping event #1369 because B_DTF_M cannot accommodate the value 5076
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_0710_events) Skipping event #1468 because B_DTF_M cannot accommodate the value 5069.7
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_0710_events) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(zz_0710_events) Ignored 660 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_0710) importing dataset zz_0710_events
+
+RooWorkspace(zz_0710) zz_0710 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_zz_0710_BGEP,alpha_2_zz_0710_BGEP,mean_zz_0710_BGEP,width_L_zz_0710_BGEP,width_R_zz_0710_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::zz_0710_BGEP_fit[ m=B_DTF_M m0=mean_zz_0710_BGEP sigmaLo=width_L_zz_0710_BGEP sigmaHi=width_R_zz_0710_BGEP alphaLo=alpha_1_zz_0710_BGEP alphaHi=alpha_2_zz_0710_BGEP ] = 1
+
+datasets
+--------
+RooDataSet::zz_0710_events(B_DTF_M)
+
+mcws is zz_0710
+zz_0710
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/07_zz_12197024_2016_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/07_zz_12197024_2016_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/07_zz_12197024_2017_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/07_zz_12197024_2017_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/07_zz_12197024_2018_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/07_zz_12197024_2018_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2016_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2016_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2017_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2017_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2018_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/10_zz_11196413_2018_T_spectrum_filtered.root
+Saved: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/mc_fit/base_mc_files/zz_0710.root

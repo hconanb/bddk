@@ -1,0 +1,59 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 2944 events out of 17836 total events
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+ *** Break *** segmentation violation
+ Generating stack trace...
+ 0x00007f405a078a7f in RooAbsCollection::selectCommon(RooAbsCollection const&) const + 0xbf from /home/hbernste/miniconda/envs/my_root_env/lib/libRooFitCore.so.6.22
+ 0x00007f405a0ce423 in RooAbsReal::plotOn(RooPlot*, RooAbsReal::PlotOpt) const + 0x1c3 from /home/hbernste/miniconda/envs/my_root_env/lib/libRooFitCore.so.6.22
+ 0x00007f405a0d6fe5 in RooAbsReal::plotOn(RooPlot*, RooLinkedList&) const at RooAbsReal.cxx:? from /home/hbernste/miniconda/envs/my_root_env/lib/libRooFitCore.so.6.22
+ 0x00007f405a0a5c8b in RooAbsPdf::plotOn(RooPlot*, RooLinkedList&) const + 0xc1b from /home/hbernste/miniconda/envs/my_root_env/lib/libRooFitCore.so.6.22
+ 0x00007f405a279129 in RooSimultaneous::plotOn(RooPlot*, RooLinkedList&) const + 0x1e59 from /home/hbernste/miniconda/envs/my_root_env/lib/libRooFitCore.so.6.22
+ 0x00007f405a0d1178 in RooAbsReal::plotOn(RooPlot*, RooCmdArg const&, RooCmdArg const&, RooCmdArg const&, RooCmdArg const&, RooCmdArg const&, RooCmdArg const&, RooCmdArg const&, RooCmdArg const&, RooCmdArg const&, RooCmdArg const&) const + 0x158 from /home/hbernste/miniconda/envs/my_root_env/lib/libRooFitCore.so.6.22
+ 0x00007f40966397fe in <unknown function>
+ 0x00007f40bb5b1f30 in <unknown> from /home/hbernste/miniconda/envs/my_root_env/bin/../lib/libcppyy_backend3_8.so.6.22
+ 0x00007f40bb5b30a0 in Cppyy::CallR(long, void*, unsigned long, void*) + 0x30 from /home/hbernste/miniconda/envs/my_root_env/bin/../lib/libcppyy_backend3_8.so.6.22
+ 0x00007f40bb4fb5d9 in <unknown> from /home/hbernste/miniconda/envs/my_root_env/lib/python3.8/site-packages/libcppyy3_8.so
+ 0x00007f40bb4e4a12 in <unknown> from /home/hbernste/miniconda/envs/my_root_env/lib/python3.8/site-packages/libcppyy3_8.so
+ 0x00007f40bb4e4eb0 in <unknown> from /home/hbernste/miniconda/envs/my_root_env/lib/python3.8/site-packages/libcppyy3_8.so
+ 0x00007f40bb4e5437 in CPyCppyy::CPPMethod::Execute(void*, long, CPyCppyy::CallContext*) + 0x27 from /home/hbernste/miniconda/envs/my_root_env/lib/python3.8/site-packages/libcppyy3_8.so
+ 0x00007f40bb4e671d in CPyCppyy::CPPMethod::Call(CPyCppyy::CPPInstance*&, _object*, _object*, CPyCppyy::CallContext*) + 0xad from /home/hbernste/miniconda/envs/my_root_env/lib/python3.8/site-packages/libcppyy3_8.so
+ 0x00007f40bb4eb668 in <unknown> from /home/hbernste/miniconda/envs/my_root_env/lib/python3.8/site-packages/libcppyy3_8.so
+ 0x00007f40bcb4aade in _PyObject_MakeTpCall + 0x31e from python3
+ 0x00007f40bcbed9fa in _PyEval_EvalFrameDefault + 0x534a from python3
+ 0x00007f40bcbd2256 in _PyFunction_Vectorcall + 0x1a6 from python3
+ 0x00007f40bcbe8fdf in _PyEval_EvalFrameDefault + 0x92f from python3
+ 0x00007f40bcbd1053 in _PyEval_EvalCodeWithName + 0x2c3 from python3
+ 0x00007f40bcbd20a9 in PyEval_EvalCodeEx + 0x39 from python3
+ 0x00007f40bcc7313b in PyEval_EvalCode + 0x1b from python3
+ 0x00007f40bcc731d3 in <unknown> from python3
+ 0x00007f40bcc92983 in <unknown> from python3
+ 0x00007f40bcc97f77 in PyRun_FileExFlags + 0x97 from python3
+ 0x00007f40bcc9814c in PyRun_SimpleFileExFlags + 0x19c from python3
+ 0x00007f40bcc986cd in Py_RunMain + 0x36d from python3
+ 0x00007f40bcc98889 in Py_BytesMain + 0x39 from python3
+ 0x00007f40bb631bf7 in __libc_start_main + 0xe7 from /lib/x86_64-linux-gnu/libc.so.6
+ 0x00007f40bcc02589 in <unknown> from python3
+Traceback (most recent call last):
+  File "data_fit/data_plot_script.py", line 182, in <module>
+    plot_data(run_name, fit_strat, specs)
+  File "data_fit/data_plot_script.py", line 24, in plot_data
+    all_fit.plotOn(frame, ROOT.RooFit.Slice(all_cats, spectrum), ROOT.RooFit.Components(f"{spec}_spectrum_bkg"), ROOT.RooFit.ProjWData(ROOT.RooArgSet(all_cats), all_data_sets), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kGreen), ROOT.RooFit.Name("bkg"))
+TypeError: none of the 4 overloaded methods succeeded. Full details:
+  RooPlot* RooSimultaneous::plotOn(RooPlot* frame, const RooCmdArg& arg1, const RooCmdArg& arg2 = RooCmdArg(), const RooCmdArg& arg3 = RooCmdArg(), const RooCmdArg& arg4 = RooCmdArg(), const RooCmdArg& arg5 = RooCmdArg(), const RooCmdArg& arg6 = RooCmdArg(), const RooCmdArg& arg7 = RooCmdArg(), const RooCmdArg& arg8 = RooCmdArg(), const RooCmdArg& arg9 = RooCmdArg(), const RooCmdArg& arg10 = RooCmdArg()) =>
+    SegmentationViolation: segfault in C++; program state was reset
+  RooPlot* RooSimultaneous::plotOn(RooPlot* frame, RooLinkedList& cmdList) =>
+    TypeError: takes at most 2 arguments (7 given)
+  RooPlot* RooSimultaneous::plotOn(RooPlot* frame, RooAbsReal::PlotOpt o) =>
+    TypeError: takes at most 2 arguments (7 given)
+  RooPlot* RooSimultaneous::plotOn(RooPlot* frame, const char* drawOptions, double scaleFactor = 1., RooAbsReal::ScaleType stype = Relative, const RooAbsData* projData = 0, const RooArgSet* projSet = 0, double precision = 0.001, bool shiftToZero = kFALSE, const RooArgSet* projDataSet = 0, double rangeLo = 0, double rangeHi = 0, RooCurve::WingMode wmode = RooCurve::Extended) =>
+    TypeError: could not convert argument 2 (bad argument type for built-in operation)

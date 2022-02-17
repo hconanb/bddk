@@ -1,0 +1,95 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing dataset st_07_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_st_07_DG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (st_07_DG_a,st_07_DG_b)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_st_07_DG   5.28000e+03  2.00000e+00    5.27000e+03  5.29000e+03
+     2 st_07_DG_a_frac   8.00000e-01  1.00000e-01    0.00000e+00  1.00000e+00
+     3 width_b_st_07_DG   2.10000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     4 width_st_07_DG   1.20000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2000           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=18194.2 FROM MIGRAD    STATUS=CONVERGED     193 CALLS         194 TOTAL
+                     EDM=1.49987e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_st_07_DG   5.27905e+03   8.38958e-02   7.84056e-04  -1.00667e-02
+   2  st_07_DG_a_frac   2.98654e-01   6.54755e-02   3.31358e-03  -1.04527e-02
+   3  width_b_st_07_DG   5.02974e+00   2.10663e-01   5.25381e-04  -1.44917e-01
+   4  width_st_07_DG   9.20865e+00   5.21628e-01   8.93828e-04  -2.29505e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2000
+ **********
+ FCN=18194.2 FROM HESSE     STATUS=OK             23 CALLS         217 TOTAL
+                     EDM=1.52935e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_st_07_DG   5.27905e+03   8.39010e-02   1.56811e-04  -9.54526e-02
+   2  st_07_DG_a_frac   2.98654e-01   6.61857e-02   1.32543e-04  -4.14456e-01
+   3  width_b_st_07_DG   5.02974e+00   2.13969e-01   1.05076e-04  -9.25315e-01
+   4  width_st_07_DG   9.20865e+00   5.23938e-01   3.57531e-05  -6.83685e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooAddPdf::st_07_DG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooGaussian::st_07_DG_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::mean_st_07_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::width_st_07_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::st_07_DG_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooGaussian::st_07_DG_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::width_b_st_07_DG
+
+RooWorkspace(fit_st_07) fit_st_07 contents
+
+variables
+---------
+(B_DTF_M,mean_st_07_DG,st_07_DG_a_frac,width_b_st_07_DG,width_st_07_DG)
+
+p.d.f.s
+-------
+RooGaussian::st_07_DG_a[ x=B_DTF_M mean=mean_st_07_DG sigma=width_st_07_DG ] = 0.998971
+RooGaussian::st_07_DG_b[ x=B_DTF_M mean=mean_st_07_DG sigma=width_b_st_07_DG ] = 0.996554
+RooAddPdf::st_07_DG_fit[ st_07_DG_a_frac * st_07_DG_a + [%] * st_07_DG_b ] = 0.997276
+
+datasets
+--------
+RooDataSet::st_07_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_st_07_DG_fit_st_07_events
+

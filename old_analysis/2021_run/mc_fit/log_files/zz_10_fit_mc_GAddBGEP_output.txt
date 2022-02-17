@@ -1,0 +1,110 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing dataset zz_10_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_zz_10_GAddBGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (zz_10_GAddBGEP_fit_a,zz_10_GAddBGEP_fit_b)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_zz_10_GAddBGEP_a   2.00000e+00  6.95000e-01    5.00000e-02  7.00000e+00
+     2 alpha_2_zz_10_GAddBGEP_a   3.00000e+00  6.95000e-01    5.00000e-02  7.00000e+00
+     3 alpha_zz_10_GAddBGEP_b   3.00000e+00  6.95000e-01    5.00000e-02  7.00000e+00
+     4 mean_zz_10_GAddBGEP_a   5.13000e+03  3.00000e+00    5.11500e+03  5.14500e+03
+     5 width_L_zz_10_GAddBGEP_a   1.00000e+01  2.60000e+00    4.00000e+00  3.00000e+01
+     6 width_R_zz_10_GAddBGEP_a   2.00000e+01  2.60000e+00    4.00000e+00  3.00000e+01
+     7 width_zz_10_GAddBGEP_b   1.00000e+01  2.60000e+00    4.00000e+00  3.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        3500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=46467.5 FROM MIGRAD    STATUS=CONVERGED     607 CALLS         608 TOTAL
+                     EDM=3.14227e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_zz_10_GAddBGEP_a   2.45327e+00   6.41032e-01   2.71635e-02   1.50573e-02
+   2  alpha_2_zz_10_GAddBGEP_a   5.94382e-01   1.21298e-01   2.43895e-03   6.33670e-02
+   3  alpha_zz_10_GAddBGEP_b   4.55767e-01   2.90253e-02   8.69929e-04  -9.52813e-02
+   4  mean_zz_10_GAddBGEP_a   5.13176e+03   4.40665e-01   1.77253e-03  -1.13434e-01
+   5  width_L_zz_10_GAddBGEP_a   1.83095e+01   9.58707e-01   6.52077e-03  -3.33188e-02
+   6  width_R_zz_10_GAddBGEP_a   2.02923e+01   3.26902e+00   9.40419e-03  -1.29945e-03
+   7  width_zz_10_GAddBGEP_b   9.39819e+00   4.20242e-01   2.20246e-03   3.65074e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        3500
+ **********
+ FCN=46467.5 FROM HESSE     STATUS=OK             50 CALLS         658 TOTAL
+                     EDM=3.68115e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_zz_10_GAddBGEP_a   2.45327e+00   6.36052e-01   1.08654e-03  -3.13523e-01
+   2  alpha_2_zz_10_GAddBGEP_a   5.94382e-01   1.38094e-01   9.75581e-05  -1.00347e+00
+   3  alpha_zz_10_GAddBGEP_b   4.55767e-01   2.93137e-02   1.73986e-04  -1.08271e+00
+   4  mean_zz_10_GAddBGEP_a   5.13176e+03   4.45714e-01   3.54506e-04   1.17722e-01
+   5  width_L_zz_10_GAddBGEP_a   1.83095e+01   9.65268e-01   2.60831e-04  -3.24250e+00
+   6  width_R_zz_10_GAddBGEP_a   2.02923e+01   3.72459e+00   3.76168e-04   2.56042e-01
+   7  width_zz_10_GAddBGEP_b   9.39819e+00   4.25944e-01   8.80983e-05  -6.24578e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooAddPdf::zz_10_GAddBGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooBifurGaussExp::zz_10_GAddBGEP_fit_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::mean_zz_10_GAddBGEP_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::width_L_zz_10_GAddBGEP_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::width_R_zz_10_GAddBGEP_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::alpha_1_zz_10_GAddBGEP_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::alpha_2_zz_10_GAddBGEP_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::zz_10_GAddBGEP_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooGaussExp::zz_10_GAddBGEP_fit_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::width_zz_10_GAddBGEP_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_10) importing RooRealVar::alpha_zz_10_GAddBGEP_b
+
+RooWorkspace(fit_zz_10) fit_zz_10 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_zz_10_GAddBGEP_a,alpha_2_zz_10_GAddBGEP_a,alpha_zz_10_GAddBGEP_b,mean_zz_10_GAddBGEP_a,width_L_zz_10_GAddBGEP_a,width_R_zz_10_GAddBGEP_a,width_zz_10_GAddBGEP_b,zz_10_GAddBGEP_a_frac)
+
+p.d.f.s
+-------
+RooAddPdf::zz_10_GAddBGEP_fit[ zz_10_GAddBGEP_a_frac * zz_10_GAddBGEP_fit_a + [%] * zz_10_GAddBGEP_fit_b ] = 0.947801
+RooBifurGaussExp::zz_10_GAddBGEP_fit_a[ m=B_DTF_M m0=mean_zz_10_GAddBGEP_a sigmaLo=width_L_zz_10_GAddBGEP_a sigmaHi=width_R_zz_10_GAddBGEP_a alphaLo=alpha_1_zz_10_GAddBGEP_a alphaHi=alpha_2_zz_10_GAddBGEP_a ] = 0.984099
+RooGaussExp::zz_10_GAddBGEP_fit_b[ m=B_DTF_M m0=mean_zz_10_GAddBGEP_a sigma=width_zz_10_GAddBGEP_b alpha=alpha_zz_10_GAddBGEP_b ] = 0.927997
+
+datasets
+--------
+RooDataSet::zz_10_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_zz_10_GAddBGEP_fit_zz_10_events
+

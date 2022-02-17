@@ -1,0 +1,120 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing dataset p_48_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_p_48_BGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_p_48_BGEP   2.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     2 alpha_2_p_48_BGEP   8.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     3 mean_p_48_BGEP   4.99000e+03  2.00000e+00    4.98000e+03  5.00000e+03
+     4 width_L_p_48_BGEP   1.00000e+01  1.80000e+00    2.00000e+00  2.00000e+01
+     5 width_R_p_48_BGEP   5.00000e+00  1.50000e+00    2.00000e+00  2.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ MINUIT WARNING IN HESSE
+ ============== Second derivative enters zero, param 1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=48989.8 FROM MIGRAD    STATUS=CONVERGED     457 CALLS         458 TOTAL
+                     EDM=3.8999e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_p_48_BGEP   8.24726e+00   1.38183e+00  -2.40004e-02   0.00000e+00
+   2  alpha_2_p_48_BGEP   7.37223e-01   1.23693e-02  -8.12506e-04  -6.05650e-01
+   3  mean_p_48_BGEP   4.98579e+03   1.62677e-01   1.23307e-03  -1.26744e-01
+   4  width_L_p_48_BGEP   1.90709e+01   1.82985e-01   9.64987e-04  -1.63996e-02
+   5  width_R_p_48_BGEP   9.39181e+00   1.19922e-01  -3.11381e-03   6.90519e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **HESSE        2500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=48989.8 FROM HESSE     STATUS=FAILED          3 CALLS         461 TOTAL
+                     EDM=3.8999e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_p_48_BGEP   6.02695e+00   1.99824e+00  -2.40004e-02   7.06863e-01
+   2  alpha_2_p_48_BGEP   7.37223e-01   1.23693e-02  -8.12506e-04  -1.02086e+00
+   3  mean_p_48_BGEP   4.98579e+03   1.62677e-01   1.23307e-03  -4.34339e-01
+   4  width_L_p_48_BGEP   1.90709e+01   1.82985e-01   9.64987e-04   1.11240e+00
+   5  width_R_p_48_BGEP   9.39181e+00   1.19922e-01  -3.11381e-03  -1.79653e-01
+                               ERR DEF= 0.5
+ **********
+ **    8 **SET ERR         0.5
+ **********
+ **********
+ **    9 **SET PRINT           0
+ **********
+ **********
+ **   10 **HESSE        2500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=48989.8 FROM HESSE     STATUS=FAILED          3 CALLS         464 TOTAL
+                     EDM=3.8999e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_p_48_BGEP   6.02695e+00   1.99824e+00  -2.40004e-02   7.06863e-01
+   2  alpha_2_p_48_BGEP   7.37223e-01   1.23693e-02  -8.12506e-04  -1.02086e+00
+   3  mean_p_48_BGEP   4.98579e+03   1.62677e-01   1.23307e-03  -4.34339e-01
+   4  width_L_p_48_BGEP   1.90709e+01   1.82985e-01   9.64987e-04   1.11240e+00
+   5  width_R_p_48_BGEP   9.39181e+00   1.19922e-01  -3.11381e-03  -1.79653e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooBifurGaussExp::p_48_BGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::mean_p_48_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::width_L_p_48_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::width_R_p_48_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::alpha_1_p_48_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_48) importing RooRealVar::alpha_2_p_48_BGEP
+
+RooWorkspace(fit_p_48) fit_p_48 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_p_48_BGEP,alpha_2_p_48_BGEP,mean_p_48_BGEP,width_L_p_48_BGEP,width_R_p_48_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::p_48_BGEP_fit[ m=B_DTF_M m0=mean_p_48_BGEP sigmaLo=width_L_p_48_BGEP sigmaHi=width_R_p_48_BGEP alphaLo=alpha_1_p_48_BGEP alphaHi=alpha_2_p_48_BGEP ] = 0.371638
+
+datasets
+--------
+RooDataSet::p_48_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_p_48_BGEP_fit_p_48_events
+

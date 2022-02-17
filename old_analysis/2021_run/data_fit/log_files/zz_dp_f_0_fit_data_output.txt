@@ -1,0 +1,17 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+Error in <TFile::TFile>: file /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/data_fit/base_data_files/zz_dp_f_0.root does not exist
+Traceback (most recent call last):
+  File "data_fit/data_ws_fit_script.py", line 70, in <module>
+    run_data_fit(run_name, gc_onflag, specs)
+  File "data_fit/data_ws_fit_script.py", line 21, in run_data_fit
+    all_data_sets = dws.data("all_data_sets")
+AttributeError: 'TObject' object has no attribute 'data'

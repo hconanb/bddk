@@ -1,0 +1,33 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 2944 events out of 17836 total events
+Info in <TCanvas::Print>: png file plots/6_23/fit_tests/z_spectrum_z_dp_f_wa_1.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 5421 events out of 17836 total events
+Info in <TCanvas::Print>: png file plots/6_23/fit_tests/zz_spectrum_z_dp_f_wa_1.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 5831 events out of 17836 total events
+Info in <TCanvas::Print>: png file plots/6_23/fit_tests/p_spectrum_z_dp_f_wa_1.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 1977 events out of 17836 total events
+Info in <TCanvas::Print>: png file plots/6_23/fit_tests/m_spectrum_z_dp_f_wa_1.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 537 events out of 17836 total events
+Info in <TCanvas::Print>: png file plots/6_23/fit_tests/st_spectrum_z_dp_f_wa_1.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 1126 events out of 17836 total events
+Info in <TCanvas::Print>: png file plots/6_23/fit_tests/s_spectrum_z_dp_f_wa_1.png has been created
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+saved: z_spectrum_z_dp_f_wa_1.png in plots/6_23/fit_tests/
+saved: zz_spectrum_z_dp_f_wa_1.png in plots/6_23/fit_tests/
+saved: p_spectrum_z_dp_f_wa_1.png in plots/6_23/fit_tests/
+saved: m_spectrum_z_dp_f_wa_1.png in plots/6_23/fit_tests/
+saved: st_spectrum_z_dp_f_wa_1.png in plots/6_23/fit_tests/
+saved: s_spectrum_z_dp_f_wa_1.png in plots/6_23/fit_tests/

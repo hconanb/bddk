@@ -1,0 +1,385 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state m_spectrum (1977 dataset entries)
+RooAbsTestStatistic::initSimMode: creating slave calculator #1 for state p_spectrum (5831 dataset entries)
+RooAbsTestStatistic::initSimMode: creating slave calculator #2 for state st_spectrum (537 dataset entries)
+RooAbsTestStatistic::initSimMode: creating slave calculator #3 for state z_spectrum (2944 dataset entries)
+RooAbsTestStatistic::initSimMode: creating slave calculator #4 for state zz_spectrum (5421 dataset entries)
+[#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 5 slave calculators.
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (m_03_fit,m_04_fit,m_spectrum_bkg)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (p_05_fit,p_020607_fit,p_0408_fit,p_spectrum_bkg)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (st_07_fit,st_0408_fit,st_spectrum_bkg)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (z_01_fit,z_02_fit,z_04_fit,z_spectrum_bkg)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (zz_09_fit,zz_0710_fit,zz_040812_fit,zz_spectrum_bkg)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_p_020607_BGEP   2.04322e+00  1.12270e-01    0.00000e+00  1.00000e+01
+     2 alpha_1_st_0408_BGEP   1.66740e+00  1.01103e-01    0.00000e+00  1.00000e+01
+     3 alpha_1_zz_040812_BGEP   1.56933e+00  5.26402e-02    0.00000e+00  1.00000e+01
+     4 alpha_2_p_020607_BGEP   7.71524e-01  7.89068e-02    0.00000e+00  1.00000e+01
+     5 alpha_2_st_0408_BGEP   6.07878e-01  1.50961e-01    0.00000e+00  1.00000e+01
+     6 alpha_2_zz_040812_BGEP   1.14250e+00  3.50047e-02    0.00000e+00  1.00000e+01
+     7 alpha_z_04_GEP   1.59753e+00  1.82041e-01    5.00000e-02  7.00000e+00
+     8 c0_m         0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+     9 c0_p         0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    10 c0_st        0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    11 c0_z         0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    12 c0_zz        0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    13 mean_m_03_BG   5.12957e+03  4.07601e-01    5.12000e+03  5.14000e+03
+    14 mean_m_04_G   4.97877e+03  2.02739e-01    4.97000e+03  5.01000e+03
+    15 mean_p_020607_BGEP   5.13308e+03  4.32370e-01    5.11000e+03  5.15000e+03
+    16 mean_p_0408_BG   4.97921e+03  3.98689e-01    4.97000e+03  5.01000e+03
+    17 mean_p_05_G   5.27931e+03  7.83978e-02    5.27000e+03  5.29000e+03
+    18 mean_st_0408_BGEP   5.13263e+03  7.15840e-01    5.12000e+03  5.14000e+03
+    19 mean_st_07_G   5.27902e+03  8.77919e-02    5.27000e+03  5.29000e+03
+    20 mean_z_01_G   5.27994e+03  1.06180e-01    5.27000e+03  5.29000e+03
+    21 mean_z_02_BG   5.13257e+03  4.59797e-01    5.12000e+03  5.14000e+03
+    22 mean_z_04_GEP   4.98436e+03  3.29037e-01    4.98000e+03  5.00000e+03
+    23 mean_zz_040812_BGEP   4.97844e+03  3.18874e-01    4.96500e+03  4.98500e+03
+    24 mean_zz_0710_BG   5.12482e+03  1.90407e-01    5.11000e+03  5.15000e+03
+    25 mean_zz_09_G   5.27936e+03  6.64403e-02    5.27000e+03  5.29000e+03
+    26 n_m_bkg      1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+    27 n_p_bkg      1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+    28 n_st_bkg     1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+03
+    29 n_z_bkg      1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+    30 n_zz_bkg     1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+05
+    31 nny_1        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    32 nny_10       5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    33 nny_11       5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    34 nny_12       5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    35 nny_13       5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    36 nny_2        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    37 nny_3        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    38 nny_4        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    39 nny_5        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    40 nny_6        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    41 nny_7        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    42 nny_8        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    43 nny_9        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+    44 width_1_m_03_BG   1.62077e+01  2.93397e-01    0.00000e+00  5.00000e+01
+    45 width_1_p_0408_BG   1.58493e+01  2.93104e-01    0.00000e+00  5.00000e+01
+    46 width_1_z_02_BG   1.55101e+01  3.23271e-01    0.00000e+00  5.00000e+01
+    47 width_1_zz_0710_BG   1.52347e+01  1.33177e-01    0.00000e+00  5.00000e+01
+    48 width_2_m_03_BG   8.62566e+00  2.45926e-01    0.00000e+00  5.00000e+01
+    49 width_2_p_0408_BG   1.91903e+01  2.66399e-01    0.00000e+00  5.00000e+01
+    50 width_2_z_02_BG   1.11145e+01  2.92052e-01    0.00000e+00  5.00000e+01
+    51 width_2_zz_0710_BG   1.48408e+01  1.24016e-01    0.00000e+00  5.00000e+01
+    52 width_L_p_020607_BGEP   1.78640e+01  2.73442e-01    1.00000e+00  3.00000e+01
+    53 width_L_st_0408_BGEP   1.49006e+01  4.95775e-01    2.00000e+00  2.00000e+01
+    54 width_L_zz_040812_BGEP   1.74089e+01  2.82577e-01    1.00000e+00  3.00000e+01
+    55 width_R_p_020607_BGEP   7.04058e+00  6.80207e-01    1.00000e+00  3.00000e+01
+    56 width_R_st_0408_BGEP   5.84970e+00  1.41261e+00    2.00000e+00  2.00000e+01
+    57 width_R_zz_040812_BGEP   1.32085e+01  3.26832e-01    1.00000e+00  3.00000e+01
+    58 width_m_04_G   1.43952e+01  1.50641e-01    0.00000e+00  2.00000e+01
+    59 width_p_05_G   7.19900e+00  5.55710e-02    0.00000e+00  2.00000e+01
+    60 width_st_07_G   6.53710e+00  6.21144e-02    0.00000e+00  2.00000e+01
+    61 width_z_01_G   7.16443e+00  7.52429e-02    0.00000e+00  2.00000e+01
+    62 width_z_04_GEP   1.44461e+01  2.68662e-01    4.00000e+00  3.00000e+01
+    63 width_zz_09_G   6.89415e+00  4.70403e-02    0.00000e+00  2.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD    3.15e+04           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=1549.14 FROM MIGRAD    STATUS=CONVERGED   15004 CALLS       15005 TOTAL
+                     EDM=0.0008297    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_p_020607_BGEP   1.45592e+00   1.40225e-01   6.77662e-04   1.25112e-01
+   2  alpha_1_st_0408_BGEP   8.20262e-01   3.50797e-01   8.12830e-04   2.77342e-02
+   3  alpha_1_zz_040812_BGEP   1.15488e+00   1.77220e-01   6.57112e-04  -5.21343e-02
+   4  alpha_2_p_020607_BGEP   1.95452e-01   2.20450e-01   1.35876e-04   1.03760e+00
+   5  alpha_2_st_0408_BGEP   1.05147e+00   2.52759e-01   9.03514e-04  -8.85082e-02
+   6  alpha_2_zz_040812_BGEP   1.25166e+00   1.85179e-01   7.20331e-04   4.58742e-02
+   7  alpha_z_04_GEP   1.37546e+00   5.57573e-01   4.91773e-03   9.74347e-02
+   8  c0_m        -1.64263e-03   1.46513e-04   1.95614e-06  -3.90401e-01
+   9  c0_p        -3.00655e-03   1.53268e-04   2.03116e-06  -1.64959e+01
+  10  c0_st       -2.18768e-03   7.39957e-04   9.92521e-06  -1.56085e-01
+  11  c0_z        -1.97705e-03   1.56471e-04   2.00586e-06  -1.33249e+01
+  12  c0_zz       -1.89523e-03   1.15782e-04   1.50403e-06   8.96597e+00
+  13  mean_m_03_BG   5.12977e+03   1.30356e+00   1.34695e-03  -1.35006e-02
+  14  mean_m_04_G   4.97904e+03   1.06154e+00   1.70819e-03   2.72486e-04
+  15  mean_p_020607_BGEP   5.13392e+03   7.95534e-01   4.70519e-04  -1.66421e-01
+  16  mean_p_0408_BG   4.98014e+03   2.88704e+00   1.25148e-03   4.17509e-04
+  17  mean_p_05_G   5.27903e+03   2.38044e-01   6.50162e-04   4.33016e-03
+  18  mean_st_0408_BGEP   5.12465e+03   3.60410e+00   2.72572e-03   4.28591e-03
+  19  mean_st_07_G   5.27892e+03   5.62720e-01   1.53472e-03  -5.39942e-03
+  20  mean_z_01_G   5.27927e+03   2.84584e-01   7.74565e-04  -1.45885e-02
+  21  mean_z_02_BG   5.13520e+03   1.42118e+00   1.53254e-03  -2.43428e-02
+  22  mean_z_04_GEP   4.98324e+03   2.08244e+00   7.73582e-03   4.90945e-03
+  23  mean_zz_040812_BGEP   4.97529e+03   1.90487e+00   1.30536e-03  -2.15402e-02
+  24  mean_zz_0710_BG   5.13068e+03   1.18644e+00   6.30384e-04   2.11661e-03
+  25  mean_zz_09_G   5.27841e+03   6.33620e-01   1.74554e-03   4.58203e-03
+  26  n_m_bkg      1.01553e+03   3.64860e+01   3.10269e-04   4.90354e-02
+  27  n_p_bkg      1.19521e+03   4.85292e+01   3.50376e-04  -2.58054e-01
+  28  n_st_bkg     4.29789e+01   8.16588e+00   1.02475e-03   1.75353e-02
+  29  n_z_bkg      1.02963e+03   4.34954e+01   3.23076e-04  -2.15715e-01
+  30  n_zz_bkg     1.84841e+03   5.73694e+01   1.01296e-04  -1.21549e-01
+  31  nny_1        8.20557e+02   2.97735e+01   2.91297e-04   9.35630e-02
+  32  nny_10       6.45725e+02   2.74321e+01   2.97542e-04   1.20046e-01
+  33  nny_11       3.15805e+02   2.21219e+01   3.18558e-04   6.86564e-02
+  34  nny_12       1.34976e+02   1.17284e+01   2.75594e-04   8.98076e-02
+  35  nny_13       3.59049e+02   1.94375e+01   2.80598e-04  -5.76800e-02
+  36  nny_2        8.74363e+02   3.18294e+01   2.99652e-04   5.76950e-02
+  37  nny_3        2.19421e+02   2.63995e+01   3.56632e-04  -3.19738e-02
+  38  nny_4        1.61685e+02   1.49856e+01   3.13533e-04   6.26842e-03
+  39  nny_5        1.43402e+03   4.16031e+01   3.12184e-04   1.45297e-01
+  40  nny_6        1.97691e+03   5.26877e+01   3.28518e-04  -3.49292e-02
+  41  nny_7        9.76508e+02   3.21028e+01   2.91914e-04   7.36735e-02
+  42  nny_8        2.87558e+03   5.79474e+01   3.33488e-04   2.26419e-02
+  43  nny_9        7.83619e+02   3.39326e+01   3.15026e-04  -9.76797e-02
+  44  width_1_m_03_BG   1.52275e+01   1.03062e+00   7.55064e-04   4.36468e-02
+  45  width_1_p_0408_BG   1.71437e+01   2.20676e+00   1.02758e-03  -3.79745e-02
+  46  width_1_z_02_BG   2.00518e+01   1.16336e+00   7.86586e-04  -2.59347e-02
+  47  width_1_zz_0710_BG   1.80948e+01   8.80659e-01   6.04899e-04   6.40527e-02
+  48  width_2_m_03_BG   7.70428e+00   9.38680e-01   6.61605e-04  -2.74462e-03
+  49  width_2_p_0408_BG   1.78064e+01   2.41726e+00   1.09886e-03   1.29487e-02
+  50  width_2_z_02_BG   7.79953e+00   1.00832e+00   6.11578e-04   4.74842e-02
+  51  width_2_zz_0710_BG   1.24497e+01   9.86120e-01   6.13564e-04  -2.60527e-02
+  52  width_L_p_020607_BGEP   2.23571e+01   9.35127e-01   9.67767e-04   1.03788e-02
+  53  width_L_st_0408_BGEP   1.02741e+01   4.25179e+00   2.21519e-03   4.23325e-03
+  54  width_L_zz_040812_BGEP   1.57847e+01   1.91724e+00   9.57017e-04   6.18700e-02
+  55  width_R_p_020607_BGEP   2.39423e+00   2.63372e+00   3.62102e-04  -4.12544e-01
+  56  width_R_st_0408_BGEP   1.37994e+01   3.20276e+00   2.63308e-03   1.45541e-02
+  57  width_R_zz_040812_BGEP   1.61194e+01   1.79480e+00   9.34473e-04  -6.69875e-02
+  58  width_m_04_G   1.38798e+01   9.86321e-01   2.69917e-03   9.12444e-04
+  59  width_p_05_G   6.91539e+00   1.97567e-01   5.56028e-04   4.57520e-02
+  60  width_st_07_G   6.27729e+00   4.65851e-01   1.34455e-03   1.84535e-02
+  61  width_z_01_G   7.37833e+00   2.53689e-01   6.97486e-04   4.29101e-03
+  62  width_z_04_GEP   1.91139e+01   2.62870e+00   4.53735e-03  -1.31758e-02
+  63  width_zz_09_G   6.18944e+00   5.04244e-01   1.44534e-03   1.48425e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE    3.15e+04
+ **********
+ FCN=1549.14 FROM HESSE     STATUS=OK           2212 CALLS       17217 TOTAL
+                     EDM=0.00103688    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_p_020607_BGEP   1.45592e+00   1.45112e-01   1.35532e-04  -7.87818e-01
+   2  alpha_1_st_0408_BGEP   8.20262e-01   3.65675e-01   3.25132e-05  -9.89857e-01
+   3  alpha_1_zz_040812_BGEP   1.15488e+00   1.82813e-01   1.31422e-04  -8.77313e-01
+   4  alpha_2_p_020607_BGEP   1.95452e-01   3.75225e-01   2.71753e-05  -1.29027e+00
+   5  alpha_2_st_0408_BGEP   1.05147e+00   2.59541e-01   1.80703e-04  -9.10329e-01
+   6  alpha_2_zz_040812_BGEP   1.25166e+00   1.89678e-01   2.88132e-05  -8.47559e-01
+   7  alpha_z_04_GEP   1.37546e+00   5.06682e-01   1.53472e-01  -6.66925e-01
+   8  c0_m        -1.64263e-03   1.46520e-04   3.91229e-07  -8.21313e-04
+   9  c0_p        -3.00655e-03   1.53281e-04   4.06231e-07  -1.50328e-03
+  10  c0_st       -2.18768e-03   7.40049e-04   3.97008e-07  -1.09384e-03
+  11  c0_z        -1.97705e-03   1.54904e-04   4.01172e-07  -9.88527e-04
+  12  c0_zz       -1.89523e-03   1.15786e-04   3.00805e-07  -9.47616e-04
+  13  mean_m_03_BG   5.12977e+03   1.31042e+00   2.69391e-04  -2.25445e-02
+  14  mean_m_04_G   4.97904e+03   1.06173e+00   6.83274e-05  -5.80250e-01
+  15  mean_p_020607_BGEP   5.13392e+03   1.10028e+00   9.41038e-05   1.97115e-01
+  16  mean_p_0408_BG   4.98014e+03   2.92069e+00   5.00593e-05  -5.15304e-01
+  17  mean_p_05_G   5.27903e+03   2.38044e-01   1.30032e-04  -9.69314e-02
+  18  mean_st_0408_BGEP   5.12465e+03   3.69674e+00   1.09029e-04  -5.64851e-01
+  19  mean_st_07_G   5.27892e+03   5.62670e-01   3.06945e-04  -1.08589e-01
+  20  mean_z_01_G   5.27927e+03   2.84594e-01   1.54913e-04  -7.33987e-02
+  21  mean_z_02_BG   5.13520e+03   1.44157e+00   3.06508e-04   5.47342e-01
+  22  mean_z_04_GEP   4.98324e+03   2.08022e+00   3.09433e-04   3.88357e+00
+  23  mean_zz_040812_BGEP   4.97529e+03   1.97667e+00   2.61072e-04   2.90506e-02
+  24  mean_zz_0710_BG   5.13068e+03   1.19234e+00   2.52154e-05   3.40732e-02
+  25  mean_zz_09_G   5.27841e+03   6.33614e-01   3.49108e-04  -1.59235e-01
+  26  n_m_bkg      1.01553e+03   3.64942e+01   6.20538e-05  -9.22136e-01
+  27  n_p_bkg      1.19521e+03   4.85479e+01   7.00751e-05  -8.64788e-01
+  28  n_st_bkg     4.29789e+01   8.16697e+00   2.04950e-04  -1.15314e+00
+  29  n_z_bkg      1.02963e+03   4.28561e+01   6.46152e-05  -9.17484e-01
+  30  n_zz_bkg     1.84841e+03   5.73872e+01   2.02592e-05  -1.29804e+00
+  31  nny_1        8.20557e+02   2.97738e+01   5.82594e-05  -9.89750e-01
+  32  nny_10       6.45725e+02   2.74339e+01   5.95084e-05  -1.05694e+00
+  33  nny_11       3.15805e+02   2.21291e+01   6.37117e-05  -1.21348e+00
+  34  nny_12       1.34976e+02   1.17285e+01   5.51188e-05  -1.33791e+00
+  35  nny_13       3.59049e+02   1.94378e+01   5.61197e-05  -1.18952e+00
+  36  nny_2        8.74363e+02   3.18211e+01   5.99304e-05  -9.70428e-01
+  37  nny_3        2.19421e+02   2.55827e+01   7.13264e-05  -1.27344e+00
+  38  nny_4        1.61685e+02   1.49876e+01   6.27066e-05  -1.31579e+00
+  39  nny_5        1.43402e+03   4.16069e+01   6.24368e-05  -7.94047e-01
+  40  nny_6        1.97691e+03   5.26966e+01   6.57037e-05  -6.49286e-01
+  41  nny_7        9.76508e+02   3.21033e+01   5.83828e-05  -9.35167e-01
+  42  nny_8        2.87558e+03   5.79561e+01   6.66976e-05  -4.38835e-01
+  43  nny_9        7.83619e+02   3.39404e+01   6.30052e-05  -1.00335e+00
+  44  width_1_m_03_BG   1.52275e+01   1.03380e+00   1.51013e-04  -4.01610e-01
+  45  width_1_p_0408_BG   1.71437e+01   2.22700e+00   2.05516e-04  -3.19670e-01
+  46  width_1_z_02_BG   2.00518e+01   1.17348e+00   1.57317e-04  -1.99246e-01
+  47  width_1_zz_0710_BG   1.80948e+01   8.83130e-01   1.20980e-04  -2.79845e-01
+  48  width_2_m_03_BG   7.70428e+00   9.43981e-01   2.64642e-05  -7.64019e-01
+  49  width_2_p_0408_BG   1.78064e+01   2.44496e+00   2.19771e-04  -2.91871e-01
+  50  width_2_z_02_BG   7.79953e+00   1.02234e+00   1.22316e-04  -7.58756e-01
+  51  width_2_zz_0710_BG   1.24497e+01   9.91046e-01   1.22713e-04  -5.25925e-01
+  52  width_L_p_020607_BGEP   2.23571e+01   1.06000e+00   1.93553e-04   4.92585e-01
+  53  width_L_st_0408_BGEP   1.02741e+01   4.40785e+00   8.86076e-05  -8.07467e-02
+  54  width_L_zz_040812_BGEP   1.57847e+01   1.99141e+00   1.91403e-04   1.96361e-02
+  55  width_R_p_020607_BGEP   2.39423e+00   4.24190e+00   7.24203e-05  -1.12868e+00
+  56  width_R_st_0408_BGEP   1.37994e+01   3.28393e+00   5.26617e-04   3.16295e-01
+  57  width_R_zz_040812_BGEP   1.61194e+01   1.85766e+00   1.86895e-04   4.27298e-02
+  58  width_m_04_G   1.38798e+01   9.86871e-01   1.07967e-04   3.98437e-01
+  59  width_p_05_G   6.91539e+00   1.97575e-01   1.11206e-04  -3.13575e-01
+  60  width_st_07_G   6.27729e+00   4.65829e-01   2.68910e-04  -3.81455e-01
+  61  width_z_01_G   7.37833e+00   2.53695e-01   2.78994e-05  -2.65267e-01
+  62  width_z_04_GEP   1.91139e+01   2.64679e+00   9.07469e-04   1.63335e-01
+  63  width_zz_09_G   6.18944e+00   5.04311e-01   2.89069e-04  -3.90939e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing dataset all_data_sets
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooCategory::all_cats
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::B_DTF_M
+[#0] ERROR:ObjectHandling -- RooWorkSpace::import(fit_z_dp_f_nn_0) ERROR importing object named all_cats: another instance with same name already in the workspace and no conflict resolution protocol specified
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooSimultaneous::super_fit_Pdf
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooAddPdf::z_spectrum_all_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooGaussian::z_01_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_z_01_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_z_01_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooBifurGauss::z_02_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_z_02_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_1_z_02_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_2_z_02_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_2
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooGaussExp::z_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::alpha_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooExponential::z_spectrum_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::c0_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::n_z_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooAddPdf::zz_spectrum_all_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooGaussian::zz_09_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_zz_09_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_zz_09_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_4
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooBifurGauss::zz_0710_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_zz_0710_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_1_zz_0710_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_2_zz_0710_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_5
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooBifurGaussExp::zz_040812_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_zz_040812_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_L_zz_040812_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_R_zz_040812_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::alpha_1_zz_040812_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::alpha_2_zz_040812_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_6
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooExponential::zz_spectrum_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::c0_zz
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::n_zz_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooAddPdf::p_spectrum_all_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooGaussian::p_05_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_p_05_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_p_05_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_7
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooBifurGaussExp::p_020607_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_p_020607_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_L_p_020607_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_R_p_020607_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::alpha_1_p_020607_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::alpha_2_p_020607_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_8
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooBifurGauss::p_0408_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_p_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_1_p_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_2_p_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_9
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooExponential::p_spectrum_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::c0_p
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::n_p_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooAddPdf::m_spectrum_all_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooBifurGauss::m_03_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_m_03_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_1_m_03_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_2_m_03_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_10
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooGaussian::m_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_m_04_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_m_04_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_11
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooExponential::m_spectrum_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::c0_m
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::n_m_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooAddPdf::st_spectrum_all_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooGaussian::st_07_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_st_07_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_st_07_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_12
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooBifurGaussExp::st_0408_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::mean_st_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_L_st_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::width_R_st_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::alpha_1_st_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::alpha_2_st_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::nny_13
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooExponential::st_spectrum_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::c0_st
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_f_nn_0) importing RooRealVar::n_st_bkg
+
+RooWorkspace(fit_z_dp_f_nn_0) fit_z_dp_f_nn_0 contents
+
+variables
+---------
+(B_DTF_M,all_cats,alpha_1_p_020607_BGEP,alpha_1_st_0408_BGEP,alpha_1_zz_040812_BGEP,alpha_2_p_020607_BGEP,alpha_2_st_0408_BGEP,alpha_2_zz_040812_BGEP,alpha_z_04_GEP,c0_m,c0_p,c0_st,c0_z,c0_zz,mean_m_03_BG,mean_m_04_G,mean_p_020607_BGEP,mean_p_0408_BG,mean_p_05_G,mean_st_0408_BGEP,mean_st_07_G,mean_z_01_G,mean_z_02_BG,mean_z_04_GEP,mean_zz_040812_BGEP,mean_zz_0710_BG,mean_zz_09_G,n_m_bkg,n_p_bkg,n_st_bkg,n_z_bkg,n_zz_bkg,nny_1,nny_10,nny_11,nny_12,nny_13,nny_2,nny_3,nny_4,nny_5,nny_6,nny_7,nny_8,nny_9,width_1_m_03_BG,width_1_p_0408_BG,width_1_z_02_BG,width_1_zz_0710_BG,width_2_m_03_BG,width_2_p_0408_BG,width_2_z_02_BG,width_2_zz_0710_BG,width_L_p_020607_BGEP,width_L_st_0408_BGEP,width_L_zz_040812_BGEP,width_R_p_020607_BGEP,width_R_st_0408_BGEP,width_R_zz_040812_BGEP,width_m_04_G,width_p_05_G,width_st_07_G,width_z_01_G,width_z_04_GEP,width_zz_09_G)
+
+p.d.f.s
+-------
+RooBifurGauss::m_03_fit[ x=B_DTF_M mean=mean_m_03_BG sigmaL=width_1_m_03_BG sigmaR=width_2_m_03_BG ] = 4.58467e-35
+RooGaussian::m_04_fit[ x=B_DTF_M mean=mean_m_04_G sigma=width_m_04_G ] = 0.0134381
+RooAddPdf::m_spectrum_all_fit[ nny_10 * m_03_fit + nny_11 * m_04_fit + n_m_bkg * m_spectrum_bkg ] = 0.00230062
+RooExponential::m_spectrum_bkg[ x=B_DTF_M c=c0_m ] = 0.00029999
+RooBifurGaussExp::p_020607_fit[ m=B_DTF_M m0=mean_p_020607_BGEP sigmaLo=width_L_p_020607_BGEP sigmaHi=width_R_p_020607_BGEP alphaLo=alpha_1_p_020607_BGEP alphaHi=alpha_2_p_020607_BGEP ] = 8.46273e-06
+RooBifurGauss::p_0408_fit[ x=B_DTF_M mean=mean_p_0408_BG sigmaL=width_1_p_0408_BG sigmaR=width_2_p_0408_BG ] = 0.0507578
+RooGaussian::p_05_fit[ x=B_DTF_M mean=mean_p_05_G sigma=width_p_05_G ] = 0
+RooAddPdf::p_spectrum_all_fit[ nny_7 * p_05_fit + nny_8 * p_020607_fit + nny_9 * p_0408_fit + n_p_bkg * p_spectrum_bkg ] = 0.00682561
+RooExponential::p_spectrum_bkg[ x=B_DTF_M c=c0_p ] = 3.56399e-07
+RooBifurGaussExp::st_0408_fit[ m=B_DTF_M m0=mean_st_0408_BGEP sigmaLo=width_L_st_0408_BGEP sigmaHi=width_R_st_0408_BGEP alphaLo=alpha_1_st_0408_BGEP alphaHi=alpha_2_st_0408_BGEP ] = 4.83464e-07
+RooGaussian::st_07_fit[ x=B_DTF_M mean=mean_st_07_G sigma=width_st_07_G ] = 0
+RooAddPdf::st_spectrum_all_fit[ nny_12 * st_07_fit + nny_13 * st_0408_fit + n_st_bkg * st_spectrum_bkg ] = 1.95043e-06
+RooExponential::st_spectrum_bkg[ x=B_DTF_M c=c0_st ] = 2.03309e-05
+RooSimultaneous::super_fit_Pdf[ indexCat=all_cats z_spectrum=z_spectrum_all_fit zz_spectrum=zz_spectrum_all_fit p_spectrum=p_spectrum_all_fit m_spectrum=m_spectrum_all_fit st_spectrum=st_spectrum_all_fit ] = 0.0153847
+RooGaussian::z_01_fit[ x=B_DTF_M mean=mean_z_01_G sigma=width_z_01_G ] = 0
+RooBifurGauss::z_02_fit[ x=B_DTF_M mean=mean_z_02_BG sigmaL=width_1_z_02_BG sigmaR=width_2_z_02_BG ] = 1.14256e-21
+RooGaussExp::z_04_fit[ m=B_DTF_M m0=mean_z_04_GEP sigma=width_z_04_GEP alpha=alpha_z_04_GEP ] = 0.101351
+RooAddPdf::z_spectrum_all_fit[ nny_1 * z_01_fit + nny_2 * z_02_fit + nny_3 * z_04_fit + n_z_bkg * z_spectrum_bkg ] = 0.00757402
+RooExponential::z_spectrum_bkg[ x=B_DTF_M c=c0_z ] = 5.7527e-05
+RooBifurGaussExp::zz_040812_fit[ m=B_DTF_M m0=mean_zz_040812_BGEP sigmaLo=width_L_zz_040812_BGEP sigmaHi=width_R_zz_040812_BGEP alphaLo=alpha_1_zz_040812_BGEP alphaHi=alpha_2_zz_040812_BGEP ] = 0.12996
+RooBifurGauss::zz_0710_fit[ x=B_DTF_M mean=mean_zz_0710_BG sigmaL=width_1_zz_0710_BG sigmaR=width_2_zz_0710_BG ] = 2.82506e-25
+RooGaussian::zz_09_fit[ x=B_DTF_M mean=mean_zz_09_G sigma=width_zz_09_G ] = 0
+RooAddPdf::zz_spectrum_all_fit[ nny_4 * zz_09_fit + nny_5 * zz_0710_fit + nny_6 * zz_040812_fit + n_zz_bkg * zz_spectrum_bkg ] = 0.0474225
+RooExponential::zz_spectrum_bkg[ x=B_DTF_M c=c0_zz ] = 8.61697e-05
+
+datasets
+--------
+RooDataSet::all_data_sets(all_cats,B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_super_fit_Pdf_all_data_sets
+

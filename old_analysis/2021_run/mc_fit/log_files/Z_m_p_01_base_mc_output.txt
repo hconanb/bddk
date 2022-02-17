@@ -1,0 +1,51 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+RooWorkspace(Z_m_p_01) Z_m_p_01 contents
+
+variables
+---------
+(B_DTF_M,mean_Z_m_p_01_G,width_Z_m_p_01_G)
+
+p.d.f.s
+-------
+RooGaussian::Z_m_p_01_G_fit[ x=B_DTF_M mean=mean_Z_m_p_01_G sigma=width_Z_m_p_01_G ] = 1
+
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_01_events) Skipping event #95 because B_DTF_M cannot accommodate the value 5244.63
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_01_events) Skipping event #101 because B_DTF_M cannot accommodate the value 5336.92
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_01_events) Skipping event #153 because B_DTF_M cannot accommodate the value 5244.41
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_01_events) Skipping event #201 because B_DTF_M cannot accommodate the value 5224.37
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_01_events) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_01_events) Ignored 42 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(Z_m_p_01) importing dataset Z_m_p_01_events
+
+RooWorkspace(Z_m_p_01) Z_m_p_01 contents
+
+variables
+---------
+(B_DTF_M,mean_Z_m_p_01_G,width_Z_m_p_01_G)
+
+p.d.f.s
+-------
+RooGaussian::Z_m_p_01_G_fit[ x=B_DTF_M mean=mean_Z_m_p_01_G sigma=width_Z_m_p_01_G ] = 1
+
+datasets
+--------
+RooDataSet::Z_m_p_01_events(B_DTF_M)
+
+mcws is Z_m_p_01
+Z_m_p_01
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2016/post_d/01_Z_m_p_11198006_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2016/post_d/01_Z_m_p_11198006_T_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2017/post_d/01_Z_m_p_11198006_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2017/post_d/01_Z_m_p_11198006_T_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2018/post_d/01_Z_m_p_11198006_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2018/post_d/01_Z_m_p_11198006_T_postdcuts.root
+Saved: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/mc_fit/base_mc_files/Z_m_p_01.root

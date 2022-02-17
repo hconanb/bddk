@@ -1,0 +1,124 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 2944 events out of 17836 total events
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_spectrum_all_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: (z_01_fit,n_01_z,z_02_fit,n_0203_z,n_02_z,n_03_z,z_04_fit,n_04_z,z_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_01_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_02_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_04_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+Info in <TCanvas::Print>: file plots/6_11/fit_tests/z_spectrum_z_dp_f_np48_0.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 5421 events out of 17836 total events
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) directly selected PDF components: (zz_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(zz_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) directly selected PDF components: (zz_spectrum_all_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) indirectly selected PDF components: (zz_09_fit,n_09_zz,zz_0710_fit,n_0710_zz,n_07_zz,n_10_zz,zz_040812_fit,n_040812_zz,n_04_zz,n_08_zz,n_12_zz,zz_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsReal::plotOn(zz_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) directly selected PDF components: (zz_09_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(zz_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) directly selected PDF components: (zz_0710_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(zz_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) directly selected PDF components: (zz_040812_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(zz_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(zz_spectrum_all_fit) slice variable all_cats was not projected anyway
+Info in <TCanvas::Print>: file plots/6_11/fit_tests/zz_spectrum_z_dp_f_np48_0.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 5831 events out of 17836 total events
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) directly selected PDF components: (p_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(p_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) directly selected PDF components: (p_spectrum_all_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) indirectly selected PDF components: (p_05_fit,n_05_p,p_020607_fit,n_020607_p,n_02_p,n_06_p,n_07_p,p_0408_fit,n_0408_p,n_04_p,n_08_p,p_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsReal::plotOn(p_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) directly selected PDF components: (p_05_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(p_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) directly selected PDF components: (p_020607_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(p_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) directly selected PDF components: (p_0408_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(p_spectrum_all_fit) slice variable all_cats was not projected anyway
+Info in <TCanvas::Print>: file plots/6_11/fit_tests/p_spectrum_z_dp_f_np48_0.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 1977 events out of 17836 total events
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(m_spectrum_all_fit) directly selected PDF components: (m_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(m_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(m_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(m_spectrum_all_fit) directly selected PDF components: (m_spectrum_all_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(m_spectrum_all_fit) indirectly selected PDF components: (m_03_fit,n_03_m,m_04_fit,n_04_m,m_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsReal::plotOn(m_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(m_spectrum_all_fit) directly selected PDF components: (m_03_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(m_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(m_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(m_spectrum_all_fit) directly selected PDF components: (m_04_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(m_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(m_spectrum_all_fit) slice variable all_cats was not projected anyway
+Info in <TCanvas::Print>: file plots/6_11/fit_tests/m_spectrum_z_dp_f_np48_0.png has been created
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 537 events out of 17836 total events
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(st_spectrum_all_fit) directly selected PDF components: (st_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(st_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(st_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(st_spectrum_all_fit) directly selected PDF components: (st_spectrum_all_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(st_spectrum_all_fit) indirectly selected PDF components: (st_07_fit,n_07_st,st_0408_fit,n_0408_st,n_04_st,n_08_st,st_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsReal::plotOn(st_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(st_spectrum_all_fit) directly selected PDF components: (st_07_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(st_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(st_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(st_spectrum_all_fit) directly selected PDF components: (st_0408_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(st_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(st_spectrum_all_fit) slice variable all_cats was not projected anyway
+Info in <TCanvas::Print>: file plots/6_11/fit_tests/st_spectrum_z_dp_f_np48_0.png has been created
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: p1
+dp_f_np48
+saved: z_spectrum_z_dp_f_np48_0.png in plots/6_11/fit_tests/
+dp_f_np48
+saved: zz_spectrum_z_dp_f_np48_0.png in plots/6_11/fit_tests/
+dp_f_np48
+saved: p_spectrum_z_dp_f_np48_0.png in plots/6_11/fit_tests/
+dp_f_np48
+saved: m_spectrum_z_dp_f_np48_0.png in plots/6_11/fit_tests/
+dp_f_np48
+saved: st_spectrum_z_dp_f_np48_0.png in plots/6_11/fit_tests/

@@ -1,0 +1,108 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_020607) importing dataset p_020607_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_020607) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_p_020607_BG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_p_020607_BG   5.13000e+03  4.00000e+00    5.11000e+03  5.15000e+03
+     2 width_1_p_020607_BG   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_2_p_020607_BG   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (103513) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_p_020607_BG=5138.07, width_1_p_020607_BG=1.12917, width_2_p_020607_BG=6.96531
+RooBifurGauss::p_020607_BG_fit[ x=B_DTF_M mean=mean_p_020607_BG sigmaL=width_1_p_020607_BG sigmaR=width_2_p_020607_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5094.33, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5087.35, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5092.54, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5080.99, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5084.35, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5086.46, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5090.97, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5092.93, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5094.23, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5091.41, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5087.4, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5083.2, mean=mean_p_020607_BG=5138.07, sigmaL=width_1_p_020607_BG=1.12917, sigmaR=width_2_p_020607_BG=6.96531
+    ... (remaining 361 messages suppressed)
+RooNLLVar::nll_p_020607_BG_fit_p_020607_events[ paramSet=(mean_p_020607_BG,width_1_p_020607_BG,width_2_p_020607_BG) ]
+     function value is NAN @ paramSet=(mean_p_020607_BG = 5138.07,width_1_p_020607_BG = 1.12917,width_2_p_020607_BG = 6.96531)
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=77739.1 FROM MIGRAD    STATUS=CONVERGED     159 CALLS         160 TOTAL
+                     EDM=1.20368e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_p_020607_BG   5.12762e+03   2.45112e-01   1.07758e-03   5.39725e-01
+   2  width_1_p_020607_BG   1.56784e+01   1.71957e-01   8.86917e-04  -1.94777e-01
+   3  width_2_p_020607_BG   1.46584e+01   1.61450e-01   8.31418e-04   7.10139e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=77739.1 FROM HESSE     STATUS=OK             16 CALLS         176 TOTAL
+                     EDM=1.20342e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_p_020607_BG   5.12762e+03   2.46797e-01   2.15516e-04  -1.19513e-01
+   2  width_1_p_020607_BG   1.56784e+01   1.72726e-01   3.54767e-05  -3.82094e-01
+   3  width_2_p_020607_BG   1.46584e+01   1.62405e-01   3.32567e-05  -4.26475e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_020607) importing RooBifurGauss::p_020607_BG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_020607) importing RooRealVar::mean_p_020607_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_020607) importing RooRealVar::width_1_p_020607_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_020607) importing RooRealVar::width_2_p_020607_BG
+
+RooWorkspace(fit_p_020607) fit_p_020607 contents
+
+variables
+---------
+(B_DTF_M,mean_p_020607_BG,width_1_p_020607_BG,width_2_p_020607_BG)
+
+p.d.f.s
+-------
+RooBifurGauss::p_020607_BG_fit[ x=B_DTF_M mean=mean_p_020607_BG sigmaL=width_1_p_020607_BG sigmaR=width_2_p_020607_BG ] = 0.955379
+
+datasets
+--------
+RooDataSet::p_020607_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_p_020607_BG_fit_p_020607_events
+

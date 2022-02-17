@@ -1,0 +1,17 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+Error in <TFile::TFile>: file /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/mc_fit/fit_mc_files/fit_zz_09_D.root does not exist
+Traceback (most recent call last):
+  File "mc_fit/mc_plot_script.py", line 146, in <module>
+    plot_mc(ws_name, shape, pullflag = 1)
+  File "mc_fit/mc_plot_script.py", line 10, in plot_mc
+    b_dtf_m = fws.var("B_DTF_M")
+AttributeError: 'TObject' object has no attribute 'var'

@@ -1,0 +1,133 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooGaussian::Z_m_p_01_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooRealVar::mean_MC_01_Z_m_p_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooRealVar::width_MC_01_Z_m_p_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooBifurGauss::Z_m_p_02_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooRealVar::mean_MC_02_Z_m_p_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooRealVar::width_1_MC_02_Z_m_p_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooRealVar::width_2_MC_02_Z_m_p_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooGaussian::Z_m_p_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooRealVar::mean_MC_04_Z_m_p_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooRealVar::width_MC_04_Z_m_p_G
+
+RooWorkspace(swbkg_dp_f_nn_0) swbkg_dp_f_nn_0 contents
+
+variables
+---------
+(B_DTF_M,c0_Z_m_p,mean_MC_01_Z_m_p_G,mean_MC_02_Z_m_p_BG,mean_MC_04_Z_m_p_G,n_Z_m_p_bkg,nny_1,nny_10,nny_11,nny_12,nny_13,nny_14,nny_15,nny_16,nny_17,nny_2,nny_3,nny_4,nny_5,nny_6,nny_7,nny_8,nny_9,width_1_MC_02_Z_m_p_BG,width_2_MC_02_Z_m_p_BG,width_MC_01_Z_m_p_G,width_MC_04_Z_m_p_G)
+
+p.d.f.s
+-------
+RooGaussian::Z_m_p_01_fit[ x=B_DTF_M mean=mean_MC_01_Z_m_p_G sigma=width_MC_01_Z_m_p_G ] = 3.24043e-26
+RooBifurGauss::Z_m_p_02_fit[ x=B_DTF_M mean=mean_MC_02_Z_m_p_BG sigmaL=width_1_MC_02_Z_m_p_BG sigmaR=width_2_MC_02_Z_m_p_BG ] = 3.39521e-08
+RooGaussian::Z_m_p_04_fit[ x=B_DTF_M mean=mean_MC_04_Z_m_p_G sigma=width_MC_04_Z_m_p_G ] = 6.64919e-44
+RooAddPdf::Z_m_p_spectrum_all_fit[ nny_1 * Z_m_p_01_fit + nny_2 * Z_m_p_02_fit + nny_3 * Z_m_p_04_fit + n_Z_m_p_bkg * Z_m_p_spectrum_bkg ] = 0.0625
+RooExponential::Z_m_p_spectrum_bkg[ x=B_DTF_M c=c0_Z_m_p ] = 1
+
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_spectrum_data) Skipping event #0 because B_DTF_M cannot accommodate the value 4719.87
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_spectrum_data) Skipping event #16 because B_DTF_M cannot accommodate the value 4798.47
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_spectrum_data) Skipping event #29 because B_DTF_M cannot accommodate the value 5657.91
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_spectrum_data) Skipping event #38 because B_DTF_M cannot accommodate the value 5603.43
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_spectrum_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(Z_m_p_spectrum_data) Ignored 405 out-of-range events
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_z_z_spectrum_data) Skipping event #2 because B_DTF_M cannot accommodate the value 4759.25
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_z_z_spectrum_data) Skipping event #6 because B_DTF_M cannot accommodate the value 5911.09
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_z_z_spectrum_data) Skipping event #26 because B_DTF_M cannot accommodate the value 5675.16
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_z_z_spectrum_data) Skipping event #39 because B_DTF_M cannot accommodate the value 4792.19
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Z_z_z_spectrum_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(Z_z_z_spectrum_data) Ignored 542 out-of-range events
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_p_spectrum_data) Skipping event #2 because B_DTF_M cannot accommodate the value 6944.11
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_p_spectrum_data) Skipping event #9 because B_DTF_M cannot accommodate the value 5771.16
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_p_spectrum_data) Skipping event #17 because B_DTF_M cannot accommodate the value 4761.33
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_p_spectrum_data) Skipping event #51 because B_DTF_M cannot accommodate the value 5728.59
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_p_spectrum_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(P_z_p_spectrum_data) Ignored 707 out-of-range events
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(M_m_z_spectrum_data) Skipping event #19 because B_DTF_M cannot accommodate the value 5683.19
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(M_m_z_spectrum_data) Skipping event #20 because B_DTF_M cannot accommodate the value 4706.37
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(M_m_z_spectrum_data) Skipping event #26 because B_DTF_M cannot accommodate the value 5760.61
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(M_m_z_spectrum_data) Skipping event #28 because B_DTF_M cannot accommodate the value 6374.8
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(M_m_z_spectrum_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(M_m_z_spectrum_data) Ignored 598 out-of-range events
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_pst_spectrum_data) Skipping event #115 because B_DTF_M cannot accommodate the value 6942.84
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_pst_spectrum_data) Skipping event #118 because B_DTF_M cannot accommodate the value 6658.17
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_pst_spectrum_data) Skipping event #203 because B_DTF_M cannot accommodate the value 6039.71
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_pst_spectrum_data) Skipping event #215 because B_DTF_M cannot accommodate the value 6157.82
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(P_z_pst_spectrum_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(P_z_pst_spectrum_data) Ignored 12 out-of-range events
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Zs_sm_p_spectrum_data) Skipping event #1 because B_DTF_M cannot accommodate the value 5743.92
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Zs_sm_p_spectrum_data) Skipping event #2 because B_DTF_M cannot accommodate the value 5627.83
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Zs_sm_p_spectrum_data) Skipping event #13 because B_DTF_M cannot accommodate the value 5919.54
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Zs_sm_p_spectrum_data) Skipping event #32 because B_DTF_M cannot accommodate the value 5849.55
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(Zs_sm_p_spectrum_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(Zs_sm_p_spectrum_data) Ignored 307 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing RooCategory::all_cats
+[#1] INFO:ObjectHandling -- RooWorkspace::import(swbkg_dp_f_nn_0) importing dataset all_data_sets
+
+RooWorkspace(swbkg_dp_f_nn_0) swbkg_dp_f_nn_0 contents
+
+variables
+---------
+(B_DTF_M,all_cats,c0_Z_m_p,mean_MC_01_Z_m_p_G,mean_MC_02_Z_m_p_BG,mean_MC_04_Z_m_p_G,n_Z_m_p_bkg,nny_1,nny_10,nny_11,nny_12,nny_13,nny_14,nny_15,nny_16,nny_17,nny_2,nny_3,nny_4,nny_5,nny_6,nny_7,nny_8,nny_9,width_1_MC_02_Z_m_p_BG,width_2_MC_02_Z_m_p_BG,width_MC_01_Z_m_p_G,width_MC_04_Z_m_p_G)
+
+p.d.f.s
+-------
+RooGaussian::Z_m_p_01_fit[ x=B_DTF_M mean=mean_MC_01_Z_m_p_G sigma=width_MC_01_Z_m_p_G ] = 3.24043e-26
+RooBifurGauss::Z_m_p_02_fit[ x=B_DTF_M mean=mean_MC_02_Z_m_p_BG sigmaL=width_1_MC_02_Z_m_p_BG sigmaR=width_2_MC_02_Z_m_p_BG ] = 3.39521e-08
+RooGaussian::Z_m_p_04_fit[ x=B_DTF_M mean=mean_MC_04_Z_m_p_G sigma=width_MC_04_Z_m_p_G ] = 6.64919e-44
+RooAddPdf::Z_m_p_spectrum_all_fit[ nny_1 * Z_m_p_01_fit + nny_2 * Z_m_p_02_fit + nny_3 * Z_m_p_04_fit + n_Z_m_p_bkg * Z_m_p_spectrum_bkg ] = 0.0625
+RooExponential::Z_m_p_spectrum_bkg[ x=B_DTF_M c=c0_Z_m_p ] = 1
+
+datasets
+--------
+RooDataSet::all_data_sets(all_cats,B_DTF_M)
+
+Asdf
+01_Z_m_p_G
+Z_m_p_01_fit
+02_Z_m_p_BG
+Z_m_p_02_fit
+04_Z_m_p_G
+Z_m_p_04_fit
+0
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2016/post_d/Z_m_p_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2017/post_d/Z_m_p_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2018/post_d/Z_m_p_postdcuts.root
+4803
+0
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2016/post_d/Z_z_z_postdcuts_wolap.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2017/post_d/Z_z_z_postdcuts_wolap.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2018/post_d/Z_z_z_postdcuts_wolap.root
+7178
+0
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2016/post_d/P_z_p_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2017/post_d/P_z_p_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2018/post_d/P_z_p_postdcuts.root
+8618
+0
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2016/post_d/M_m_z_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2017/post_d/M_m_z_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2018/post_d/M_m_z_postdcuts.root
+3538
+0
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2016/post_d/P_z_pst_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2017/post_d/P_z_pst_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2018/post_d/P_z_pst_postdcuts.root
+557
+0
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2016/post_d/Zs_sm_p_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2017/post_d/Zs_sm_p_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/DATA_2021/2018/post_d/Zs_sm_p_postdcuts.root
+2500
+Wrote dws to: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/data_fit/base_data_files/swbkg_dp_f_nn_0.root

@@ -1,0 +1,97 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing dataset p_0408_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_p_0408_BGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_p_0408_BGEP   2.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     2 alpha_2_p_0408_BGEP   8.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     3 mean_p_0408_BGEP   4.99000e+03  4.00000e+00    4.97000e+03  5.01000e+03
+     4 width_L_p_0408_BGEP   1.00000e+01  1.80000e+00    2.00000e+00  2.00000e+01
+     5 width_R_p_0408_BGEP   5.00000e+00  1.50000e+00    2.00000e+00  2.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ FCN=48989.8 FROM MIGRAD    STATUS=CONVERGED     374 CALLS         375 TOTAL
+                     EDM=4.52537e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.1 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_p_0408_BGEP   2.69874e+00   2.11585e+00   4.04745e-02   0.00000e+00
+   2  alpha_2_p_0408_BGEP   7.37705e-01   8.41181e-02  -1.35811e-04   9.66408e-02
+   3  mean_p_0408_BGEP   4.98579e+03   6.23447e-01   9.28321e-05  -7.59124e-02
+   4  width_L_p_0408_BGEP   1.90703e+01   3.89935e-01   3.92823e-04   2.05135e-03
+   5  width_R_p_0408_BGEP   9.39668e+00   1.01583e+00  -5.82009e-04  -4.83175e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative enters zero, param 1
+ FCN=48989.8 FROM HESSE     STATUS=OK             47 CALLS         422 TOTAL
+                     EDM=38.5895    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_p_0408_BGEP   2.69874e+00   1.78594e-01   5.00000e-01  -4.78278e-01
+   2  alpha_2_p_0408_BGEP   7.37705e-01   8.53882e-02   7.24240e-04  -1.02067e+00
+   3  mean_p_0408_BGEP   4.98579e+03   6.38836e-01   1.27189e-03  -2.12056e-01
+   4  width_L_p_0408_BGEP   1.90703e+01   4.00313e-01   2.80810e-03   1.11226e+00
+   5  width_R_p_0408_BGEP   9.39668e+00   1.03325e+00   2.07157e-03  -1.79102e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooBifurGaussExp::p_0408_BGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::mean_p_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::width_L_p_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::width_R_p_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::alpha_1_p_0408_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::alpha_2_p_0408_BGEP
+
+RooWorkspace(fit_p_0408) fit_p_0408 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_p_0408_BGEP,alpha_2_p_0408_BGEP,mean_p_0408_BGEP,width_L_p_0408_BGEP,width_R_p_0408_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::p_0408_BGEP_fit[ m=B_DTF_M m0=mean_p_0408_BGEP sigmaLo=width_L_p_0408_BGEP sigmaHi=width_R_p_0408_BGEP alphaLo=alpha_1_p_0408_BGEP alphaHi=alpha_2_p_0408_BGEP ] = 0.371669
+
+datasets
+--------
+RooDataSet::p_0408_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_p_0408_BGEP_fit_p_0408_events
+

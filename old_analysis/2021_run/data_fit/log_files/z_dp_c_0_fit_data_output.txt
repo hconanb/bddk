@@ -1,0 +1,152 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state z_spectrum (2944 dataset entries)
+[#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 1 slave calculators.
+[#1] INFO:Minization --  The following expressions have been identified as constant and will be precalculated and cached: (z_01_fit,z_02_fit,z_04_fit)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (z_spectrum_bkg)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 bf_1         5.00000e-03  2.00000e-03    1.00000e-03  5.00000e-02
+     2 bf_2         5.00000e-03  2.00000e-03    1.00000e-03  5.00000e-02
+     3 bf_4         5.00000e-03  2.00000e-03    1.00000e-03  5.00000e-02
+     4 c0_z         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+     5 c1_z         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+     6 c2_z         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+     7 c3_z         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+     8 n_z_bkg      1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        4000           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=-3427.01 FROM MIGRAD    STATUS=CONVERGED     393 CALLS         394 TOTAL
+                     EDM=5.55083e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  bf_1         1.22713e-02   4.45171e-04   8.67907e-04  -1.75375e-01
+   2  bf_2         4.31442e-02   1.62485e-03   3.78974e-03  -6.66409e-03
+   3  bf_4         3.62152e-02   3.86208e-03   6.69994e-03   1.40141e-02
+   4  c0_z         4.23453e+00   7.02427e+00   3.99439e-03  -4.69537e-02
+   5  c1_z         5.21369e+00   7.55841e+00   6.42732e-03   6.74160e-03
+   6  c2_z         2.74304e-01   6.49624e-01   7.88437e-03  -2.87283e-02
+   7  c3_z         1.11729e+00   1.46372e+00   2.01758e-03  -7.99327e-02
+   8  n_z_bkg      1.11154e+03   4.04071e+01   4.81253e-04  -1.78988e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        4000
+ **********
+ FCN=-3427.01 FROM HESSE     STATUS=OK             61 CALLS         455 TOTAL
+                     EDM=5.536e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  bf_1         1.22713e-02   4.45184e-04   1.73581e-04  -5.70373e-01
+   2  bf_2         4.31442e-02   1.62559e-03   1.51590e-04   8.04048e-01
+   3  bf_4         3.62152e-02   3.86466e-03   1.33999e-03   2.68894e+00
+   4  c0_z         4.23453e+00   5.18723e+00   7.98878e-04  -1.53698e-01
+   5  c1_z         5.21369e+00   5.79238e+00   2.57093e-04   4.27508e-02
+   6  c2_z         2.74304e-01   1.02549e+00   3.15375e-04  -1.90357e+00
+   7  c3_z         1.11729e+00   7.72393e+00   4.03516e-04  -2.25243e+00
+   8  n_z_bkg      1.11154e+03   4.04296e+01   9.62507e-05  -8.90986e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing dataset all_data_sets
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooCategory::all_cats
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::B_DTF_M
+[#0] ERROR:ObjectHandling -- RooWorkSpace::import(fit_z_dp_c_0) ERROR importing object named all_cats: another instance with same name already in the workspace and no conflict resolution protocol specified
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooSimultaneous::super_fit_Pdf
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooAddPdf::z_spectrum_all_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooAddPdf::z_01_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooGaussian::z_01_DG_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::mean_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::width_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::z_01_DG_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooGaussian::z_01_DG_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::width_b_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooFormulaVar::n_01_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::bf_1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::z_dp_c_0_par0
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooBifurGaussExp::z_02_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::mean_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::width_L_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::width_R_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::alpha_1_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::alpha_2_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooFormulaVar::n_02_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::bf_2
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::z_dp_c_0_par1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooGaussExp::z_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::mean_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::width_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::alpha_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooFormulaVar::n_04_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::bf_4
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::z_dp_c_0_par3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooBernstein::z_spectrum_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::c0_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::c1_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::c2_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::c3_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_dp_c_0) importing RooRealVar::n_z_bkg
+
+RooWorkspace(fit_z_dp_c_0) fit_z_dp_c_0 contents
+
+variables
+---------
+(B_DTF_M,all_cats,alpha_1_z_02_BGEP,alpha_2_z_02_BGEP,alpha_z_04_GEP,bf_1,bf_2,bf_4,c0_z,c1_z,c2_z,c3_z,mean_z_01_DG,mean_z_02_BGEP,mean_z_04_GEP,n_z_bkg,width_L_z_02_BGEP,width_R_z_02_BGEP,width_b_z_01_DG,width_z_01_DG,width_z_04_GEP,z_01_DG_a_frac,z_dp_c_0_par0,z_dp_c_0_par1,z_dp_c_0_par3)
+
+p.d.f.s
+-------
+RooSimultaneous::super_fit_Pdf[ indexCat=all_cats z_spectrum=z_spectrum_all_fit ] = 1.61397
+RooGaussian::z_01_DG_a[ x=B_DTF_M mean=mean_z_01_DG sigma=width_z_01_DG ] = 2.31335e-215
+RooGaussian::z_01_DG_b[ x=B_DTF_M mean=mean_z_01_DG sigma=width_b_z_01_DG ] = 0
+RooAddPdf::z_01_fit[ z_01_DG_a_frac * z_01_DG_a + [%] * z_01_DG_b ] = 8.1381e-216
+RooBifurGaussExp::z_02_fit[ m=B_DTF_M m0=mean_z_02_BGEP sigmaLo=width_L_z_02_BGEP sigmaHi=width_R_z_02_BGEP alphaLo=alpha_1_z_02_BGEP alphaHi=alpha_2_z_02_BGEP ] = 4.14272e-08
+RooGaussExp::z_04_fit[ m=B_DTF_M m0=mean_z_04_GEP sigma=width_z_04_GEP alpha=alpha_z_04_GEP ] = 0.99226
+RooAddPdf::z_spectrum_all_fit[ n_01_z * z_01_fit + n_02_z * z_02_fit + n_04_z * z_04_fit + n_z_bkg * z_spectrum_bkg ] = 1.61397
+RooBernstein::z_spectrum_bkg[ x=B_DTF_M coefList=(c0_z,c1_z,c2_z,c3_z) ] = 4.11928
+
+functions
+--------
+RooFormulaVar::n_01_z[ actualVars=(bf_1,z_dp_c_0_par0) formula="x[0]*x[1]" ] = 818.153
+RooFormulaVar::n_02_z[ actualVars=(bf_2,z_dp_c_0_par1) formula="x[0]*x[1]" ] = 840.297
+RooFormulaVar::n_04_z[ actualVars=(bf_4,z_dp_c_0_par3) formula="x[0]*x[1]" ] = 173.802
+
+datasets
+--------
+RooDataSet::all_data_sets(all_cats,B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_super_fit_Pdf_all_data_sets
+

@@ -1,0 +1,257 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[#1] INFO:Minization --  Including the following constraint terms in minimization: (z_mcp_f_1_nu0_g,z_mcp_f_1_nu1_g,z_mcp_f_1_nu2_g,z_mcp_f_1_nu3_g)
+[#1] INFO:Fitting -- RooAddition::defaultErrorLevel(nll_super_fit_Pdf_all_data_sets_with_constr) Summation contains a RooNLLVar, using its error level
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state z_spectrum (2944 dataset entries)
+[#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 1 slave calculators.
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (z_01_DG_a,z_01_DG_b,z_02_fit,z_03_fit,z_04_fit,z_spectrum_bkg)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_z_02_BGEP   2.06702e+00  2.39070e-01    5.00000e-02  7.00000e+00
+     2 alpha_1_z_03_BGEP   2.06702e+00  2.39070e-01    5.00000e-02  7.00000e+00
+     3 alpha_2_z_02_BGEP   1.25018e+00  1.31338e-01    5.00000e-02  7.00000e+00
+     4 alpha_2_z_03_BGEP   1.25018e+00  1.31338e-01    5.00000e-02  7.00000e+00
+     5 alpha_z_04_GEP   1.59753e+00  1.82041e-01    5.00000e-02  7.00000e+00
+     6 bf_1         5.00000e-03  2.00000e-03    1.00000e-03  5.00000e-02
+     7 bf_2         5.00000e-03  2.00000e-03    1.00000e-03  5.00000e-02
+     8 bf_3         5.00000e-03  2.00000e-03    1.00000e-03  5.00000e-02
+     9 bf_4         5.00000e-03  2.00000e-03    1.00000e-03  5.00000e-02
+    10 c0_z         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+    11 c1_z         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+    12 c2_z         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+    13 c3_z         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+    14 mean_z_01_DG   5.27996e+03  1.04075e-01    5.27000e+03  5.29000e+03
+    15 mean_z_02_BGEP   5.13549e+03  7.54238e-01    5.12000e+03  5.14000e+03
+    16 mean_z_03_BGEP   5.13549e+03  7.54238e-01    5.12000e+03  5.14000e+03
+    17 mean_z_04_GEP   4.98436e+03  3.29037e-01    4.98000e+03  5.00000e+03
+    18 n_z_bkg      1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+    19 width_L_z_02_BGEP   1.65189e+01  5.41132e-01    4.00000e+00  3.00000e+01
+    20 width_L_z_03_BGEP   1.65189e+01  5.41132e-01    4.00000e+00  3.00000e+01
+    21 width_R_z_02_BGEP   7.80969e+00  6.96596e-01    4.00000e+00  3.00000e+01
+    22 width_R_z_03_BGEP   7.80969e+00  6.96596e-01    4.00000e+00  3.00000e+01
+    23 width_b_z_01_DG   5.60271e+00  3.23312e-01    0.00000e+00  5.00000e+01
+    24 width_z_01_DG   9.45938e+00  6.44983e-01    0.00000e+00  5.00000e+01
+    25 width_z_04_GEP   1.44461e+01  2.68662e-01    4.00000e+00  3.00000e+01
+    26 z_01_DG_a_frac   3.51789e-01  1.02960e-01    0.00000e+00  1.00000e+00
+    27 z_mcp_f_1_nu0   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    28 z_mcp_f_1_nu1   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    29 z_mcp_f_1_nu2   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    30 z_mcp_f_1_nu3   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD     1.5e+04           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 21 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== 4.27418 added to diagonal of error matrix
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -2.5587e-01  2.4894e-02  5.4016e-02  7.0181e-02  8.2855e-02  1.6619e-01  2.8016e-01  3.6546e-01  5.7682e-01  6.9661e-01  7.2931e-01  7.9902e-01  9.0012e-01  9.0694e-01  9.3371e-01  9.7735e-01  9.9900e-01  9.9996e-01  1.0004e+00  1.0046e+00  1.0133e+00  1.0338e+00  1.3182e+00  1.4855e+00  1.6829e+00  1.8112e+00  2.1096e+00  2.2077e+00  2.6826e+00  3.3434e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.259209 TO DIAGONAL.
+ MIGRAD TERMINATED WITHOUT CONVERGENCE.
+ FCN=-3456.04 FROM MIGRAD    STATUS=FAILED       7264 CALLS        7265 TOTAL
+                     EDM=0.00235214    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_z_02_BGEP   5.00226e-02   2.34722e-01   1.41654e-02   2.91131e-02
+   2  alpha_1_z_03_BGEP   2.61864e+00   1.02877e+00   1.35666e-02   4.84417e-02
+   3  alpha_2_z_02_BGEP   2.65897e+00   5.59882e+00   1.91073e-01  -1.54513e-03
+   4  alpha_2_z_03_BGEP   1.66032e+00   2.57270e-01   3.81778e-03   3.83179e-03
+   5  alpha_z_04_GEP   1.58021e+00   7.06546e-01   1.07158e-02  -2.83050e-04
+   6  bf_1         1.27601e-02   5.40926e-04   8.74034e-04   7.96662e-03
+   7  bf_2         1.11005e-02   4.02835e-03   3.16892e-03   3.11039e-02
+   8  bf_3         4.39267e-02   2.09150e-03   4.01246e-03   6.21375e-04
+   9  bf_4         3.85766e-02   4.35487e-03   7.42207e-03  -3.35233e-03
+  10  c0_z         9.99745e+00   9.85772e+00   1.12016e-01   4.81280e-04
+  11  c1_z         7.79369e+00   8.88696e+00   2.00022e-02  -1.36608e-03
+  12  c2_z         4.14694e+00   7.91938e+00   9.31034e-03  -1.65598e-02
+  13  c3_z         2.82289e+00   3.22225e+00   4.49914e-03   2.93649e-02
+  14  mean_z_01_DG   5.27935e+03   2.38821e-01   1.08930e-03  -2.35098e-03
+  15  mean_z_02_BGEP   5.12000e+03   1.27055e+01   4.98818e-02** at limit **
+  16  mean_z_03_BGEP   5.13534e+03   6.35599e-01   2.24866e-03   2.11842e-02
+  17  mean_z_04_GEP   4.98232e+03   1.80133e+00   1.26502e-02   3.75990e-03
+  18  n_z_bkg      8.36320e+02   5.92196e+01   5.22773e-04   3.65637e-02
+  19  width_L_z_02_BGEP   2.99753e+01   1.91356e+01   1.77890e-01   3.12300e-03
+  20  width_L_z_03_BGEP   1.90200e+01   7.54278e-01   2.11219e-03   1.25352e-02
+  21  width_R_z_02_BGEP   4.00000e+00   5.55023e+00   4.37979e-02** at limit **
+  22  width_R_z_03_BGEP   7.62646e+00   4.88271e-01   1.74909e-03   3.33017e-02
+  23  width_b_z_01_DG   5.63152e+00   2.77303e-01   6.46299e-04   3.28505e-02
+  24  width_z_01_DG   1.34905e+01   1.24835e+00   1.92158e-03   2.99230e-02
+  25  width_z_04_GEP   1.65009e+01   1.73183e+00   5.46266e-03  -1.17832e-02
+  26  z_01_DG_a_frac   3.03107e-01   4.72565e-02   3.16703e-03   1.71945e-02
+  27  z_mcp_f_1_nu0  -2.59401e-04   3.11680e-01   8.74424e-04   1.47891e-02
+  28  z_mcp_f_1_nu1   1.66214e-04   7.56044e-01   2.75032e-03  -5.83461e-03
+  29  z_mcp_f_1_nu2   3.93307e-04   8.46870e-01   3.48101e-03   8.09317e-03
+  30  z_mcp_f_1_nu3   8.74804e-04   8.64591e-01   3.74918e-03   1.11299e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE     1.5e+04
+ **********
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -1.1879e-01  2.3908e-02  5.2475e-02  6.9625e-02  8.3202e-02  1.6548e-01  2.8150e-01  3.6854e-01  5.7454e-01  6.9409e-01  7.7085e-01  8.0358e-01  9.0933e-01  9.6714e-01  9.7316e-01  9.8567e-01  9.9994e-01  1.0000e+00  1.0000e+00  1.0018e+00  1.0118e+00  1.0253e+00  1.2757e+00  1.4585e+00  1.6617e+00  1.7921e+00  2.1025e+00  2.1988e+00  2.6197e+00  3.2478e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.122038 TO DIAGONAL.
+ FCN=-3456.04 FROM HESSE     STATUS=NOT POSDEF    566 CALLS        7831 TOTAL
+                     EDM=0.00280663    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_z_02_BGEP   5.00226e-02   1.95858e-01   5.66616e-04  -1.56719e+00
+   2  alpha_1_z_03_BGEP   2.61864e+00   1.10415e+00   5.42666e-04  -2.63874e-01
+   3  alpha_2_z_02_BGEP   2.65897e+00   4.57509e+00   5.00000e-01  -2.51872e-01
+   4  alpha_2_z_03_BGEP   1.66032e+00   2.72681e-01   7.63556e-04  -5.66400e-01
+   5  alpha_z_04_GEP   1.58021e+00   7.53013e-01   2.14316e-03  -5.93964e-01
+   6  bf_1         1.27601e-02   6.85095e-04   1.74807e-04  -5.46848e-01
+   7  bf_2         1.11005e-02   4.21496e-03   6.33784e-04  -2.51334e+00
+   8  bf_3         4.39267e-02   2.61114e-03   1.60498e-04   8.51260e-01
+   9  bf_4         3.85766e-02   5.14077e-03   2.96883e-04   5.63016e-01
+  10  c0_z         9.99745e+00   8.13536e+00   4.57026e-01   1.60276e+00
+  11  c1_z         7.79369e+00   8.84978e+00   8.00087e-04   5.92863e-01
+  12  c2_z         4.14694e+00   7.90224e+00   1.86207e-03  -2.97014e+00
+  13  c3_z         2.82289e+00   3.40973e+00   8.99828e-04  -4.50506e-01
+  14  mean_z_01_DG   5.27935e+03   2.53074e-01   2.17860e-04  -6.45820e-02
+  15  mean_z_02_BGEP   5.12000e+03   1.29980e+01   9.97636e-03  -1.57082e+00
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  16  mean_z_03_BGEP   5.13534e+03   8.24245e-01   4.49732e-04   5.63311e-01
+  17  mean_z_04_GEP   4.98232e+03   1.89421e+00   5.06008e-04  -8.76150e-01
+  18  n_z_bkg      8.36320e+02   6.71047e+01   1.04555e-04  -9.84031e-01
+  19  width_L_z_02_BGEP   2.99753e+01   2.24569e+01   7.11558e-03   1.63241e+00
+  20  width_L_z_03_BGEP   1.90200e+01   8.80692e-01   8.44878e-05   1.56018e-01
+  21  width_R_z_02_BGEP   4.00000e+00   1.60804e+01   8.75958e-03  -1.57020e+00
+                                 WARNING -   - ABOVE PARAMETER IS AT LIMIT.
+  22  width_R_z_03_BGEP   7.62646e+00   6.14669e-01   3.49817e-04  -8.05304e-01
+  23  width_b_z_01_DG   5.63152e+00   3.30349e-01   1.29260e-04  -8.86302e-01
+  24  width_z_01_DG   1.34905e+01   1.46435e+00   3.84315e-04  -4.78422e-01
+  25  width_z_04_GEP   1.65009e+01   1.93362e+00   2.18506e-04  -3.84022e-02
+  26  z_01_DG_a_frac   3.03107e-01   5.96313e-02   6.33406e-04  -4.04747e-01
+  27  z_mcp_f_1_nu0  -2.59401e-04   4.21496e-01   1.74885e-04  -2.59401e-05
+  28  z_mcp_f_1_nu1   1.66214e-04   8.55319e-01   5.50064e-04   1.66214e-05
+  29  z_mcp_f_1_nu2   3.93307e-04   9.13656e-01   6.96203e-04   3.93307e-05
+  30  z_mcp_f_1_nu3   8.74804e-04   9.27173e-01   7.49836e-04   8.74804e-05
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing dataset all_data_sets
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooCategory::all_cats
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::B_DTF_M
+[#0] ERROR:ObjectHandling -- RooWorkSpace::import(fit_z_mcp_f_1) ERROR importing object named all_cats: another instance with same name already in the workspace and no conflict resolution protocol specified
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooSimultaneous::super_fit_Pdf
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooAddPdf::z_spectrum_all_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooAddPdf::z_01_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooGaussian::z_01_DG_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::mean_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::width_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::z_01_DG_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooGaussian::z_01_DG_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::width_b_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooFormulaVar::n_01_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::bf_1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooFormulaVar::z_mcp_f_1_par0
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::z_mcp_f_1_nu0
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::z_mcp_f_1_nu1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::z_mcp_f_1_nu2
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::z_mcp_f_1_nu3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooBifurGaussExp::z_02_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::mean_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::width_L_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::width_R_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::alpha_1_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::alpha_2_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooFormulaVar::n_02_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::bf_2
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooFormulaVar::z_mcp_f_1_par1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooBifurGaussExp::z_03_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::mean_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::width_L_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::width_R_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::alpha_1_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::alpha_2_z_03_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooFormulaVar::n_03_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::bf_3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooFormulaVar::z_mcp_f_1_par2
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooGaussExp::z_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::mean_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::width_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::alpha_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooFormulaVar::n_04_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::bf_4
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooFormulaVar::z_mcp_f_1_par3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooBernstein::z_spectrum_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::c0_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::c1_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::c2_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::c3_z
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_mcp_f_1) importing RooRealVar::n_z_bkg
+
+RooWorkspace(fit_z_mcp_f_1) fit_z_mcp_f_1 contents
+
+variables
+---------
+(B_DTF_M,all_cats,alpha_1_z_02_BGEP,alpha_1_z_03_BGEP,alpha_2_z_02_BGEP,alpha_2_z_03_BGEP,alpha_z_04_GEP,bf_1,bf_2,bf_3,bf_4,c0_z,c1_z,c2_z,c3_z,mean_z_01_DG,mean_z_02_BGEP,mean_z_03_BGEP,mean_z_04_GEP,n_z_bkg,width_L_z_02_BGEP,width_L_z_03_BGEP,width_R_z_02_BGEP,width_R_z_03_BGEP,width_b_z_01_DG,width_z_01_DG,width_z_04_GEP,z_01_DG_a_frac,z_mcp_f_1_nu0,z_mcp_f_1_nu1,z_mcp_f_1_nu2,z_mcp_f_1_nu3)
+
+p.d.f.s
+-------
+RooSimultaneous::super_fit_Pdf[ indexCat=all_cats z_spectrum=z_spectrum_all_fit ] = 2.48147
+RooGaussian::z_01_DG_a[ x=B_DTF_M mean=mean_z_01_DG sigma=width_z_01_DG ] = 7.92204e-106
+RooGaussian::z_01_DG_b[ x=B_DTF_M mean=mean_z_01_DG sigma=width_b_z_01_DG ] = 0
+RooAddPdf::z_01_fit[ z_01_DG_a_frac * z_01_DG_a + [%] * z_01_DG_b ] = 2.40122e-106
+RooBifurGaussExp::z_02_fit[ m=B_DTF_M m0=mean_z_02_BGEP sigmaLo=width_L_z_02_BGEP sigmaHi=width_R_z_02_BGEP alphaLo=alpha_1_z_02_BGEP alphaHi=alpha_2_z_02_BGEP ] = 0.796039
+RooBifurGaussExp::z_03_fit[ m=B_DTF_M m0=mean_z_03_BGEP sigmaLo=width_L_z_03_BGEP sigmaHi=width_R_z_03_BGEP alphaLo=alpha_1_z_03_BGEP alphaHi=alpha_2_z_03_BGEP ] = 2.25902e-08
+RooGaussExp::z_04_fit[ m=B_DTF_M m0=mean_z_04_GEP sigma=width_z_04_GEP alpha=alpha_z_04_GEP ] = 0.999891
+RooAddPdf::z_spectrum_all_fit[ n_01_z * z_01_fit + n_02_z * z_02_fit + n_03_z * z_03_fit + n_04_z * z_04_fit + n_z_bkg * z_spectrum_bkg ] = 2.48147
+RooBernstein::z_spectrum_bkg[ x=B_DTF_M coefList=(c0_z,c1_z,c2_z,c3_z) ] = 8.30807
+
+functions
+--------
+RooFormulaVar::n_01_z[ actualVars=(bf_1,z_mcp_f_1_par0) formula="x[0]*x[1]" ] = 850.761
+RooFormulaVar::n_02_z[ actualVars=(bf_2,z_mcp_f_1_par1) formula="x[0]*x[1]" ] = 216.204
+RooFormulaVar::n_03_z[ actualVars=(bf_3,z_mcp_f_1_par2) formula="x[0]*x[1]" ] = 855.575
+RooFormulaVar::n_04_z[ actualVars=(bf_4,z_mcp_f_1_par3) formula="x[0]*x[1]" ] = 185.134
+RooFormulaVar::z_mcp_f_1_par0[ actualVars=(z_mcp_f_1_nu0,z_mcp_f_1_nu1,z_mcp_f_1_nu2,z_mcp_f_1_nu3) formula="66671.88843952997 + x[0]*7864.282715487855*-0.9300001799439006 + x[1]*1024.6222546275642*-0.367472427854659 + x[2]*599.4199563886276*3.55803951328432e-16 + x[3]*198.53487958715513*0.007979979380591933" ] = 66673.7
+RooFormulaVar::z_mcp_f_1_par1[ actualVars=(z_mcp_f_1_nu0,z_mcp_f_1_nu1,z_mcp_f_1_nu2,z_mcp_f_1_nu3) formula="19476.49988098454 + x[0]*7864.282715487855*-0.25606330057050586 + x[1]*1024.6222546275642*0.6503694820235835 + x[2]*599.4199563886276*-0.7071067811865481 + x[3]*198.53487958715513*0.10700991988276283" ] = 19477
+RooFormulaVar::z_mcp_f_1_par2[ actualVars=(z_mcp_f_1_nu0,z_mcp_f_1_nu1,z_mcp_f_1_nu2,z_mcp_f_1_nu3) formula="19476.49988098454 + x[0]*7864.282715487855*-0.2560633005705059 + x[1]*1024.6222546275642*0.650369482023582 + x[2]*599.4199563886276*0.7071067811865467 + x[3]*198.53487958715513*0.10700991988276308" ] = 19477.3
+RooFormulaVar::z_mcp_f_1_par3[ actualVars=(z_mcp_f_1_nu0,z_mcp_f_1_nu1,z_mcp_f_1_nu2,z_mcp_f_1_nu3) formula="4799.146204488457 + x[0]*7864.282715487855*-0.06295107231961691 + x[1]*1024.6222546275642*0.13785169012875972 + x[2]*599.4199563886276*1.3101689658258324e-16 + x[3]*198.53487958715513*-0.988450339684526" ] = 4799.13
+
+datasets
+--------
+RooDataSet::all_data_sets(all_cats,B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_super_fit_Pdf_all_data_sets
+

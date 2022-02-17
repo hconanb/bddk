@@ -1,0 +1,98 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing dataset st_07_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_st_07_GEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_st_07_GEP   3.00000e+00  6.95000e-01    5.00000e-02  7.00000e+00
+     2 mean_st_07_GEP   5.28000e+03  2.00000e+00    5.27000e+03  5.29000e+03
+     3 width_st_07_GEP   1.00000e+01  2.60000e+00    4.00000e+00  3.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00315 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00797 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -6.5573e-03  2.5501e-03  3.0040e+00
+ MINUIT WARNING IN MIGRAD  
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.009561 TO DIAGONAL.
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=18244.4 FROM MIGRAD    STATUS=CONVERGED     172 CALLS         173 TOTAL
+                     EDM=2.34644e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_st_07_GEP   1.66449e+00   8.05795e-02   2.14567e-03   4.97811e-02
+   2  mean_st_07_GEP   5.27923e+03   9.25255e-02   8.08878e-04  -2.41800e-04
+   3  width_st_07_GEP   6.25183e+00   7.26325e-02   8.07024e-04   2.94821e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=18244.4 FROM HESSE     STATUS=OK             16 CALLS         189 TOTAL
+                     EDM=2.35257e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_st_07_GEP   1.66449e+00   8.06014e-02   8.58267e-05  -5.64978e-01
+   2  mean_st_07_GEP   5.27923e+03   9.25710e-02   3.23551e-05  -7.67429e-02
+   3  width_st_07_GEP   6.25183e+00   7.27108e-02   3.22810e-05  -9.73363e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooGaussExp::st_07_GEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::mean_st_07_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::width_st_07_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_07) importing RooRealVar::alpha_st_07_GEP
+
+RooWorkspace(fit_st_07) fit_st_07 contents
+
+variables
+---------
+(B_DTF_M,alpha_st_07_GEP,mean_st_07_GEP,width_st_07_GEP)
+
+p.d.f.s
+-------
+RooGaussExp::st_07_GEP_fit[ m=B_DTF_M m0=mean_st_07_GEP sigma=width_st_07_GEP alpha=alpha_st_07_GEP ] = 0.999315
+
+datasets
+--------
+RooDataSet::st_07_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_st_07_GEP_fit_st_07_events
+

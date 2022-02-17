@@ -1,0 +1,86 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_48) importing dataset st_48_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_48) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_st_48_GEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_st_48_GEP   3.00000e+00  6.95000e-01    5.00000e-02  7.00000e+00
+     2 mean_st_48_GEP   5.13000e+03  2.00000e+00    5.12000e+03  5.14000e+03
+     3 width_st_48_GEP   1.00000e+01  2.60000e+00    4.00000e+00  3.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=42238.8 FROM MIGRAD    STATUS=CONVERGED      99 CALLS         100 TOTAL
+                     EDM=1.29461e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_st_48_GEP   1.65609e+00   6.33324e-02   2.69493e-03   5.71761e-02
+   2  mean_st_48_GEP   5.12871e+03   1.48575e-01   2.01271e-03  -1.94924e-01
+   3  width_st_48_GEP   1.38749e+01   1.16150e-01   1.18447e-03  -2.69226e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=42238.8 FROM HESSE     STATUS=OK             16 CALLS         116 TOTAL
+                     EDM=1.29299e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_st_48_GEP   1.65609e+00   6.33208e-02   1.07797e-04  -5.67843e-01
+   2  mean_st_48_GEP   5.12871e+03   1.48634e-01   4.02541e-04  -1.29012e-01
+   3  width_st_48_GEP   1.38749e+01   1.16222e-01   2.36894e-04  -2.42766e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_48) importing RooGaussExp::st_48_GEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_48) importing RooRealVar::mean_st_48_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_48) importing RooRealVar::width_st_48_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_48) importing RooRealVar::alpha_st_48_GEP
+
+RooWorkspace(fit_st_48) fit_st_48 contents
+
+variables
+---------
+(B_DTF_M,alpha_st_48_GEP,mean_st_48_GEP,width_st_48_GEP)
+
+p.d.f.s
+-------
+RooGaussExp::st_48_GEP_fit[ m=B_DTF_M m0=mean_st_48_GEP sigma=width_st_48_GEP alpha=alpha_st_48_GEP ] = 0.520502
+
+datasets
+--------
+RooDataSet::st_48_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_st_48_GEP_fit_st_48_events
+

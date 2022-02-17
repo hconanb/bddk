@@ -1,0 +1,63 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+RooWorkspace(p_0408) p_0408 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_p_0408_BGEP,alpha_2_p_0408_BGEP,alpha_p_0408_GEP,mean_p_0408_BG,mean_p_0408_BGEP,mean_p_0408_GEP,width_1_p_0408_BG,width_2_p_0408_BG,width_L_p_0408_BGEP,width_R_p_0408_BGEP,width_p_0408_GEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::p_0408_BGEP_fit[ m=B_DTF_M m0=mean_p_0408_BGEP sigmaLo=width_L_p_0408_BGEP sigmaHi=width_R_p_0408_BGEP alphaLo=alpha_1_p_0408_BGEP alphaHi=alpha_2_p_0408_BGEP ] = 1
+RooBifurGauss::p_0408_BG_fit[ x=B_DTF_M mean=mean_p_0408_BG sigmaL=width_1_p_0408_BG sigmaR=width_2_p_0408_BG ] = 1
+RooGaussExp::p_0408_GEP_fit[ m=B_DTF_M m0=mean_p_0408_GEP sigma=width_p_0408_GEP alpha=alpha_p_0408_GEP ] = 1
+
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_0408_events) Skipping event #69 because B_DTF_M cannot accommodate the value 4939.84
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_0408_events) Skipping event #110 because B_DTF_M cannot accommodate the value 4935.98
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_0408_events) Skipping event #130 because B_DTF_M cannot accommodate the value 4931.88
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_0408_events) Skipping event #155 because B_DTF_M cannot accommodate the value 4939.01
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_0408_events) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(p_0408_events) Ignored 328 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(p_0408) importing dataset p_0408_events
+
+RooWorkspace(p_0408) p_0408 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_p_0408_BGEP,alpha_2_p_0408_BGEP,alpha_p_0408_GEP,mean_p_0408_BG,mean_p_0408_BGEP,mean_p_0408_GEP,width_1_p_0408_BG,width_2_p_0408_BG,width_L_p_0408_BGEP,width_R_p_0408_BGEP,width_p_0408_GEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::p_0408_BGEP_fit[ m=B_DTF_M m0=mean_p_0408_BGEP sigmaLo=width_L_p_0408_BGEP sigmaHi=width_R_p_0408_BGEP alphaLo=alpha_1_p_0408_BGEP alphaHi=alpha_2_p_0408_BGEP ] = 1
+RooBifurGauss::p_0408_BG_fit[ x=B_DTF_M mean=mean_p_0408_BG sigmaL=width_1_p_0408_BG sigmaR=width_2_p_0408_BG ] = 1
+RooGaussExp::p_0408_GEP_fit[ m=B_DTF_M m0=mean_p_0408_GEP sigma=width_p_0408_GEP alpha=alpha_p_0408_GEP ] = 1
+
+datasets
+--------
+RooDataSet::p_0408_events(B_DTF_M)
+
+mcws is p_0408
+p_0408
+p_0408
+p_0408
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/04_p_11198410_2016_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/04_p_11198410_2016_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/04_p_11198410_2017_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/04_p_11198410_2017_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/04_p_11198410_2018_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/04_p_11198410_2018_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/08_p_12197401_2016_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/08_p_12197401_2016_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/08_p_12197401_2017_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/08_p_12197401_2017_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/08_p_12197401_2018_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/08_p_12197401_2018_T_spectrum_filtered.root
+Saved: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/mc_fit/base_mc_files/p_0408.root

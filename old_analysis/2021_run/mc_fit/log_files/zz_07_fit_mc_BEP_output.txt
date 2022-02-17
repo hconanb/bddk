@@ -1,0 +1,21 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing dataset zz_07_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing RooRealVar::B_DTF_M
+Traceback (most recent call last):
+  File "mc_fit/mc_ws_fit_script.py", line 32, in <module>
+    run_mc_fit(ws_name, shape)
+  File "mc_fit/mc_ws_fit_script.py", line 17, in run_mc_fit
+    fit_pdf = fit.fitTo(data_set, ROOT.RooFit.PrintLevel(0), ROOT.RooFit.Save())
+TypeError: none of the 2 overloaded methods succeeded. Full details:
+  RooFitResult* RooAbsPdf::fitTo(RooAbsData& data, const RooLinkedList& cmdList) =>
+    TypeError: takes at most 2 arguments (3 given)
+  attempt to access a null-pointer

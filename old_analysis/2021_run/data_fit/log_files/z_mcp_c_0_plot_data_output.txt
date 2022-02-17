@@ -1,0 +1,38 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Plotting -- RooTreeData::plotOn: plotting 2944 events out of 2944 total events
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_spectrum_all_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: (z_01_fit,z_01_DG_a,z_01_DG_b,n_01_z,z_02_fit,n_02_z,z_03_fit,n_03_z,z_04_fit,n_04_z,z_spectrum_bkg)
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_01_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: (z_01_DG_a,z_01_DG_b)
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_02_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_03_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+[#1] INFO:Plotting -- RooSimultaneous::plotOn(super_fit_Pdf) plot on B_DTF_M represents a slice in the index category (all_cats)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) directly selected PDF components: (z_04_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_spectrum_all_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsReal::plotOn(z_spectrum_all_fit) slice variable all_cats was not projected anyway
+Info in <TCanvas::Print>: png file plots/5_24/fit_tests/z_spectrum_z_mcp_c_0.png has been created
+mcp_c
+saved: z_spectrum_z_mcp_c_0.png in plots/5_24/fit_tests/

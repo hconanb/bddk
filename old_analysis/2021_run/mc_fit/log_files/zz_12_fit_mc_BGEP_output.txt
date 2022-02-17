@@ -1,0 +1,96 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_12) importing dataset zz_12_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_12) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_zz_12_BGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_zz_12_BGEP   2.00000e+00  6.95000e-01    5.00000e-02  7.00000e+00
+     2 alpha_2_zz_12_BGEP   3.00000e+00  6.95000e-01    5.00000e-02  7.00000e+00
+     3 mean_zz_12_BGEP   4.98000e+03  2.00000e+00    4.97000e+03  4.99000e+03
+     4 width_L_zz_12_BGEP   1.00000e+01  2.60000e+00    4.00000e+00  3.00000e+01
+     5 width_R_zz_12_BGEP   2.00000e+01  2.60000e+00    4.00000e+00  3.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=44336.1 FROM MIGRAD    STATUS=CONVERGED     359 CALLS         360 TOTAL
+                     EDM=4.87953e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_zz_12_BGEP   1.25901e+00   9.89364e-02   1.81723e-03   2.36734e-01
+   2  alpha_2_zz_12_BGEP   1.04235e+00   1.00516e-01   1.44963e-03   1.64961e-02
+   3  mean_zz_12_BGEP   4.98330e+03   1.19784e+00   4.05357e-03   8.73595e-02
+   4  width_L_zz_12_BGEP   2.21755e+01   1.22183e+00   3.16422e-03  -1.61901e-01
+   5  width_R_zz_12_BGEP   1.95839e+01   1.50796e+00   2.89892e-03   7.17259e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2500
+ **********
+ FCN=44336.1 FROM HESSE     STATUS=OK             31 CALLS         391 TOTAL
+                     EDM=6.94193e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_zz_12_BGEP   1.25901e+00   1.18982e-01   7.26894e-05  -7.10329e-01
+   2  alpha_2_zz_12_BGEP   1.04235e+00   1.21737e-01   5.79851e-05  -7.95809e-01
+   3  mean_zz_12_BGEP   4.98330e+03   1.50907e+00   8.10714e-04   3.36096e-01
+   4  width_L_zz_12_BGEP   2.21755e+01   1.52023e+00   1.26569e-04   4.09465e-01
+   5  width_R_zz_12_BGEP   1.95839e+01   1.87177e+00   1.15957e-04   2.00096e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_12) importing RooBifurGaussExp::zz_12_BGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_12) importing RooRealVar::mean_zz_12_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_12) importing RooRealVar::width_L_zz_12_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_12) importing RooRealVar::width_R_zz_12_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_12) importing RooRealVar::alpha_1_zz_12_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_12) importing RooRealVar::alpha_2_zz_12_BGEP
+
+RooWorkspace(fit_zz_12) fit_zz_12 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_zz_12_BGEP,alpha_2_zz_12_BGEP,mean_zz_12_BGEP,width_L_zz_12_BGEP,width_R_zz_12_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::zz_12_BGEP_fit[ m=B_DTF_M m0=mean_zz_12_BGEP sigmaLo=width_L_zz_12_BGEP sigmaHi=width_R_zz_12_BGEP alphaLo=alpha_1_zz_12_BGEP alphaHi=alpha_2_zz_12_BGEP ] = 0.186563
+
+datasets
+--------
+RooDataSet::zz_12_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_zz_12_BGEP_fit_zz_12_events
+

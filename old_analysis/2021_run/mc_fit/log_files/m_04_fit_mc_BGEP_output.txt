@@ -1,0 +1,101 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing dataset m_04_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_m_04_BGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_m_04_BGEP   2.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     2 alpha_2_m_04_BGEP   8.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     3 mean_m_04_BGEP   4.99000e+03  4.00000e+00    4.97000e+03  5.01000e+03
+     4 width_L_m_04_BGEP   1.00000e+01  2.90000e+00    1.00000e+00  3.00000e+01
+     5 width_R_m_04_BGEP   5.00000e+00  2.00000e+00    1.00000e+00  3.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.08849 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00054 added to diagonal of error matrix
+ MIGRAD TERMINATED WITHOUT CONVERGENCE.
+ FCN=21165.4 FROM MIGRAD    STATUS=FAILED        547 CALLS         548 TOTAL
+                     EDM=0.00130262    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_m_04_BGEP   2.52798e+00   2.82343e+00   0.00000e+00  -1.76037e-01
+   2  alpha_2_m_04_BGEP   1.60029e+00   2.38442e+00  -0.00000e+00   2.25986e-03
+   3  mean_m_04_BGEP   4.98367e+03   1.23391e+01  -0.00000e+00   1.06333e-03
+   4  width_L_m_04_BGEP   1.73996e+01   9.34784e+00   0.00000e+00  -1.62149e-03
+   5  width_R_m_04_BGEP   1.05668e+01   8.86989e+00   0.00000e+00  -6.91264e-04
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2500
+ **********
+ FCN=21165.4 FROM HESSE     STATUS=OK             41 CALLS         589 TOTAL
+                     EDM=3.32793e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_m_04_BGEP   2.52798e+00   1.23295e+00   2.91288e-02  -5.17149e-01
+   2  alpha_2_m_04_BGEP   1.60029e+00   1.23081e-01   7.54859e-04  -2.39391e+00
+   3  mean_m_04_BGEP   4.98367e+03   6.72046e-01   1.05213e-03  -3.21879e-01
+   4  width_L_m_04_BGEP   1.73996e+01   4.66957e-01   6.63639e-04   1.31387e-01
+   5  width_R_m_04_BGEP   1.05668e+01   5.35397e-01   4.75188e-04  -3.47154e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooBifurGaussExp::m_04_BGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::mean_m_04_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::width_L_m_04_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::width_R_m_04_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::alpha_1_m_04_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_m_04) importing RooRealVar::alpha_2_m_04_BGEP
+
+RooWorkspace(fit_m_04) fit_m_04 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_m_04_BGEP,alpha_2_m_04_BGEP,mean_m_04_BGEP,width_L_m_04_BGEP,width_R_m_04_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::m_04_BGEP_fit[ m=B_DTF_M m0=mean_m_04_BGEP sigmaLo=width_L_m_04_BGEP sigmaHi=width_R_m_04_BGEP alphaLo=alpha_1_m_04_BGEP alphaHi=alpha_2_m_04_BGEP ] = 0.867996
+
+datasets
+--------
+RooDataSet::m_04_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_m_04_BGEP_fit_m_04_events
+

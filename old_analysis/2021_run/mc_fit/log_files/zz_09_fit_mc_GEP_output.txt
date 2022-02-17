@@ -1,0 +1,100 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_09) importing dataset zz_09_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_09) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_zz_09_GEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_zz_09_GEP   3.00000e+00  6.95000e-01    5.00000e-02  7.00000e+00
+     2 mean_zz_09_GEP   5.28000e+03  2.00000e+00    5.27000e+03  5.29000e+03
+     3 width_zz_09_GEP   1.00000e+01  2.60000e+00    4.00000e+00  3.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00318 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00299 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00102 added to diagonal of error matrix
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=35960.8 FROM MIGRAD    STATUS=CONVERGED     216 CALLS         217 TOTAL
+                     EDM=2.86179e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_zz_09_GEP   1.53304e+00   4.80798e-02   1.81724e-03   2.23316e-02
+   2  mean_zz_09_GEP   5.27967e+03   7.06376e-02   8.50342e-04  -4.97715e-02
+   3  width_zz_09_GEP   6.47800e+00   5.57123e-02   8.18558e-04  -3.53445e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=35960.8 FROM HESSE     STATUS=OK             16 CALLS         233 TOTAL
+                     EDM=2.86866e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_zz_09_GEP   1.53304e+00   4.80656e-02   7.26897e-05  -6.10439e-01
+   2  mean_zz_09_GEP   5.27967e+03   7.06454e-02   1.70068e-04  -3.27486e-02
+   3  width_zz_09_GEP   6.47800e+00   5.57185e-02   3.27423e-05  -9.43103e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_09) importing RooGaussExp::zz_09_GEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_09) importing RooRealVar::mean_zz_09_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_09) importing RooRealVar::width_zz_09_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_09) importing RooRealVar::alpha_zz_09_GEP
+
+RooWorkspace(fit_zz_09) fit_zz_09 contents
+
+variables
+---------
+(B_DTF_M,alpha_zz_09_GEP,mean_zz_09_GEP,width_zz_09_GEP)
+
+p.d.f.s
+-------
+RooGaussExp::zz_09_GEP_fit[ m=B_DTF_M m0=mean_zz_09_GEP sigma=width_zz_09_GEP alpha=alpha_zz_09_GEP ] = 0.947866
+
+datasets
+--------
+RooDataSet::zz_09_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_zz_09_GEP_fit_zz_09_events
+

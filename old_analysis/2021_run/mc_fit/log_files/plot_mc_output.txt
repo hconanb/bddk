@@ -1,0 +1,66 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_G_fit) directly selected PDF components: (z_01_G_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_G_fit) indirectly selected PDF components: ()
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Info in <TCanvas::Print>: png file plots/5_19/mc_fits/z_01_G.png has been created
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_DG_fit) directly selected PDF components: (z_01_DG_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_DG_fit) indirectly selected PDF components: (z_01_DG_a,z_01_DG_b)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_DG_fit) directly selected PDF components: (z_01_DG_a)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_DG_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_DG_fit) directly selected PDF components: (z_01_DG_b)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_DG_fit) indirectly selected PDF components: ()
+Info in <TCanvas::Print>: png file plots/5_19/mc_fits/z_01_DG.png has been created
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_GEP_fit) directly selected PDF components: (z_01_GEP_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_GEP_fit) indirectly selected PDF components: ()
+Info in <TCanvas::Print>: png file plots/5_19/mc_fits/z_01_GEP.png has been created
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_BGEP_fit) directly selected PDF components: (z_01_BGEP_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_01_BGEP_fit) indirectly selected PDF components: ()
+Info in <TCanvas::Print>: png file plots/5_19/mc_fits/z_01_BGEP.png has been created
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_G_fit) directly selected PDF components: (z_02_G_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_G_fit) indirectly selected PDF components: ()
+Info in <TCanvas::Print>: png file plots/5_19/mc_fits/z_02_G.png has been created
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_DG_fit) directly selected PDF components: (z_02_DG_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_DG_fit) indirectly selected PDF components: (z_02_DG_a,z_02_DG_b)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_DG_fit) directly selected PDF components: (z_02_DG_a)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_DG_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_DG_fit) directly selected PDF components: (z_02_DG_b)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_DG_fit) indirectly selected PDF components: ()
+Info in <TCanvas::Print>: png file plots/5_19/mc_fits/z_02_DG.png has been created
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_GEP_fit) directly selected PDF components: (z_02_GEP_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_GEP_fit) indirectly selected PDF components: ()
+Info in <TCanvas::Print>: png file plots/5_19/mc_fits/z_02_GEP.png has been created
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_BGEP_fit) directly selected PDF components: (z_02_BGEP_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(z_02_BGEP_fit) indirectly selected PDF components: ()
+Info in <TCanvas::Print>: png file plots/5_19/mc_fits/z_02_BGEP.png has been created
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: splitPlot
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: splitPlot
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: splitPlot
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: splitPlot
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: splitPlot
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: splitPlot
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: splitPlot
+1.389687771132542
+saved: z_01_G.png in plots/5_19/mc_fits/
+0.9542417426770377
+saved: z_01_DG.png in plots/5_19/mc_fits/
+1.141406354474636
+saved: z_01_GEP.png in plots/5_19/mc_fits/
+0.9242473077325236
+saved: z_01_BGEP.png in plots/5_19/mc_fits/
+1.8078194010788093
+saved: z_02_G.png in plots/5_19/mc_fits/
+1.7090210631488496
+saved: z_02_DG.png in plots/5_19/mc_fits/
+1.807918001047989
+saved: z_02_GEP.png in plots/5_19/mc_fits/
+0.7927226251784005
+saved: z_02_BGEP.png in plots/5_19/mc_fits/

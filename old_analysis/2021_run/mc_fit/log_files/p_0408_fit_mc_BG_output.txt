@@ -1,0 +1,86 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing dataset p_0408_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_p_0408_BG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_p_0408_BG   4.99000e+03  4.00000e+00    4.97000e+03  5.01000e+03
+     2 width_1_p_0408_BG   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_2_p_0408_BG   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=49152 FROM MIGRAD    STATUS=CONVERGED     189 CALLS         190 TOTAL
+                     EDM=9.88509e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_p_0408_BG   4.97921e+03   4.01359e-01   1.52358e-03  -1.48171e-01
+   2  width_1_p_0408_BG   1.58493e+01   2.95697e-01   1.08506e-03   9.05717e-02
+   3  width_2_p_0408_BG   1.91903e+01   2.66736e-01   1.00941e-03  -4.13384e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=49152 FROM HESSE     STATUS=OK             16 CALLS         206 TOTAL
+                     EDM=9.83163e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_p_0408_BG   4.97921e+03   3.98689e-01   6.09433e-05  -5.69711e-01
+   2  width_1_p_0408_BG   1.58493e+01   2.93104e-01   4.34022e-05   3.51633e+00
+   3  width_2_p_0408_BG   1.91903e+01   2.66399e-01   4.03765e-05  -2.34533e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooBifurGauss::p_0408_BG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::mean_p_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::width_1_p_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_p_0408) importing RooRealVar::width_2_p_0408_BG
+
+RooWorkspace(fit_p_0408) fit_p_0408 contents
+
+variables
+---------
+(B_DTF_M,mean_p_0408_BG,width_1_p_0408_BG,width_2_p_0408_BG)
+
+p.d.f.s
+-------
+RooBifurGauss::p_0408_BG_fit[ x=B_DTF_M mean=mean_p_0408_BG sigmaL=width_1_p_0408_BG sigmaR=width_2_p_0408_BG ] = 0.498261
+
+datasets
+--------
+RooDataSet::p_0408_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_p_0408_BG_fit_p_0408_events
+

@@ -1,0 +1,51 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+RooWorkspace(02_Z_m_p) 02_Z_m_p contents
+
+variables
+---------
+(B_DTF_M,alpha_1_02_Z_m_p_BGEP,alpha_2_02_Z_m_p_BGEP,mean_02_Z_m_p_BGEP,width_L_02_Z_m_p_BGEP,width_R_02_Z_m_p_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::02_Z_m_p_BGEP_fit[ m=B_DTF_M m0=mean_02_Z_m_p_BGEP sigmaLo=width_L_02_Z_m_p_BGEP sigmaHi=width_R_02_Z_m_p_BGEP alphaLo=alpha_1_02_Z_m_p_BGEP alphaHi=alpha_2_02_Z_m_p_BGEP ] = 1
+
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(02_Z_m_p_events) Skipping event #122 because B_DTF_M cannot accommodate the value 5064.82
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(02_Z_m_p_events) Skipping event #247 because B_DTF_M cannot accommodate the value 5187.85
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(02_Z_m_p_events) Skipping event #334 because B_DTF_M cannot accommodate the value 5069.57
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(02_Z_m_p_events) Skipping event #547 because B_DTF_M cannot accommodate the value 5038.8
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(02_Z_m_p_events) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(02_Z_m_p_events) Ignored 50 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(02_Z_m_p) importing dataset 02_Z_m_p_events
+
+RooWorkspace(02_Z_m_p) 02_Z_m_p contents
+
+variables
+---------
+(B_DTF_M,alpha_1_02_Z_m_p_BGEP,alpha_2_02_Z_m_p_BGEP,mean_02_Z_m_p_BGEP,width_L_02_Z_m_p_BGEP,width_R_02_Z_m_p_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::02_Z_m_p_BGEP_fit[ m=B_DTF_M m0=mean_02_Z_m_p_BGEP sigmaLo=width_L_02_Z_m_p_BGEP sigmaHi=width_R_02_Z_m_p_BGEP alphaLo=alpha_1_02_Z_m_p_BGEP alphaHi=alpha_2_02_Z_m_p_BGEP ] = 1
+
+datasets
+--------
+RooDataSet::02_Z_m_p_events(B_DTF_M)
+
+mcws is 02_Z_m_p
+02_Z_m_p
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2016/post_d/02_Z_m_p_11198400_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2016/post_d/02_Z_m_p_11198400_T_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2017/post_d/02_Z_m_p_11198400_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2017/post_d/02_Z_m_p_11198400_T_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2018/post_d/02_Z_m_p_11198400_nTaT_postdcuts.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC_2021/2018/post_d/02_Z_m_p_11198400_T_postdcuts.root
+Saved: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/mc_fit/base_mc_files/02_Z_m_p.root

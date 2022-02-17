@@ -1,0 +1,94 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing dataset z_02_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_02_BGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_z_02_BGEP   2.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     2 alpha_2_z_02_BGEP   8.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     3 mean_z_02_BGEP   5.13000e+03  2.00000e+00    5.12000e+03  5.14000e+03
+     4 width_L_z_02_BGEP   1.00000e+01  2.90000e+00    1.00000e+00  3.00000e+01
+     5 width_R_z_02_BGEP   5.00000e+00  2.00000e+00    1.00000e+00  3.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=16851.4 FROM MIGRAD    STATUS=CONVERGED     441 CALLS         442 TOTAL
+                     EDM=3.44362e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_z_02_BGEP   2.06925e+00   2.40528e-01   4.04163e-03   8.64655e-02
+   2  alpha_2_z_02_BGEP   1.25007e+00   1.28007e-01   1.28398e-03  -1.85488e-01
+   3  mean_z_02_BGEP   5.13549e+03   7.23953e-01   2.07075e-03   6.81353e-02
+   4  width_L_z_02_BGEP   1.65194e+01   5.24454e-01   1.39062e-03  -1.16305e-01
+   5  width_R_z_02_BGEP   7.80765e+00   6.71240e-01   1.08678e-03  -1.71656e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2500
+ **********
+ FCN=16851.4 FROM HESSE     STATUS=OK             31 CALLS         473 TOTAL
+                     EDM=3.45352e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_z_02_BGEP   2.06925e+00   2.46001e-01   1.61665e-04  -6.26299e-01
+   2  alpha_2_z_02_BGEP   1.25007e+00   1.32711e-01   5.13594e-05  -2.29355e+00
+   3  mean_z_02_BGEP   5.13549e+03   7.62713e-01   4.14149e-04   5.80922e-01
+   4  width_L_z_02_BGEP   1.65194e+01   5.49370e-01   5.56248e-05   7.03633e-02
+   5  width_R_z_02_BGEP   7.80765e+00   7.04616e-01   4.34712e-05  -5.59199e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooBifurGaussExp::z_02_BGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::mean_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::width_L_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::width_R_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::alpha_1_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::alpha_2_z_02_BGEP
+
+RooWorkspace(fit_z_02) fit_z_02 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_z_02_BGEP,alpha_2_z_02_BGEP,mean_z_02_BGEP,width_L_z_02_BGEP,width_R_z_02_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::z_02_BGEP_fit[ m=B_DTF_M m0=mean_z_02_BGEP sigmaLo=width_L_z_02_BGEP sigmaHi=width_R_z_02_BGEP alphaLo=alpha_1_z_02_BGEP alphaHi=alpha_2_z_02_BGEP ] = 0.186853
+
+datasets
+--------
+RooDataSet::z_02_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_02_BGEP_fit_z_02_events
+

@@ -1,0 +1,191 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object c0_z created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object z_spectrum_bkg created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooGaussian::z_01_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_z_01_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_z_01_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooGaussExp::z_02_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_z_02_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_z_02_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::alpha_z_02_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::z_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_z_04_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_z_04_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_z_04_BG
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object c0_zz created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object zz_spectrum_bkg created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooGaussian::zz_09_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_zz_09_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_zz_09_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::zz_0710_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_zz_0710_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_zz_0710_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_zz_0710_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::zz_040812_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_zz_040812_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_zz_040812_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_zz_040812_BG
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object c0_p created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object p_spectrum_bkg created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooGaussian::p_05_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_p_05_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_p_05_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::p_020607_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_p_020607_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_p_020607_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_p_020607_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::p_0408_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_p_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_p_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_p_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object c0_m created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object m_spectrum_bkg created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::m_03_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_m_03_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_m_03_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_m_03_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::m_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_m_04_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_m_04_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_m_04_BG
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object c0_st created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkSpace::import(z_dp_f_0) Recycling existing object st_spectrum_bkg created with identical factory specification
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::st_07_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_st_07_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_st_07_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_st_07_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooBifurGauss::st_0408_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::mean_st_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_1_st_0408_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooRealVar::width_2_st_0408_BG
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping event #42 because B_DTF_M cannot accommodate the value 4790.49
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping event #62 because B_DTF_M cannot accommodate the value 4761.68
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping event #87 because B_DTF_M cannot accommodate the value 5617.06
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping event #101 because B_DTF_M cannot accommodate the value 5652.56
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(z_data) Ignored 191 out-of-range events
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_data) Skipping event #2 because B_DTF_M cannot accommodate the value 4773.64
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_data) Skipping event #19 because B_DTF_M cannot accommodate the value 5626.49
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_data) Skipping event #23 because B_DTF_M cannot accommodate the value 4760.93
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_data) Skipping event #25 because B_DTF_M cannot accommodate the value 5834.7
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(zz_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(zz_data) Ignored 382 out-of-range events
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_data) Skipping event #30 because B_DTF_M cannot accommodate the value 5729.77
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_data) Skipping event #75 because B_DTF_M cannot accommodate the value 4792.72
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_data) Skipping event #137 because B_DTF_M cannot accommodate the value 4791.27
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_data) Skipping event #150 because B_DTF_M cannot accommodate the value 6848.44
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(p_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(p_data) Ignored 346 out-of-range events
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(m_data) Skipping event #4 because B_DTF_M cannot accommodate the value 6996.2
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(m_data) Skipping event #7 because B_DTF_M cannot accommodate the value 5857.85
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(m_data) Skipping event #9 because B_DTF_M cannot accommodate the value 5612.82
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(m_data) Skipping event #15 because B_DTF_M cannot accommodate the value 4727.89
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(m_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(m_data) Ignored 330 out-of-range events
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(st_data) Skipping event #164 because B_DTF_M cannot accommodate the value 6563.01
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(st_data) Skipping event #267 because B_DTF_M cannot accommodate the value 5602.76
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(st_data) Skipping event #268 because B_DTF_M cannot accommodate the value 5634.03
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(st_data) Skipping event #305 because B_DTF_M cannot accommodate the value 6036.12
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(st_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(st_data) Ignored 7 out-of-range events
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(s_data) Skipping event #13 because B_DTF_M cannot accommodate the value 5946.96
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(s_data) Skipping event #15 because B_DTF_M cannot accommodate the value 5999.82
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(s_data) Skipping event #18 because B_DTF_M cannot accommodate the value 4767.42
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(s_data) Skipping event #20 because B_DTF_M cannot accommodate the value 5638.36
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(s_data) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(s_data) Ignored 110 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing RooCategory::all_cats
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_dp_f_0) importing dataset all_data_sets
+
+RooWorkspace(z_dp_f_0) z_dp_f_0 contents
+
+variables
+---------
+(B_DTF_M,all_cats,alpha_z_02_GEP,bf_1,bf_10,bf_11,bf_12,bf_13,bf_14,bf_15,bf_16,bf_2,bf_3,bf_4,bf_5,bf_6,bf_7,bf_8,bf_9,c0_m,c0_p,c0_st,c0_z,c0_zz,mean_m_03_BG,mean_m_04_BG,mean_p_020607_BG,mean_p_0408_BG,mean_p_05_G,mean_st_0408_BG,mean_st_07_BG,mean_z_01_G,mean_z_02_GEP,mean_z_04_BG,mean_zz_040812_BG,mean_zz_0710_BG,mean_zz_09_G,n_m_bkg,n_p_bkg,n_st_bkg,n_z_bkg,n_zz_bkg,width_1_m_03_BG,width_1_m_04_BG,width_1_p_020607_BG,width_1_p_0408_BG,width_1_st_0408_BG,width_1_st_07_BG,width_1_z_04_BG,width_1_zz_040812_BG,width_1_zz_0710_BG,width_2_m_03_BG,width_2_m_04_BG,width_2_p_020607_BG,width_2_p_0408_BG,width_2_st_0408_BG,width_2_st_07_BG,width_2_z_04_BG,width_2_zz_040812_BG,width_2_zz_0710_BG,width_p_05_G,width_z_01_G,width_z_02_GEP,width_zz_09_G,z_dp_f_0_par0,z_dp_f_0_par1,z_dp_f_0_par10,z_dp_f_0_par11,z_dp_f_0_par12,z_dp_f_0_par13,z_dp_f_0_par14,z_dp_f_0_par15,z_dp_f_0_par16,z_dp_f_0_par17,z_dp_f_0_par18,z_dp_f_0_par19,z_dp_f_0_par2,z_dp_f_0_par20,z_dp_f_0_par3,z_dp_f_0_par4,z_dp_f_0_par5,z_dp_f_0_par6,z_dp_f_0_par7,z_dp_f_0_par8,z_dp_f_0_par9)
+
+p.d.f.s
+-------
+RooBifurGauss::m_03_fit[ x=B_DTF_M mean=mean_m_03_BG sigmaL=width_1_m_03_BG sigmaR=width_2_m_03_BG ] = 3.32474e-15
+RooBifurGauss::m_04_fit[ x=B_DTF_M mean=mean_m_04_BG sigmaL=width_1_m_04_BG sigmaR=width_2_m_04_BG ] = 1.9627e-63
+RooAddPdf::m_spectrum_all_fit[ n_03_m * m_03_fit + n_04_m * m_04_fit + n_m_bkg * m_spectrum_bkg ] = 0.547273
+RooExponential::m_spectrum_bkg[ x=B_DTF_M c=c0_m ] = 1
+RooBifurGauss::p_020607_fit[ x=B_DTF_M mean=mean_p_020607_BG sigmaL=width_1_p_020607_BG sigmaR=width_2_p_020607_BG ] = 5.06875e-06
+RooBifurGauss::p_0408_fit[ x=B_DTF_M mean=mean_p_0408_BG sigmaL=width_1_p_0408_BG sigmaR=width_2_p_0408_BG ] = 1.60021e-30
+RooGaussian::p_05_fit[ x=B_DTF_M mean=mean_p_05_G sigma=width_p_05_G ] = 4.38352e-27
+RooAddPdf::p_spectrum_all_fit[ n_05_p * p_05_fit + n_020607_p * p_020607_fit + n_0408_p * p_0408_fit + n_p_bkg * p_spectrum_bkg ] = 0.141567
+RooExponential::p_spectrum_bkg[ x=B_DTF_M c=c0_p ] = 1
+RooBifurGauss::st_0408_fit[ x=B_DTF_M mean=mean_st_0408_BG sigmaL=width_1_st_0408_BG sigmaR=width_2_st_0408_BG ] = 5.73433e-06
+RooBifurGauss::st_07_fit[ x=B_DTF_M mean=mean_st_07_BG sigmaL=width_1_st_07_BG sigmaR=width_2_st_07_BG ] = 2.97585e-31
+RooAddPdf::st_spectrum_all_fit[ n_07_st * st_07_fit + n_48_st * st_0408_fit + n_st_bkg * st_spectrum_bkg ] = 0.464937
+RooExponential::st_spectrum_bkg[ x=B_DTF_M c=c0_st ] = 1
+RooGaussian::z_01_fit[ x=B_DTF_M mean=mean_z_01_G sigma=width_z_01_G ] = 9.29314e-28
+RooGaussExp::z_02_fit[ m=B_DTF_M m0=mean_z_02_GEP sigma=width_z_02_GEP alpha=alpha_z_02_GEP ] = 7.96789e-08
+RooBifurGauss::z_04_fit[ x=B_DTF_M mean=mean_z_04_BG sigmaL=width_1_z_04_BG sigmaR=width_2_z_04_BG ] = 3.95359e-50
+RooAddPdf::z_spectrum_all_fit[ n_01_z * z_01_fit + n_23_z * z_02_fit + n_04_z * z_04_fit + n_z_bkg * z_spectrum_bkg ] = 0.153346
+RooExponential::z_spectrum_bkg[ x=B_DTF_M c=c0_z ] = 1
+RooBifurGauss::zz_040812_fit[ x=B_DTF_M mean=mean_zz_040812_BG sigmaL=width_1_zz_040812_BG sigmaR=width_2_zz_040812_BG ] = 1.63317e-38
+RooBifurGauss::zz_0710_fit[ x=B_DTF_M mean=mean_zz_0710_BG sigmaL=width_1_zz_0710_BG sigmaR=width_2_zz_0710_BG ] = 2.67289e-06
+RooGaussian::zz_09_fit[ x=B_DTF_M mean=mean_zz_09_G sigma=width_zz_09_G ] = 1.67356e-29
+RooAddPdf::zz_spectrum_all_fit[ n_09_zz * zz_09_fit + n_0710_zz * zz_0710_fit + n_040812_zz * zz_040812_fit + n_zz_bkg * zz_spectrum_bkg ] = 0.117118
+RooExponential::zz_spectrum_bkg[ x=B_DTF_M c=c0_zz ] = 1
+
+functions
+--------
+RooFormulaVar::n_01_z[ actualVars=(bf_1,z_dp_f_0_par0) formula="x[0]*x[1]" ] = 333.359
+RooFormulaVar::n_020607_p[ actualVars=(n_02_p,n_06_p,n_07_p) formula="x[0]+x[1]+x[2]" ] = 333.265
+RooFormulaVar::n_02_p[ actualVars=(bf_2,z_dp_f_0_par10) formula="x[0]*x[1]" ] = 105.475
+RooFormulaVar::n_02_z[ actualVars=(bf_2,z_dp_f_0_par1) formula="x[0]*x[1]" ] = 97.3825
+RooFormulaVar::n_03_m[ actualVars=(bf_3,z_dp_f_0_par16) formula="x[0]*x[1]" ] = 51.9762
+RooFormulaVar::n_03_z[ actualVars=(bf_3,z_dp_f_0_par2) formula="x[0]*x[1]" ] = 97.3825
+RooFormulaVar::n_040812_zz[ actualVars=(n_04_zz,n_08_zz,n_12_zz) formula="x[0]+x[1]+x[2]" ] = 366.263
+RooFormulaVar::n_0408_p[ actualVars=(n_04_p,n_08_p) formula="x[0]+x[1]" ] = 85.2953
+RooFormulaVar::n_04_m[ actualVars=(bf_4,z_dp_f_0_par17) formula="x[0]*x[1]" ] = 30.7482
+RooFormulaVar::n_04_p[ actualVars=(bf_4,z_dp_f_0_par11) formula="x[0]*x[1]" ] = 30.7736
+RooFormulaVar::n_04_st[ actualVars=(bf_4,z_dp_f_0_par18) formula="x[0]*x[1]" ] = 27.5985
+RooFormulaVar::n_04_z[ actualVars=(bf_4,z_dp_f_0_par3) formula="x[0]*x[1]" ] = 23.9957
+RooFormulaVar::n_04_zz[ actualVars=(bf_4,z_dp_f_0_par4) formula="x[0]*x[1]" ] = 113.892
+RooFormulaVar::n_05_p[ actualVars=(bf_5,z_dp_f_0_par12) formula="x[0]*x[1]" ] = 187.831
+RooFormulaVar::n_06_p[ actualVars=(bf_6,z_dp_f_0_par13) formula="x[0]*x[1]" ] = 171.639
+RooFormulaVar::n_0710_zz[ actualVars=(n_07_zz,n_10_zz) formula="x[0]+x[1]" ] = 272.101
+RooFormulaVar::n_07_p[ actualVars=(bf_7,z_dp_f_0_par14) formula="x[0]*x[1]" ] = 56.151
+RooFormulaVar::n_07_st[ actualVars=(bf_7,z_dp_f_0_par19) formula="x[0]*x[1]" ] = 45.6174
+RooFormulaVar::n_07_zz[ actualVars=(bf_7,z_dp_f_0_par5) formula="x[0]*x[1]" ] = 159.236
+RooFormulaVar::n_08_p[ actualVars=(bf_8,z_dp_f_0_par15) formula="x[0]*x[1]" ] = 54.5217
+RooFormulaVar::n_08_st[ actualVars=(bf_8,z_dp_f_0_par20) formula="x[0]*x[1]" ] = 41.8678
+RooFormulaVar::n_08_zz[ actualVars=(bf_8,z_dp_f_0_par6) formula="x[0]*x[1]" ] = 154.117
+RooFormulaVar::n_09_zz[ actualVars=(bf_9,z_dp_f_0_par7) formula="x[0]*x[1]" ] = 115.485
+RooFormulaVar::n_10_zz[ actualVars=(bf_10,z_dp_f_0_par8) formula="x[0]*x[1]" ] = 112.866
+RooFormulaVar::n_12_zz[ actualVars=(bf_12,z_dp_f_0_par9) formula="x[0]*x[1]" ] = 98.2539
+RooFormulaVar::n_23_z[ actualVars=(n_02_z,n_03_z) formula="x[0]+x[1]" ] = 194.765
+RooFormulaVar::n_48_st[ actualVars=(n_04_st,n_08_st) formula="x[0]+x[1]" ] = 69.4663
+
+datasets
+--------
+RooDataSet::all_data_sets(all_cats,B_DTF_M)
+
+z_01_fit
+z_02_fit
+z_04_fit
+zz_09_fit
+zz_0710_fit
+zz_040812_fit
+p_05_fit
+p_020607_fit
+p_0408_fit
+m_03_fit
+m_04_fit
+st_07_fit
+st_0408_fit
+Wrote dws to: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/data_fit/base_data_files/z_dp_f_0.root

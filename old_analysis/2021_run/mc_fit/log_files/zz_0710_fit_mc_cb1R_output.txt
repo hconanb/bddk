@@ -1,0 +1,92 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_0710) importing dataset zz_0710_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_0710) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_zz_0710_cb1R_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_zz_0710_cb1R  -5.00000e+00  1.00000e+00   -1.00000e+01 -0.00000e+00
+     2 mean_zz_0710_cb1R   5.14000e+03  4.00000e+00    5.12000e+03  5.16000e+03
+     3 n_zz_0710_cb1R   5.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     4 width_zz_0710_cb1R   1.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2000           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=141487 FROM MIGRAD    STATUS=CONVERGED     193 CALLS         194 TOTAL
+                     EDM=8.09321e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_zz_0710_cb1R  -1.98791e+00   3.98535e-02   1.28288e-03  -1.30346e+00
+   2  mean_zz_0710_cb1R   5.12367e+03   8.43059e-02   1.87217e-03   1.34559e-01
+   3  n_zz_0710_cb1R   2.72710e+00   2.96392e-01   8.51119e-03   2.44514e-01
+   4  width_zz_0710_cb1R   1.48649e+01   6.41690e-02   7.07132e-04   5.10999e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2000
+ **********
+ FCN=141487 FROM HESSE     STATUS=OK             23 CALLS         217 TOTAL
+                     EDM=8.12936e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_zz_0710_cb1R  -1.98791e+00   4.06839e-02   5.13151e-05   6.46527e-01
+   2  mean_zz_0710_cb1R   5.12367e+03   8.42969e-02   7.48866e-05  -9.55481e-01
+   3  n_zz_0710_cb1R   2.72710e+00   3.02575e-01   3.40448e-04  -4.71900e-01
+   4  width_zz_0710_cb1R   1.48649e+01   6.41695e-02   2.82853e-05  -4.17421e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_0710) importing RooCBShape::zz_0710_cb1R_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_0710) importing RooRealVar::mean_zz_0710_cb1R
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_0710) importing RooRealVar::width_zz_0710_cb1R
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_0710) importing RooRealVar::alpha_zz_0710_cb1R
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_0710) importing RooRealVar::n_zz_0710_cb1R
+
+RooWorkspace(fit_zz_0710) fit_zz_0710 contents
+
+variables
+---------
+(B_DTF_M,alpha_zz_0710_cb1R,mean_zz_0710_cb1R,n_zz_0710_cb1R,width_zz_0710_cb1R)
+
+p.d.f.s
+-------
+RooCBShape::zz_0710_cb1R_fit[ m=B_DTF_M m0=mean_zz_0710_cb1R sigma=width_zz_0710_cb1R alpha=alpha_zz_0710_cb1R n=n_zz_0710_cb1R ] = 0.732583
+
+datasets
+--------
+RooDataSet::zz_0710_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_zz_0710_cb1R_fit_zz_0710_events
+

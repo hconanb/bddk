@@ -1,0 +1,716 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing dataset z_01_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_01_G_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_z_01_G   5.28000e+03  4.00000e+00    5.26000e+03  5.30000e+03
+     2 width_z_01_G   5.00000e+00  2.00000e+00    0.00000e+00  2.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1000           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=15302.3 FROM MIGRAD    STATUS=CONVERGED      42 CALLS          43 TOTAL
+                     EDM=3.28217e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_z_01_G   5.27997e+03   1.04899e-01   4.47847e-04   1.09199e+00
+   2  width_z_01_G   7.05098e+00   7.53393e-02   6.72871e-04   1.61074e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1000
+ **********
+ FCN=15302.3 FROM HESSE     STATUS=OK             10 CALLS          53 TOTAL
+                     EDM=3.28206e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_z_01_G   5.27997e+03   1.04899e-01   8.95694e-05  -1.27855e-03
+   2  width_z_01_G   7.05098e+00   7.53393e-02   2.69148e-05  -2.99353e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooGaussian::z_01_G_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::mean_z_01_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::width_z_01_G
+
+RooWorkspace(fit_z_01) fit_z_01 contents
+
+variables
+---------
+(B_DTF_M,mean_z_01_G,width_z_01_G)
+
+p.d.f.s
+-------
+RooGaussian::z_01_G_fit[ x=B_DTF_M mean=mean_z_01_G sigma=width_z_01_G ] = 0.950934
+
+datasets
+--------
+RooDataSet::z_01_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_01_G_fit_z_01_events
+
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_01_DG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (z_01_DG_a,z_01_DG_b)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_z_01_DG   5.28000e+03  4.00000e+00    5.26000e+03  5.30000e+03
+     2 width_b_z_01_DG   2.10000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_z_01_DG   1.20000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     4 z_01_DG_a_frac   8.00000e-01  1.00000e-01    0.00000e+00  1.00000e+00
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2000           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=15275.8 FROM MIGRAD    STATUS=CONVERGED     199 CALLS         200 TOTAL
+                     EDM=4.51491e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_z_01_DG   5.27998e+03   1.04386e-01   4.42506e-04   5.86562e-01
+   2  width_b_z_01_DG   5.50966e+00   3.98168e-01   6.57225e-04  -6.53956e-01
+   3  width_z_01_DG   9.13574e+00   8.07812e-01   8.59806e-04  -4.00216e-01
+   4  z_01_DG_a_frac   3.91537e-01   1.38387e-01   3.99561e-03  -9.96440e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2000
+ **********
+ FCN=15275.8 FROM HESSE     STATUS=OK             23 CALLS         223 TOTAL
+                     EDM=4.61814e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_z_01_DG   5.27998e+03   1.04470e-01   8.85012e-05  -1.18338e-03
+   2  width_b_z_01_DG   5.50966e+00   4.19996e-01   1.31445e-04  -8.94048e-01
+   3  width_z_01_DG   9.13574e+00   8.35114e-01   1.71961e-04  -6.87452e-01
+   4  z_01_DG_a_frac   3.91537e-01   1.44603e-01   7.99122e-04  -2.18664e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooAddPdf::z_01_DG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooGaussian::z_01_DG_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::mean_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::width_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::z_01_DG_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooGaussian::z_01_DG_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::width_b_z_01_DG
+
+RooWorkspace(fit_z_01) fit_z_01 contents
+
+variables
+---------
+(B_DTF_M,mean_z_01_DG,mean_z_01_G,width_b_z_01_DG,width_z_01_DG,width_z_01_G,z_01_DG_a_frac)
+
+p.d.f.s
+-------
+RooGaussian::z_01_DG_a[ x=B_DTF_M mean=mean_z_01_DG sigma=width_z_01_DG ] = 0.970426
+RooGaussian::z_01_DG_b[ x=B_DTF_M mean=mean_z_01_DG sigma=width_b_z_01_DG ] = 0.920777
+RooAddPdf::z_01_DG_fit[ z_01_DG_a_frac * z_01_DG_a + [%] * z_01_DG_b ] = 0.940217
+RooGaussian::z_01_G_fit[ x=B_DTF_M mean=mean_z_01_G sigma=width_z_01_G ] = 0.950934
+
+datasets
+--------
+RooDataSet::z_01_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_01_G_fit_z_01_events
+RooFitResult::fitresult_z_01_DG_fit_z_01_events
+
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_01_GEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_z_01_GEP   1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+     2 mean_z_01_GEP   5.28000e+03  4.00000e+00    5.26000e+03  5.30000e+03
+     3 width_z_01_GEP   2.00000e+01  4.90000e+00    1.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=15287.1 FROM MIGRAD    STATUS=CONVERGED     102 CALLS         103 TOTAL
+                     EDM=1.84902e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_z_01_GEP   1.64027e+00   9.02381e-02   1.81330e-03  -9.57345e-03
+   2  mean_z_01_GEP   5.28017e+03   1.10315e-01   4.44890e-04  -6.31011e-02
+   3  width_z_01_GEP   6.80030e+00   8.64211e-02   4.19823e-04   5.05663e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=15287.1 FROM HESSE     STATUS=OK             16 CALLS         119 TOTAL
+                     EDM=1.8515e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_z_01_GEP   1.64027e+00   9.03811e-02   7.25322e-05  -7.36832e-01
+   2  mean_z_01_GEP   5.28017e+03   1.10397e-01   8.89779e-05   8.73924e-03
+   3  width_z_01_GEP   6.80030e+00   8.65444e-02   1.67929e-05  -8.68333e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooGaussExp::z_01_GEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::mean_z_01_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::width_z_01_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::alpha_z_01_GEP
+
+RooWorkspace(fit_z_01) fit_z_01 contents
+
+variables
+---------
+(B_DTF_M,alpha_z_01_GEP,mean_z_01_DG,mean_z_01_G,mean_z_01_GEP,width_b_z_01_DG,width_z_01_DG,width_z_01_G,width_z_01_GEP,z_01_DG_a_frac)
+
+p.d.f.s
+-------
+RooGaussian::z_01_DG_a[ x=B_DTF_M mean=mean_z_01_DG sigma=width_z_01_DG ] = 0.970426
+RooGaussian::z_01_DG_b[ x=B_DTF_M mean=mean_z_01_DG sigma=width_b_z_01_DG ] = 0.920777
+RooAddPdf::z_01_DG_fit[ z_01_DG_a_frac * z_01_DG_a + [%] * z_01_DG_b ] = 0.940217
+RooGaussExp::z_01_GEP_fit[ m=B_DTF_M m0=mean_z_01_GEP sigma=width_z_01_GEP alpha=alpha_z_01_GEP ] = 0.937805
+RooGaussian::z_01_G_fit[ x=B_DTF_M mean=mean_z_01_G sigma=width_z_01_G ] = 0.950934
+
+datasets
+--------
+RooDataSet::z_01_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_01_G_fit_z_01_events
+RooFitResult::fitresult_z_01_DG_fit_z_01_events
+RooFitResult::fitresult_z_01_GEP_fit_z_01_events
+
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_01_BGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_z_01_BGEP   1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+     2 alpha_2_z_01_BGEP   2.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     3 mean_z_01_BGEP   5.28000e+03  4.00000e+00    5.26000e+03  5.30000e+03
+     4 width_L_z_01_BGEP   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     5 width_R_z_01_BGEP   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=15273.1 FROM MIGRAD    STATUS=CONVERGED     338 CALLS         339 TOTAL
+                     EDM=2.07e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_z_01_BGEP   1.31507e+00   1.10846e-01   1.24534e-03  -3.47451e-02
+   2  alpha_2_z_01_BGEP   1.94381e+00   1.85078e-01   2.95572e-03   1.18212e-01
+   3  mean_z_01_BGEP   5.27917e+03   3.41054e-01   4.42119e-04  -4.16100e-01
+   4  width_L_z_01_BGEP   5.69568e+00   3.38116e-01   5.14292e-04   1.90969e-01
+   5  width_R_z_01_BGEP   7.15859e+00   2.46953e-01   4.91879e-04  -4.10349e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2500
+ **********
+ FCN=15273.1 FROM HESSE     STATUS=OK             31 CALLS         370 TOTAL
+                     EDM=2.08666e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_z_01_BGEP   1.31507e+00   1.12153e-01   4.98135e-05  -8.28600e-01
+   2  alpha_2_z_01_BGEP   1.94381e+00   1.86368e-01   1.18229e-04  -6.57623e-01
+   3  mean_z_01_BGEP   5.27917e+03   3.48353e-01   8.84239e-05  -4.14041e-02
+   4  width_L_z_01_BGEP   5.69568e+00   3.44527e-01   1.02858e-04  -8.82254e-01
+   5  width_R_z_01_BGEP   7.15859e+00   2.51711e-01   9.83758e-05  -7.94704e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooBifurGaussExp::z_01_BGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::mean_z_01_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::width_L_z_01_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::width_R_z_01_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::alpha_1_z_01_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_01) importing RooRealVar::alpha_2_z_01_BGEP
+
+RooWorkspace(fit_z_01) fit_z_01 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_z_01_BGEP,alpha_2_z_01_BGEP,alpha_z_01_GEP,mean_z_01_BGEP,mean_z_01_DG,mean_z_01_G,mean_z_01_GEP,width_L_z_01_BGEP,width_R_z_01_BGEP,width_b_z_01_DG,width_z_01_DG,width_z_01_G,width_z_01_GEP,z_01_DG_a_frac)
+
+p.d.f.s
+-------
+RooBifurGaussExp::z_01_BGEP_fit[ m=B_DTF_M m0=mean_z_01_BGEP sigmaLo=width_L_z_01_BGEP sigmaHi=width_R_z_01_BGEP alphaLo=alpha_1_z_01_BGEP alphaHi=alpha_2_z_01_BGEP ] = 0.968788
+RooGaussian::z_01_DG_a[ x=B_DTF_M mean=mean_z_01_DG sigma=width_z_01_DG ] = 0.970426
+RooGaussian::z_01_DG_b[ x=B_DTF_M mean=mean_z_01_DG sigma=width_b_z_01_DG ] = 0.920777
+RooAddPdf::z_01_DG_fit[ z_01_DG_a_frac * z_01_DG_a + [%] * z_01_DG_b ] = 0.940217
+RooGaussExp::z_01_GEP_fit[ m=B_DTF_M m0=mean_z_01_GEP sigma=width_z_01_GEP alpha=alpha_z_01_GEP ] = 0.937805
+RooGaussian::z_01_G_fit[ x=B_DTF_M mean=mean_z_01_G sigma=width_z_01_G ] = 0.950934
+
+datasets
+--------
+RooDataSet::z_01_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_01_G_fit_z_01_events
+RooFitResult::fitresult_z_01_DG_fit_z_01_events
+RooFitResult::fitresult_z_01_GEP_fit_z_01_events
+RooFitResult::fitresult_z_01_BGEP_fit_z_01_events
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing dataset z_02_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_02_G_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_z_02_G   5.14000e+03  4.00000e+00    5.12000e+03  5.16000e+03
+     2 width_z_02_G   5.00000e+00  2.00000e+00    0.00000e+00  2.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1000           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=16556.8 FROM MIGRAD    STATUS=CONVERGED      66 CALLS          67 TOTAL
+                     EDM=3.72651e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_z_02_G   5.12924e+03   2.00598e-01   1.05680e-03   4.01999e-01
+   2  width_z_02_G   1.28426e+01   1.48445e-01   1.37008e-03  -2.42974e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1000
+ **********
+ FCN=16556.8 FROM HESSE     STATUS=OK             10 CALLS          77 TOTAL
+                     EDM=3.72556e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_z_02_G   5.12924e+03   2.00599e-01   2.11361e-04  -5.68091e-01
+   2  width_z_02_G   1.28426e+01   1.48447e-01   2.74016e-04   2.88231e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooGaussian::z_02_G_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::mean_z_02_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::width_z_02_G
+
+RooWorkspace(fit_z_02) fit_z_02 contents
+
+variables
+---------
+(B_DTF_M,mean_z_02_G,width_z_02_G)
+
+p.d.f.s
+-------
+RooGaussian::z_02_G_fit[ x=B_DTF_M mean=mean_z_02_G sigma=width_z_02_G ] = 0.17421
+
+datasets
+--------
+RooDataSet::z_02_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_02_G_fit_z_02_events
+
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_02_DG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (z_02_DG_a,z_02_DG_b)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_z_02_DG   5.14000e+03  4.00000e+00    5.12000e+03  5.16000e+03
+     2 width_b_z_02_DG   2.10000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_z_02_DG   1.20000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     4 z_02_DG_a_frac   8.00000e-01  1.00000e-01    0.00000e+00  1.00000e+00
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2000           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=16550.3 FROM MIGRAD    STATUS=CONVERGED     283 CALLS         284 TOTAL
+                     EDM=2.47815e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_z_02_DG   5.12939e+03   2.09206e-01   1.06343e-03  -2.03659e-01
+   2  width_b_z_02_DG   4.99996e+01   4.40030e+01   1.88590e-01  -1.19846e-03
+   3  width_z_02_DG   1.21941e+01   2.25254e-01   6.52468e-04  -2.74591e-01
+   4  z_02_DG_a_frac   9.57508e-01   1.31266e-02   3.99137e-03   6.29236e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2000
+ **********
+ FCN=16550.3 FROM HESSE     STATUS=OK             23 CALLS         307 TOTAL
+                     EDM=2.28728e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_z_02_DG   5.12939e+03   2.09228e-01   2.12685e-04  -5.59266e-01
+   2  width_b_z_02_DG   4.99996e+01   4.41611e+01   7.54362e-03   1.56537e+00
+   3  width_z_02_DG   1.21941e+01   2.25422e-01   1.30494e-04  -5.37788e-01
+   4  z_02_DG_a_frac   9.57508e-01   1.30609e-02   1.59655e-04   1.15555e+00
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooAddPdf::z_02_DG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooGaussian::z_02_DG_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::mean_z_02_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::width_z_02_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::z_02_DG_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooGaussian::z_02_DG_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::width_b_z_02_DG
+
+RooWorkspace(fit_z_02) fit_z_02 contents
+
+variables
+---------
+(B_DTF_M,mean_z_02_DG,mean_z_02_G,width_b_z_02_DG,width_z_02_DG,width_z_02_G,z_02_DG_a_frac)
+
+p.d.f.s
+-------
+RooGaussian::z_02_DG_a[ x=B_DTF_M mean=mean_z_02_DG sigma=width_z_02_DG ] = 0.14051
+RooGaussian::z_02_DG_b[ x=B_DTF_M mean=mean_z_02_DG sigma=width_b_z_02_DG ] = 0.889829
+RooAddPdf::z_02_DG_fit[ z_02_DG_a_frac * z_02_DG_a + [%] * z_02_DG_b ] = 0.17235
+RooGaussian::z_02_G_fit[ x=B_DTF_M mean=mean_z_02_G sigma=width_z_02_G ] = 0.17421
+
+datasets
+--------
+RooDataSet::z_02_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_02_G_fit_z_02_events
+RooFitResult::fitresult_z_02_DG_fit_z_02_events
+
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_02_GEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_z_02_GEP   1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+     2 mean_z_02_GEP   5.14000e+03  4.00000e+00    5.12000e+03  5.16000e+03
+     3 width_z_02_GEP   2.00000e+01  4.90000e+00    1.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00033 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00064 added to diagonal of error matrix
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ FCN=16556.8 FROM MIGRAD    STATUS=CONVERGED     145 CALLS         146 TOTAL
+                     EDM=1.40372e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_z_02_GEP   9.38335e+00   2.01951e+00  -6.41075e-09   0.00000e+00
+   2  mean_z_02_GEP   5.12924e+03   2.01346e-01   3.27746e-04  -1.75937e-02
+   3  width_z_02_GEP   1.28431e+01   1.49371e-01  -1.50140e-04  -6.26369e-02
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative enters zero, param 1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=16556.8 FROM HESSE     STATUS=FAILED          3 CALLS         149 TOTAL
+                     EDM=1.40372e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_z_02_GEP   7.69351e+00   6.64208e+00  -6.41075e-09  -9.94621e+01
+   2  mean_z_02_GEP   5.12924e+03   2.00606e-01   3.27746e-04   3.88989e+02
+   3  width_z_02_GEP   1.28431e+01   1.48466e-01  -1.50140e-04  -1.16293e+03
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooGaussExp::z_02_GEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::mean_z_02_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::width_z_02_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::alpha_z_02_GEP
+
+RooWorkspace(fit_z_02) fit_z_02 contents
+
+variables
+---------
+(B_DTF_M,alpha_z_02_GEP,mean_z_02_DG,mean_z_02_G,mean_z_02_GEP,width_b_z_02_DG,width_z_02_DG,width_z_02_G,width_z_02_GEP,z_02_DG_a_frac)
+
+p.d.f.s
+-------
+RooGaussian::z_02_DG_a[ x=B_DTF_M mean=mean_z_02_DG sigma=width_z_02_DG ] = 0.14051
+RooGaussian::z_02_DG_b[ x=B_DTF_M mean=mean_z_02_DG sigma=width_b_z_02_DG ] = 0.889829
+RooAddPdf::z_02_DG_fit[ z_02_DG_a_frac * z_02_DG_a + [%] * z_02_DG_b ] = 0.17235
+RooGaussExp::z_02_GEP_fit[ m=B_DTF_M m0=mean_z_02_GEP sigma=width_z_02_GEP alpha=alpha_z_02_GEP ] = 0.174259
+RooGaussian::z_02_G_fit[ x=B_DTF_M mean=mean_z_02_G sigma=width_z_02_G ] = 0.17421
+
+datasets
+--------
+RooDataSet::z_02_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_02_G_fit_z_02_events
+RooFitResult::fitresult_z_02_DG_fit_z_02_events
+RooFitResult::fitresult_z_02_GEP_fit_z_02_events
+
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_z_02_BGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_z_02_BGEP   1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+01
+     2 alpha_2_z_02_BGEP   2.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     3 mean_z_02_BGEP   5.14000e+03  4.00000e+00    5.12000e+03  5.16000e+03
+     4 width_L_z_02_BGEP   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     5 width_R_z_02_BGEP   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ MINUIT WARNING IN HESSE
+ ============== Second derivative enters zero, param 1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=16498.2 FROM MIGRAD    STATUS=CONVERGED     243 CALLS         244 TOTAL
+                     EDM=5.93696e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_z_02_BGEP   5.23563e+00   7.04747e-01  -7.78487e-03   0.00000e+00
+   2  alpha_2_z_02_BGEP   1.40721e+00   6.55016e-02  -6.28156e-04  -5.38920e-02
+   3  mean_z_02_BGEP   5.13553e+03   1.90736e-01   2.29364e-03  -5.09072e-01
+   4  width_L_z_02_BGEP   1.65458e+01   2.29524e-01   1.28505e-03  -1.06176e-01
+   5  width_R_z_02_BGEP   7.92999e+00   1.51632e-01  -2.15083e-03  -6.08796e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **HESSE        2500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=16498.2 FROM HESSE     STATUS=FAILED          3 CALLS         247 TOTAL
+                     EDM=5.93696e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_z_02_BGEP   2.81232e+00   2.42095e+00  -7.78487e-03   4.71432e-02
+   2  alpha_2_z_02_BGEP   1.40721e+00   6.55016e-02  -6.28156e-04  -8.01728e-01
+   3  mean_z_02_BGEP   5.13553e+03   1.90736e-01   2.29364e-03  -2.25509e-01
+   4  width_L_z_02_BGEP   1.65458e+01   2.29524e-01   1.28505e-03  -3.44968e-01
+   5  width_R_z_02_BGEP   7.92999e+00   1.51632e-01  -2.15083e-03  -7.51589e-01
+                               ERR DEF= 0.5
+ **********
+ **    8 **SET ERR         0.5
+ **********
+ **********
+ **    9 **SET PRINT           0
+ **********
+ **********
+ **   10 **HESSE        2500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=16498.2 FROM HESSE     STATUS=FAILED          3 CALLS         250 TOTAL
+                     EDM=5.93696e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_z_02_BGEP   2.81232e+00   2.42095e+00  -7.78487e-03   4.71432e-02
+   2  alpha_2_z_02_BGEP   1.40721e+00   6.55016e-02  -6.28156e-04  -8.01728e-01
+   3  mean_z_02_BGEP   5.13553e+03   1.90736e-01   2.29364e-03  -2.25509e-01
+   4  width_L_z_02_BGEP   1.65458e+01   2.29524e-01   1.28505e-03  -3.44968e-01
+   5  width_R_z_02_BGEP   7.92999e+00   1.51632e-01  -2.15083e-03  -7.51589e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooBifurGaussExp::z_02_BGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::mean_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::width_L_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::width_R_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::alpha_1_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_z_02) importing RooRealVar::alpha_2_z_02_BGEP
+
+RooWorkspace(fit_z_02) fit_z_02 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_z_02_BGEP,alpha_2_z_02_BGEP,alpha_z_02_GEP,mean_z_02_BGEP,mean_z_02_DG,mean_z_02_G,mean_z_02_GEP,width_L_z_02_BGEP,width_R_z_02_BGEP,width_b_z_02_DG,width_z_02_DG,width_z_02_G,width_z_02_GEP,z_02_DG_a_frac)
+
+p.d.f.s
+-------
+RooBifurGaussExp::z_02_BGEP_fit[ m=B_DTF_M m0=mean_z_02_BGEP sigmaLo=width_L_z_02_BGEP sigmaHi=width_R_z_02_BGEP alphaLo=alpha_1_z_02_BGEP alphaHi=alpha_2_z_02_BGEP ] = 0.187026
+RooGaussian::z_02_DG_a[ x=B_DTF_M mean=mean_z_02_DG sigma=width_z_02_DG ] = 0.14051
+RooGaussian::z_02_DG_b[ x=B_DTF_M mean=mean_z_02_DG sigma=width_b_z_02_DG ] = 0.889829
+RooAddPdf::z_02_DG_fit[ z_02_DG_a_frac * z_02_DG_a + [%] * z_02_DG_b ] = 0.17235
+RooGaussExp::z_02_GEP_fit[ m=B_DTF_M m0=mean_z_02_GEP sigma=width_z_02_GEP alpha=alpha_z_02_GEP ] = 0.174259
+RooGaussian::z_02_G_fit[ x=B_DTF_M mean=mean_z_02_G sigma=width_z_02_G ] = 0.17421
+
+datasets
+--------
+RooDataSet::z_02_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_z_02_G_fit_z_02_events
+RooFitResult::fitresult_z_02_DG_fit_z_02_events
+RooFitResult::fitresult_z_02_GEP_fit_z_02_events
+RooFitResult::fitresult_z_02_BGEP_fit_z_02_events
+

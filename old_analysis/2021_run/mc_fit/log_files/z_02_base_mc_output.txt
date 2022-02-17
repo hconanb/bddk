@@ -1,0 +1,51 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+RooWorkspace(z_02) z_02 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_z_02_BGEP,alpha_2_z_02_BGEP,mean_z_02_BGEP,width_L_z_02_BGEP,width_R_z_02_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::z_02_BGEP_fit[ m=B_DTF_M m0=mean_z_02_BGEP sigmaLo=width_L_z_02_BGEP sigmaHi=width_R_z_02_BGEP alphaLo=alpha_1_z_02_BGEP alphaHi=alpha_2_z_02_BGEP ] = 1
+
+[#1] INFO:DataHandling -- RooAbsReal::attachToTree(B_DTF_M) TTree Float_t branch B_DTF_M will be converted to double precision.
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_02_events) Skipping event #123 because B_DTF_M cannot accommodate the value 5064.82
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_02_events) Skipping event #249 because B_DTF_M cannot accommodate the value 5187.85
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_02_events) Skipping event #337 because B_DTF_M cannot accommodate the value 5069.57
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_02_events) Skipping event #551 because B_DTF_M cannot accommodate the value 5038.8
+[#1] INFO:DataHandling -- RooTreeDataStore::loadValues(z_02_events) Skipping ...
+[#0] WARNING:DataHandling -- RooTreeDataStore::loadValues(z_02_events) Ignored 50 out-of-range events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(z_02) importing dataset z_02_events
+
+RooWorkspace(z_02) z_02 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_z_02_BGEP,alpha_2_z_02_BGEP,mean_z_02_BGEP,width_L_z_02_BGEP,width_R_z_02_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::z_02_BGEP_fit[ m=B_DTF_M m0=mean_z_02_BGEP sigmaLo=width_L_z_02_BGEP sigmaHi=width_R_z_02_BGEP alphaLo=alpha_1_z_02_BGEP alphaHi=alpha_2_z_02_BGEP ] = 1
+
+datasets
+--------
+RooDataSet::z_02_events(B_DTF_M)
+
+mcws is z_02
+z_02
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/02_z_11198400_2016_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/02_z_11198400_2016_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/02_z_11198400_2017_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/02_z_11198400_2017_T_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/02_z_11198400_2018_nTaT_spectrum_filtered.root
+/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_root/MC/02_z_11198400_2018_T_spectrum_filtered.root
+Saved: /mnt/c/Users/Harris/Google Drive/LHCb/bddk/analysis/2021_run/mc_fit/base_mc_files/z_02.root

@@ -1,0 +1,102 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing dataset zz_07_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_zz_07_BGEP_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_zz_07_BGEP   2.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     2 alpha_2_zz_07_BGEP   8.00000e+00  1.00000e+00    0.00000e+00  1.00000e+01
+     3 mean_zz_07_BGEP   5.12500e+03  3.00000e+00    5.11000e+03  5.14000e+03
+     4 width_L_zz_07_BGEP   1.00000e+01  1.80000e+00    2.00000e+00  2.00000e+01
+     5 width_R_zz_07_BGEP   5.00000e+00  1.50000e+00    2.00000e+00  2.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        2500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ FCN=90956.7 FROM MIGRAD    STATUS=CONVERGED     508 CALLS         509 TOTAL
+                     EDM=6.64345e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.0 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha_1_zz_07_BGEP   5.58712e+00   5.76322e-01   2.50000e-01   0.00000e+00
+   2  alpha_2_zz_07_BGEP   2.08314e+00   9.58644e-02  -9.44057e-05  -1.72859e-02
+   3  mean_zz_07_BGEP   5.12950e+03   2.31011e-01   2.32577e-05   5.68887e-04
+   4  width_L_zz_07_BGEP   1.66909e+01   1.58121e-01   3.84672e-05  -6.27409e-03
+   5  width_R_zz_07_BGEP   8.15728e+00   1.57379e-01  -2.11043e-05   4.54205e-03
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        2500
+ **********
+ MINUIT WARNING IN HESSE
+ ============== Second derivative enters zero, param 1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+  MNHESS FAILS AND WILL RETURN DIAGONAL MATRIX. 
+ FCN=90956.7 FROM HESSE     STATUS=FAILED          3 CALLS         512 TOTAL
+                     EDM=6.64345e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha_1_zz_07_BGEP   3.13470e+00   2.44453e+00   2.50000e-01   1.17695e-01
+   2  alpha_2_zz_07_BGEP   2.08314e+00   7.58453e-02  -9.44057e-05  -6.22874e-01
+   3  mean_zz_07_BGEP   5.12950e+03   7.80869e-02   2.32577e-05   3.04438e-01
+   4  width_L_zz_07_BGEP   1.66909e+01   9.27529e-02   3.84672e-05   6.84551e-01
+   5  width_R_zz_07_BGEP   8.15728e+00   5.97413e-02  -2.11043e-05  -3.21361e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing RooBifurGaussExp::zz_07_BGEP_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing RooRealVar::mean_zz_07_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing RooRealVar::width_L_zz_07_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing RooRealVar::width_R_zz_07_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing RooRealVar::alpha_1_zz_07_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_07) importing RooRealVar::alpha_2_zz_07_BGEP
+
+RooWorkspace(fit_zz_07) fit_zz_07 contents
+
+variables
+---------
+(B_DTF_M,alpha_1_zz_07_BGEP,alpha_2_zz_07_BGEP,mean_zz_07_BGEP,width_L_zz_07_BGEP,width_R_zz_07_BGEP)
+
+p.d.f.s
+-------
+RooBifurGaussExp::zz_07_BGEP_fit[ m=B_DTF_M m0=mean_zz_07_BGEP sigmaLo=width_L_zz_07_BGEP sigmaHi=width_R_zz_07_BGEP alphaLo=alpha_1_zz_07_BGEP alphaHi=alpha_2_zz_07_BGEP ] = 0.589918
+
+datasets
+--------
+RooDataSet::zz_07_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_zz_07_BGEP_fit_zz_07_events
+

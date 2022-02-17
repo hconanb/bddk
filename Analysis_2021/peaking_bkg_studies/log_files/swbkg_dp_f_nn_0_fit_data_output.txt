@@ -1,0 +1,175 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+RooWorkspace(swbkg_dp_f_nn_0) swbkg_dp_f_nn_0 contents
+
+variables
+---------
+(B_DTF_M,all_cats,c0_Z_m_p,mean_MC_01_Z_m_p_G,mean_MC_02_Z_m_p_BG,mean_MC_04_Z_m_p_G,n_Z_m_p_bkg,nny_1,nny_10,nny_11,nny_12,nny_13,nny_14,nny_15,nny_16,nny_17,nny_2,nny_3,nny_4,nny_5,nny_6,nny_7,nny_8,nny_9,width_1_MC_02_Z_m_p_BG,width_2_MC_02_Z_m_p_BG,width_MC_01_Z_m_p_G,width_MC_04_Z_m_p_G)
+
+p.d.f.s
+-------
+RooGaussian::Z_m_p_01_fit[ x=B_DTF_M mean=mean_MC_01_Z_m_p_G sigma=width_MC_01_Z_m_p_G ] = 3.24043e-26
+RooBifurGauss::Z_m_p_02_fit[ x=B_DTF_M mean=mean_MC_02_Z_m_p_BG sigmaL=width_1_MC_02_Z_m_p_BG sigmaR=width_2_MC_02_Z_m_p_BG ] = 3.39521e-08
+RooGaussian::Z_m_p_04_fit[ x=B_DTF_M mean=mean_MC_04_Z_m_p_G sigma=width_MC_04_Z_m_p_G ] = 6.64919e-44
+RooAddPdf::Z_m_p_spectrum_all_fit[ nny_1 * Z_m_p_01_fit + nny_2 * Z_m_p_02_fit + nny_3 * Z_m_p_04_fit + n_Z_m_p_bkg * Z_m_p_spectrum_bkg ] = 0.0625
+RooExponential::Z_m_p_spectrum_bkg[ x=B_DTF_M c=c0_Z_m_p ] = 1
+
+datasets
+--------
+RooDataSet::all_data_sets(all_cats,B_DTF_M)
+
+[#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state Z_m_p_spectrum (4398 dataset entries)
+[#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 1 slave calculators.
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (Z_m_p_01_fit,Z_m_p_02_fit,Z_m_p_04_fit,Z_m_p_spectrum_bkg)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 c0_Z_m_p     0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+     2 mean_MC_01_Z_m_p_G   5.27987e+03  1.08353e-01    5.27000e+03  5.29000e+03
+     3 mean_MC_02_Z_m_p_BG   5.13246e+03  4.69954e-01    5.12000e+03  5.14000e+03
+     4 mean_MC_04_Z_m_p_G   4.98412e+03  2.82345e-01    4.98000e+03  5.00000e+03
+     5 n_Z_m_p_bkg   1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+     6 nny_1        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+     7 nny_2        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+     8 nny_3        5.00000e+02  2.50000e+02    0.00000e+00  1.00000e+04
+     9 width_1_MC_02_Z_m_p_BG   1.60152e+01  3.32630e-01    0.00000e+00  5.00000e+01
+    10 width_2_MC_02_Z_m_p_BG   1.15153e+01  2.98586e-01    0.00000e+00  5.00000e+01
+    11 width_MC_01_Z_m_p_G   7.37230e+00  7.68656e-02    0.00000e+00  2.00000e+01
+    12 width_MC_04_Z_m_p_G   1.53094e+01  2.08115e-01    0.00000e+00  2.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        6000           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ FCN=-5600.72 FROM MIGRAD    STATUS=CONVERGED     629 CALLS         630 TOTAL
+                     EDM=1.24981e-05    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.7 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  c0_Z_m_p    -1.61994e-03   1.01807e-04   9.65271e-08   8.61035e+00
+   2  mean_MC_01_Z_m_p_G   5.27945e+03   2.93981e-01  -1.80720e-04   1.11106e-04
+   3  mean_MC_02_Z_m_p_BG   5.13437e+03   1.56416e+00  -8.88163e-04   7.29328e-05
+   4  mean_MC_04_Z_m_p_G   4.98462e+03   2.39303e+00   1.33261e-03   4.94168e-03
+   5  n_Z_m_p_bkg   2.14523e+03   5.55311e+01  -2.89645e-05  -6.54531e-02
+   6  nny_1        9.70681e+02   3.34642e+01  -1.25489e-05  -6.17612e-04
+   7  nny_2        1.03066e+03   3.61172e+01   6.63758e-06  -3.07888e-04
+   8  nny_3        2.51437e+02   2.45495e+01   7.03405e-05   2.14651e-01
+   9  width_1_MC_02_Z_m_p_BG   1.99356e+01   1.22289e+00  -2.92480e-04  -1.44218e-03
+  10  width_2_MC_02_Z_m_p_BG   9.01723e+00   1.15676e+00   3.47254e-04  -4.74007e-03
+  11  width_MC_01_Z_m_p_G   7.88776e+00   2.79501e-01   1.80858e-05  -6.62180e-04
+  12  width_MC_04_Z_m_p_G   2.00000e+01   2.43884e+00   7.24990e-02  -4.87247e-03
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        6000
+ **********
+ FCN=-5600.72 FROM HESSE     STATUS=OK            129 CALLS         759 TOTAL
+                     EDM=2.92459e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  c0_Z_m_p    -1.61994e-03   1.01791e-04   2.57508e-06  -8.09971e-04
+   2  mean_MC_01_Z_m_p_G   5.27945e+03   2.94018e-01   1.51888e-03  -5.47432e-02
+   3  mean_MC_02_Z_m_p_BG   5.13437e+03   1.55976e+00   2.89885e-03   4.52048e-01
+   4  mean_MC_04_Z_m_p_G   4.98462e+03   2.39320e+00   5.92126e-03  -5.68616e-01
+   5  n_Z_m_p_bkg   2.14523e+03   5.54769e+01   6.42884e-04  -6.07668e-01
+   6  nny_1        9.70681e+02   3.34648e+01   5.69722e-04  -9.37133e-01
+   7  nny_2        1.03066e+03   3.61162e+01   5.94488e-04  -9.17145e-01
+   8  nny_3        2.51437e+02   2.44568e+01   7.59816e-04  -1.25232e+00
+   9  width_1_MC_02_Z_m_p_BG   1.99356e+01   1.22066e+00   1.47029e-03  -2.03988e-01
+  10  width_2_MC_02_Z_m_p_BG   9.01723e+00   1.15431e+00   1.22165e-03  -6.93601e-01
+  11  width_MC_01_Z_m_p_G   7.88776e+00   2.79529e-01   5.70112e-04  -2.12827e-01
+  12  width_MC_04_Z_m_p_G   2.00000e+01   2.45765e+00   3.60991e-02   1.56830e+00
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing dataset all_data_sets
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooCategory::all_cats
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::B_DTF_M
+[#0] ERROR:ObjectHandling -- RooWorkSpace::import(fit_swbkg_dp_f_nn_0) ERROR importing object named all_cats: another instance with same name already in the workspace and no conflict resolution protocol specified
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooSimultaneous::super_fit_Pdf
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooAddPdf::Z_m_p_spectrum_all_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooGaussian::Z_m_p_01_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::mean_MC_01_Z_m_p_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::width_MC_01_Z_m_p_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::nny_1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooBifurGauss::Z_m_p_02_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::mean_MC_02_Z_m_p_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::width_1_MC_02_Z_m_p_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::width_2_MC_02_Z_m_p_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::nny_2
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooGaussian::Z_m_p_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::mean_MC_04_Z_m_p_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::width_MC_04_Z_m_p_G
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::nny_3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooExponential::Z_m_p_spectrum_bkg
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::c0_Z_m_p
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_swbkg_dp_f_nn_0) importing RooRealVar::n_Z_m_p_bkg
+
+RooWorkspace(fit_swbkg_dp_f_nn_0) fit_swbkg_dp_f_nn_0 contents
+
+variables
+---------
+(B_DTF_M,all_cats,c0_Z_m_p,mean_MC_01_Z_m_p_G,mean_MC_02_Z_m_p_BG,mean_MC_04_Z_m_p_G,n_Z_m_p_bkg,nny_1,nny_2,nny_3,width_1_MC_02_Z_m_p_BG,width_2_MC_02_Z_m_p_BG,width_MC_01_Z_m_p_G,width_MC_04_Z_m_p_G)
+
+p.d.f.s
+-------
+RooGaussian::Z_m_p_01_fit[ x=B_DTF_M mean=mean_MC_01_Z_m_p_G sigma=width_MC_01_Z_m_p_G ] = 5.18422e-62
+RooBifurGauss::Z_m_p_02_fit[ x=B_DTF_M mean=mean_MC_02_Z_m_p_BG sigmaL=width_1_MC_02_Z_m_p_BG sigmaR=width_2_MC_02_Z_m_p_BG ] = 0.378306
+RooGaussian::Z_m_p_04_fit[ x=B_DTF_M mean=mean_MC_04_Z_m_p_G sigma=width_MC_04_Z_m_p_G ] = 4.96137e-15
+RooAddPdf::Z_m_p_spectrum_all_fit[ nny_1 * Z_m_p_01_fit + nny_2 * Z_m_p_02_fit + nny_3 * Z_m_p_04_fit + n_Z_m_p_bkg * Z_m_p_spectrum_bkg ] = 0.0887714
+RooExponential::Z_m_p_spectrum_bkg[ x=B_DTF_M c=c0_Z_m_p ] = 0.00023931
+RooSimultaneous::super_fit_Pdf[ indexCat=all_cats Z_m_p_spectrum=Z_m_p_spectrum_all_fit ] = 0
+
+datasets
+--------
+RooDataSet::all_data_sets(all_cats,B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_super_fit_Pdf_all_data_sets
+
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_Z_m_p_spectrum_all_fit_FOR_OBS_B_DTF_M:all_cats with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization --  The following expressions have been identified as constant and will be precalculated and cached: (Z_m_p_01_fit,Z_m_p_02_fit,Z_m_p_04_fit,Z_m_p_spectrum_bkg)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(Z_m_p_spectrum_all_fit) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:InputArguments -- yield in pdf: nny_1 2621.84
+[#1] INFO:InputArguments -- yield in pdf: nny_2 7142.07
+[#1] INFO:InputArguments -- yield in pdf: nny_3 3764.72
+[#1] INFO:InputArguments -- yield in pdf: n_Z_m_p_bkg 10000
+[#1] INFO:Eval -- Calculating sWeight
+Info in <TCanvas::Print>: file plots/9_28/fit_tests/swbkg_dp_f_nn_0.png has been created
+{ "M_m_z_spectrum", 3 }
+{ "P_z_p_spectrum", 2 }
+{ "P_z_pst_spectrum", 4 }
+{ "Z_m_p_spectrum", 0 }
+{ "Z_z_z_spectrum", 1 }
+{ "Zs_sm_p_spectrum", 5 }
+saved: swbkg_dp_f_nn_0.png in plots/9_28/fit_tests/

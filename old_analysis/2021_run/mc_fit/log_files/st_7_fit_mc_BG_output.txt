@@ -1,0 +1,106 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_7) importing dataset st_7_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_7) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_st_7_BG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_st_7_BG   5.28000e+03  2.00000e+00    5.27000e+03  5.29000e+03
+     2 width_1_st_7_BG   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_2_st_7_BG   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (20600.7) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_st_7_BG=5280, width_1_st_7_BG=0.0599409, width_2_st_7_BG=5
+RooBifurGauss::st_7_BG_fit[ x=B_DTF_M mean=mean_st_7_BG sigmaL=width_1_st_7_BG sigmaR=width_2_st_7_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5271.04, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5268.47, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5275.13, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5267.62, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5266.62, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5277.08, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5269.8, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5272.59, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5276.46, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5276.39, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5277.52, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=5274.3, mean=mean_st_7_BG=5280, sigmaL=width_1_st_7_BG=0.0599409, sigmaR=width_2_st_7_BG=5
+    ... (remaining 2038 messages suppressed)
+RooNLLVar::nll_st_7_BG_fit_st_7_events[ paramSet=(mean_st_7_BG,width_1_st_7_BG,width_2_st_7_BG) ]
+     function value is NAN @ paramSet=(mean_st_7_BG = 5280,width_1_st_7_BG = 0.0599409,width_2_st_7_BG = 5)
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=18277.4 FROM MIGRAD    STATUS=CONVERGED      86 CALLS          87 TOTAL
+                     EDM=8.94513e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_st_7_BG   5.27925e+03   1.84794e-01   8.21406e-04   5.90119e-01
+   2  width_1_st_7_BG   6.68400e+00   1.24382e-01   4.34095e-04  -1.11643e+00
+   3  width_2_st_7_BG   6.38825e+00   1.22684e-01   4.35740e-04   1.61650e+00
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=18277.4 FROM HESSE     STATUS=OK             16 CALLS         103 TOTAL
+                     EDM=8.97742e-05    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_st_7_BG   5.27925e+03   1.85510e-01   1.64281e-04  -7.51066e-02
+   2  width_1_st_7_BG   6.68400e+00   1.24663e-01   8.68191e-05  -8.22192e-01
+   3  width_2_st_7_BG   6.38825e+00   1.23113e-01   8.71481e-05  -8.39741e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_7) importing RooBifurGauss::st_7_BG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_7) importing RooRealVar::mean_st_7_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_7) importing RooRealVar::width_1_st_7_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_st_7) importing RooRealVar::width_2_st_7_BG
+
+RooWorkspace(fit_st_7) fit_st_7 contents
+
+variables
+---------
+(B_DTF_M,mean_st_7_BG,width_1_st_7_BG,width_2_st_7_BG)
+
+p.d.f.s
+-------
+RooBifurGauss::st_7_BG_fit[ x=B_DTF_M mean=mean_st_7_BG sigmaL=width_1_st_7_BG sigmaR=width_2_st_7_BG ] = 0.999433
+
+datasets
+--------
+RooDataSet::st_7_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_st_7_BG_fit_st_7_events
+

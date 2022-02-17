@@ -1,0 +1,49 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooAddPdf::z_01_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooGaussian::z_01_DG_a
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::mean_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::width_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::z_01_DG_a_frac
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooGaussian::z_01_DG_b
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::width_b_z_01_DG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooBifurGaussExp::z_02_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::mean_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::width_L_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::width_R_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::alpha_1_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::alpha_2_z_02_BGEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooGaussExp::z_04_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::mean_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::width_z_04_GEP
+[#1] INFO:ObjectHandling -- RooWorkspace::import(zz_dp_f_0) importing RooRealVar::alpha_z_04_GEP
+Traceback (most recent call last):
+  File "data_fit/data_ws_build_script.py", line 491, in <module>
+    build_data_ws(run_name, gc_onflag, fit_strat, specs)
+  File "data_fit/data_ws_build_script.py", line 423, in build_data_ws
+    emptyset = ROOT.RooDataSet("","")
+TypeError: none of the 8 overloaded methods succeeded. Full details:
+  RooDataSet::RooDataSet(const char* name, const char* title, TTree* tree, const RooArgSet& vars, const RooFormulaVar& cutVar, const char* wgtVarName = 0) =>
+    TypeError: takes at least 5 arguments (2 given)
+  RooDataSet::RooDataSet(const char* name, const char* title, RooDataSet* data, const RooArgSet& vars, const RooFormulaVar& cutVar, const char* wgtVarName = 0) =>
+    TypeError: takes at least 5 arguments (2 given)
+  RooDataSet::RooDataSet(const char* name, const char* title, TTree* tree, const RooArgSet& vars, const char* cuts = 0, const char* wgtVarName = 0) =>
+    TypeError: takes at least 4 arguments (2 given)
+  RooDataSet::RooDataSet(const char* name, const char* title, const RooArgSet& vars, const RooCmdArg& arg1, const RooCmdArg& arg2 = RooCmdArg(), const RooCmdArg& arg3 = RooCmdArg(), const RooCmdArg& arg4 = RooCmdArg(), const RooCmdArg& arg5 = RooCmdArg(), const RooCmdArg& arg6 = RooCmdArg(), const RooCmdArg& arg7 = RooCmdArg(), const RooCmdArg& arg8 = RooCmdArg()) =>
+    TypeError: takes at least 4 arguments (2 given)
+  RooDataSet::RooDataSet(const char* name, const char* title, RooDataSet* data, const RooArgSet& vars, const char* cuts = 0, const char* wgtVarName = 0) =>
+    TypeError: takes at least 4 arguments (2 given)
+  RooDataSet::RooDataSet(const RooDataSet& other, const char* newname = 0) =>
+    TypeError: could not convert argument 1
+  RooDataSet::RooDataSet() =>
+    TypeError: takes at most 0 arguments (2 given)
+  RooDataSet::RooDataSet(const char* name, const char* title, const RooArgSet& vars, const char* wgtVarName = 0) =>
+    TypeError: takes at least 3 arguments (2 given)

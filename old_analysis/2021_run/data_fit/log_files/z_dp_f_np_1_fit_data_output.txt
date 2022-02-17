@@ -1,0 +1,127 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[#1] INFO:Minization --  Including the following constraint terms in minimization: (z_dp_f_np_1_nu0_g,z_dp_f_np_1_nu1_g,z_dp_f_np_1_nu2_g,z_dp_f_np_1_nu3_g,z_dp_f_np_1_nu4_g,z_dp_f_np_1_nu5_g,z_dp_f_np_1_nu6_g,z_dp_f_np_1_nu7_g,z_dp_f_np_1_nu8_g,z_dp_f_np_1_nu9_g,z_dp_f_np_1_nu10_g,z_dp_f_np_1_nu11_g,z_dp_f_np_1_nu12_g,z_dp_f_np_1_nu13_g,z_dp_f_np_1_nu14_g,z_dp_f_np_1_nu15_g,z_dp_f_np_1_nu16_g,z_dp_f_np_1_nu17_g,z_dp_f_np_1_nu18_g,z_dp_f_np_1_nu19_g,z_dp_f_np_1_nu20_g)
+[#1] INFO:Fitting -- RooAddition::defaultErrorLevel(nll_super_fit_Pdf_all_data_sets_with_constr) Summation contains a RooNLLVar, using its error level
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state m_spectrum (1977 dataset entries)
+RooAbsTestStatistic::initSimMode: creating slave calculator #1 for state p_spectrum (5831 dataset entries)
+RooAbsTestStatistic::initSimMode: creating slave calculator #2 for state st_spectrum (537 dataset entries)
+RooAbsTestStatistic::initSimMode: creating slave calculator #3 for state z_spectrum (2944 dataset entries)
+RooAbsTestStatistic::initSimMode: creating slave calculator #4 for state zz_spectrum (5421 dataset entries)
+[#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 5 slave calculators.
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (m_03_fit,m_04_fit,m_spectrum_bkg)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (p_05_fit,p_020607_fit,p_0408_fit,p_spectrum_bkg)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (st_07_fit,st_0408_fit,st_spectrum_bkg)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (z_01_fit,z_02_fit,z_04_fit,z_spectrum_bkg)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (zz_09_fit,zz_0710_fit,zz_040812_fit,zz_spectrum_bkg)
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha_1_p_020607_BGEP   2.04322e+00  1.12270e-01    0.00000e+00  1.00000e+01
+     2 alpha_1_st_0408_BGEP   1.66740e+00  1.01103e-01    0.00000e+00  1.00000e+01
+     3 alpha_2_p_020607_BGEP   7.71524e-01  7.89068e-02    0.00000e+00  1.00000e+01
+     4 alpha_2_st_0408_BGEP   6.07878e-01  1.50961e-01    0.00000e+00  1.00000e+01
+     5 alpha_z_04_GEP   1.59753e+00  1.82041e-01    5.00000e-02  7.00000e+00
+     6 bf_1         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+     7 bf_10        1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+     8 bf_12        1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+     9 bf_2         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+    10 bf_3         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+    11 bf_4         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+    12 bf_5         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+    13 bf_6         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+    14 bf_7         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+    15 bf_8         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+    16 bf_9         1.00000e+00  5.00000e-01    0.00000e+00  1.00000e+02
+    17 c0_m         0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    18 c0_p         0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    19 c0_st        0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    20 c0_z         0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    21 c0_zz        0.00000e+00  4.00000e-01   -2.00000e+00  2.00000e+00
+    22 mean_m_03_BG   5.12957e+03  4.07601e-01    5.12000e+03  5.14000e+03
+    23 mean_m_04_G   4.97877e+03  2.02739e-01    4.97000e+03  5.01000e+03
+    24 mean_p_020607_BGEP   5.13308e+03  4.32370e-01    5.11000e+03  5.15000e+03
+    25 mean_p_0408_BG   4.97921e+03  3.98689e-01    4.97000e+03  5.01000e+03
+    26 mean_p_05_G   5.27931e+03  7.83978e-02    5.27000e+03  5.29000e+03
+    27 mean_st_0408_BGEP   5.13263e+03  7.15840e-01    5.12000e+03  5.14000e+03
+    28 mean_st_07_G   5.27902e+03  8.77919e-02    5.27000e+03  5.29000e+03
+    29 mean_z_01_G   5.27994e+03  1.06180e-01    5.27000e+03  5.29000e+03
+    30 mean_z_02_BG   5.13257e+03  4.59797e-01    5.12000e+03  5.14000e+03
+    31 mean_z_04_GEP   4.98436e+03  3.29037e-01    4.98000e+03  5.00000e+03
+    32 mean_zz_040812_BG   4.97652e+03  1.78500e-01    4.96500e+03  4.98500e+03
+    33 mean_zz_0710_BG   5.12482e+03  1.90407e-01    5.11000e+03  5.15000e+03
+    34 mean_zz_09_G   5.27936e+03  6.64403e-02    5.27000e+03  5.29000e+03
+    35 n_m_bkg      1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+    36 n_p_bkg      1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+    37 n_st_bkg     1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+03
+    38 n_z_bkg      1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+04
+    39 n_zz_bkg     1.00000e+02  5.00000e+01    0.00000e+00  1.00000e+05
+    40 width_1_m_03_BG   1.62077e+01  2.93397e-01    0.00000e+00  5.00000e+01
+    41 width_1_p_0408_BG   1.58493e+01  2.93104e-01    0.00000e+00  5.00000e+01
+    42 width_1_z_02_BG   1.55101e+01  3.23271e-01    0.00000e+00  5.00000e+01
+    43 width_1_zz_040812_BG   1.75930e+01  1.22194e-01    0.00000e+00  5.00000e+01
+    44 width_1_zz_0710_BG   1.52347e+01  1.33177e-01    0.00000e+00  5.00000e+01
+    45 width_2_m_03_BG   8.62566e+00  2.45926e-01    0.00000e+00  5.00000e+01
+    46 width_2_p_0408_BG   1.91903e+01  2.66399e-01    0.00000e+00  5.00000e+01
+    47 width_2_z_02_BG   1.11145e+01  2.92052e-01    0.00000e+00  5.00000e+01
+    48 width_2_zz_040812_BG   1.69413e+01  1.22641e-01    0.00000e+00  5.00000e+01
+    49 width_2_zz_0710_BG   1.48408e+01  1.24016e-01    0.00000e+00  5.00000e+01
+    50 width_L_p_020607_BGEP   1.78640e+01  2.73442e-01    1.00000e+00  3.00000e+01
+    51 width_L_st_0408_BGEP   1.49006e+01  4.95775e-01    2.00000e+00  2.00000e+01
+    52 width_R_p_020607_BGEP   7.04058e+00  6.80207e-01    1.00000e+00  3.00000e+01
+    53 width_R_st_0408_BGEP   5.84970e+00  1.41261e+00    2.00000e+00  2.00000e+01
+    54 width_m_04_G   1.43952e+01  1.50641e-01    0.00000e+00  2.00000e+01
+    55 width_p_05_G   7.19900e+00  5.55710e-02    0.00000e+00  2.00000e+01
+    56 width_st_07_G   6.53710e+00  6.21144e-02    0.00000e+00  2.00000e+01
+    57 width_z_01_G   7.16443e+00  7.52429e-02    0.00000e+00  2.00000e+01
+    58 width_z_04_GEP   1.44461e+01  2.68662e-01    4.00000e+00  3.00000e+01
+    59 width_zz_09_G   6.89415e+00  4.70403e-02    0.00000e+00  2.00000e+01
+    60 z_dp_f_np_1_nu0   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    61 z_dp_f_np_1_nu1   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    62 z_dp_f_np_1_nu10   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    63 z_dp_f_np_1_nu11   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    64 z_dp_f_np_1_nu12   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    65 z_dp_f_np_1_nu13   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    66 z_dp_f_np_1_nu14   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    67 z_dp_f_np_1_nu15   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    68 z_dp_f_np_1_nu16   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    69 z_dp_f_np_1_nu17   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    70 z_dp_f_np_1_nu18   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    71 z_dp_f_np_1_nu19   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    72 z_dp_f_np_1_nu2   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    73 z_dp_f_np_1_nu20   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    74 z_dp_f_np_1_nu21   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    75 z_dp_f_np_1_nu22   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    76 z_dp_f_np_1_nu23   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    77 z_dp_f_np_1_nu24   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    78 z_dp_f_np_1_nu3   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    79 z_dp_f_np_1_nu4   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    80 z_dp_f_np_1_nu5   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    81 z_dp_f_np_1_nu6   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    82 z_dp_f_np_1_nu7   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    83 z_dp_f_np_1_nu8   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+    84 z_dp_f_np_1_nu9   0.00000e+00  1.00000e+00   -1.00000e+01  1.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD     4.2e+04           1
+ **********

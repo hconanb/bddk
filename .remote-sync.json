@@ -1,0 +1,19 @@
+{
+  "logger": {
+    "title": "Remote Sync"
+  },
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "lxplus.cern.ch",
+  "port": "22",
+  "target": "/afs/cern.ch/user/h/hbernste/bddk",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "hbernste",
+  "password": "602458Aros!",
+  "watch": [],
+  "transport": "scp"
+}

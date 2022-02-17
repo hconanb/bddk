@@ -1,0 +1,174 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+Error in <TGClient::TGClient>: can't open display "localhost:0.0", switching to batch mode...
+ In case you run from a remote ssh session, reconnect with ssh -Y
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_04) importing dataset zz_04_events
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_04) importing RooRealVar::B_DTF_M
+[#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_zz_04_BG_fit_FOR_OBS_B_DTF_M with 0 entries
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+ **********
+ **    1 **SET PRINT           0
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 mean_zz_04_BG   4.97000e+03  2.00000e+00    4.96000e+03  4.98000e+03
+     2 width_1_zz_04_BG   2.00000e+01  5.00000e+00    0.00000e+00  5.00000e+01
+     3 width_2_zz_04_BG   5.00000e+00  2.50000e+00    0.00000e+00  5.00000e+01
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           0
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ **********
+ **    6 **MIGRAD        1500           1
+ **********
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== 354.107 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00632 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00704 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00894 added to diagonal of error matrix
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (373092) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_zz_04_BG=4962.25, width_1_zz_04_BG=0.0086497, width_2_zz_04_BG=3.95852
+RooNLLVar::nll_zz_04_BG_fit_zz_04_events[ paramSet=(mean_zz_04_BG,width_1_zz_04_BG,width_2_zz_04_BG) ]
+     function value is NAN @ paramSet=(mean_zz_04_BG = 4962.25,width_1_zz_04_BG = 0.0086497,width_2_zz_04_BG = 3.95852)
+RooBifurGauss::zz_04_BG_fit[ x=B_DTF_M mean=mean_zz_04_BG sigmaL=width_1_zz_04_BG sigmaR=width_2_zz_04_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4920.09, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4958.84, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4951.57, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4955.43, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4953.1, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4961.31, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4943.18, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4943.95, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4960.84, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4953, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4958.06, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4951.01, mean=mean_zz_04_BG=4962.25, sigmaL=width_1_zz_04_BG=0.0086497, sigmaR=width_2_zz_04_BG=3.95852
+    ... (remaining 2038 messages suppressed)
+
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (373092) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_zz_04_BG=4960.05, width_1_zz_04_BG=1.89768, width_2_zz_04_BG=0.203069
+RooNLLVar::nll_zz_04_BG_fit_zz_04_events[ paramSet=(mean_zz_04_BG,width_1_zz_04_BG,width_2_zz_04_BG) ]
+     function value is NAN @ paramSet=(mean_zz_04_BG = 4960.05,width_1_zz_04_BG = 1.89768,width_2_zz_04_BG = 0.203069)
+RooBifurGauss::zz_04_BG_fit[ x=B_DTF_M mean=mean_zz_04_BG sigmaL=width_1_zz_04_BG sigmaR=width_2_zz_04_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4977.05, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4983.78, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4975.71, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4972.73, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4990.37, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4982.65, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4968.09, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4971.64, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4980.78, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4978.98, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4995.27, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4975.04, mean=mean_zz_04_BG=4960.05, sigmaL=width_1_zz_04_BG=1.89768, sigmaR=width_2_zz_04_BG=0.203069
+    ... (remaining 2038 messages suppressed)
+
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.01276 added to diagonal of error matrix
+[#0] WARNING:Minization -- RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (915003) to force MIGRAD to back out of this region. Error log follows
+Parameter values: mean_zz_04_BG=4962.69, width_1_zz_04_BG=0.920948, width_2_zz_04_BG=23.7497
+RooNLLVar::nll_zz_04_BG_fit_zz_04_events[ paramSet=(mean_zz_04_BG,width_1_zz_04_BG,width_2_zz_04_BG) ]
+     function value is NAN @ paramSet=(mean_zz_04_BG = 4962.69,width_1_zz_04_BG = 0.920948,width_2_zz_04_BG = 23.7497)
+RooBifurGauss::zz_04_BG_fit[ x=B_DTF_M mean=mean_zz_04_BG sigmaL=width_1_zz_04_BG sigmaR=width_2_zz_04_BG ]
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4920.98, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4926.43, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4925.22, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4920.34, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4926.18, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4923.86, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4922.88, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4925, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4923.89, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4923.03, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4922.19, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+     getLogVal() top-level p.d.f evaluates to zero @ x=B_DTF_M=4927.2, mean=mean_zz_04_BG=4962.69, sigmaL=width_1_zz_04_BG=0.920948, sigmaR=width_2_zz_04_BG=23.7497
+    ... (remaining 22 messages suppressed)
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ FCN=103361 FROM MIGRAD    STATUS=CONVERGED     328 CALLS         329 TOTAL
+                     EDM=1.97758e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  mean_zz_04_BG   4.97815e+03   2.24715e-01   3.16702e-03   6.55256e-02
+   2  width_1_zz_04_BG   1.63826e+01   1.50784e-01   8.15640e-04   4.03311e-02
+   3  width_2_zz_04_BG   1.06635e+01   1.37981e-01   7.14611e-04   3.10391e-01
+                               ERR DEF= 0.5
+ **********
+ **    7 **SET ERR         0.5
+ **********
+ **********
+ **    8 **SET PRINT           0
+ **********
+ **********
+ **    9 **HESSE        1500
+ **********
+ FCN=103361 FROM HESSE     STATUS=OK             16 CALLS         345 TOTAL
+                     EDM=2.01207e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  mean_zz_04_BG   4.97815e+03   2.30859e-01   1.26681e-04   9.52156e-01
+   2  width_1_zz_04_BG   1.63826e+01   1.53756e-01   3.26256e-05  -3.51917e-01
+   3  width_2_zz_04_BG   1.06635e+01   1.41438e-01   2.85845e-05  -6.10725e-01
+                               ERR DEF= 0.5
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_04) importing RooBifurGauss::zz_04_BG_fit
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_04) importing RooRealVar::mean_zz_04_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_04) importing RooRealVar::width_1_zz_04_BG
+[#1] INFO:ObjectHandling -- RooWorkspace::import(fit_zz_04) importing RooRealVar::width_2_zz_04_BG
+
+RooWorkspace(fit_zz_04) fit_zz_04 contents
+
+variables
+---------
+(B_DTF_M,mean_zz_04_BG,width_1_zz_04_BG,width_2_zz_04_BG)
+
+p.d.f.s
+-------
+RooBifurGauss::zz_04_BG_fit[ x=B_DTF_M mean=mean_zz_04_BG sigmaL=width_1_zz_04_BG sigmaR=width_2_zz_04_BG ] = 0.995729
+
+datasets
+--------
+RooDataSet::zz_04_events(B_DTF_M)
+
+generic objects
+---------------
+RooFitResult::fitresult_zz_04_BG_fit_zz_04_events
+

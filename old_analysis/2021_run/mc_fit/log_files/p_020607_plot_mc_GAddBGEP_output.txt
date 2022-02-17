@@ -1,0 +1,18 @@
+-------------------------
+Set LHCb Style - Feb 2012
+-------------------------
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_020607_GAddBGEP_fit) directly selected PDF components: (p_020607_GAddBGEP_fit)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_020607_GAddBGEP_fit) indirectly selected PDF components: (p_020607_GAddBGEP_fit_a,p_020607_GAddBGEP_fit_b)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_020607_GAddBGEP_fit) directly selected PDF components: (p_020607_GAddBGEP_fit_a)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_020607_GAddBGEP_fit) indirectly selected PDF components: ()
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_020607_GAddBGEP_fit) directly selected PDF components: (p_020607_GAddBGEP_fit_b)
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(p_020607_GAddBGEP_fit) indirectly selected PDF components: ()
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Info in <TCanvas::Print>: file plots/6_11/mc_fits/p_020607_GAddBGEP.png has been created
+2.7885662346779907
+saved: p_020607_GAddBGEP.png in plots/6_11/mc_fits/
