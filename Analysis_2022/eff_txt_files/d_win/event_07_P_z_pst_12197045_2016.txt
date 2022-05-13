@@ -1,0 +1,2 @@
+,Scheme ID,Year,$\epsilon_{D} Sig$,$\epsilon_{D} Sb$
+0,7c,2016,77.734+/-5.241,4.573+/-0.975

@@ -1,0 +1,2 @@
+,Scheme ID,Year,Number Accepted,$\epsilon_{geometrical}$
+0,4d,2017,317558.0,9.285+/-0.219

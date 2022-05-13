@@ -1,0 +1,2 @@
+,Scheme ID,Year,$\epsilon_{D} Sig$,$\epsilon_{D} Sb$
+0,ST,2017,58.943+/-4.364,5.081+/-1.042

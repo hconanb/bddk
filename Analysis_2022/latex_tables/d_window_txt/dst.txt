@@ -1,0 +1,2 @@
+,D Candidate,Fit Mean [MeV],"Signal Window [MeV, MeV]","Sideband Window [MeV, MeV]"
+0,$\Dstarm - \Dzb$,$145.45$,"$[143.55, 147.35]$","$[140.70, 142.60]$ and $[148.30, 150.20]$"

@@ -1,0 +1,2 @@
+,Spectrum,Year,Type,Canidates/Unique Event In Signal,Canidates/Unique Event In Sideband,Canidates Cut w dtfx2 selection in Signal,Canidates Cut w random selection in Sideband,Event Overlap: Signal and Sideband,Final Events in Signal,Final Events in Sideband
+0,09_Z_z_z_11196019,2016,mc,3818,136,27,1,3,3791,132

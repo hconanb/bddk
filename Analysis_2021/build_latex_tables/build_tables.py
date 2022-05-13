@@ -4,30 +4,38 @@ from essentials import *
 
 def eff_table(flag):
 
-    for flag in ["gen","can","event"]:
+    for flag in ["trigger"]:
 
-        file_list = glob.glob(f"../build_rootfiles/eff_txt_files/*{flag}_eff_txt")
+        file_list = glob.glob(f"/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/mc_efficiencies/build_root_effs/*{flag}_eff_txt")
 
         if flag == "gen":
-            mcdf_cols = ['Scheme ID','Year','Number Accepted','$\epsilon_{geometrical}$','$\epsilon_{stripping}$']
-            caption_line = "MC Efficiencies: Geometrical and Stripping"
-            the_column_format = 'ccccc'
+            mcdf_cols = ['Scheme ID','Year','Number Accepted','$\epsilon_{geometrical}$']
+            caption_line = "MC Efficiencies: Generator"
+            the_column_format = 'cccc'
             label_line_1 = "tab:genstrip_1"
             label_line_2 = "tab:genstrip_2"
 
         if flag == "can":
-            mcdf_cols = ['Scheme ID','Year','$\epsilon_{offline}$','$\epsilon_{D Window}$']
-            caption_line = "MC Candidate Efficiencies: Offline and D Window"
-            the_column_format = 'cccc'
+            mcdf_cols = ['Scheme ID','Year','$\epsilon_{stripping}$', '$\epsilon_{offline}$','$\epsilon_{D Window}$']
+            caption_line = "MC Candidate Efficiencies"
+            the_column_format = 'ccccc'
             label_line_1 = "tab:can_offdwin_1"
             label_line_2 = "tab:can_offdwin_2"
 
         if flag == "event":
-            mcdf_cols = ['Scheme ID','Year','$\epsilon_{offline}$','$\epsilon_{D Window}$']
-            caption_line = "MC Event Efficiencies: Offline and D Window"
-            the_column_format = 'cccc'
+            mcdf_cols = ['Scheme ID','Year','$\epsilon_{stripping}$', '$\epsilon_{offline}$','$\epsilon_{D Window}$']
+            caption_line = "MC Event Efficiencies"
+            the_column_format = 'ccccc'
             label_line_1 = "tab:event_offdwin_1"
             label_line_2 = "tab:event_offdwin_2"
+
+        if flag == "trigger":
+            file_list = glob.glob(f"/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/mc_efficiencies/boot_effs/*")
+            mcdf_cols = ['Scheme ID','Year','Final Bootstraped TOS Events','Final Bootstraped TIS Events']
+            caption_line = "MC Efficiencies: Disjoint Trigger Regions"
+            the_column_format = 'cccc'
+            label_line_1 = "tab:tr_1"
+            label_line_2 = "tab:tr_2"
 
         df = pandas.DataFrame()
         for file in file_list:
@@ -36,13 +44,12 @@ def eff_table(flag):
 
         df_i = df.set_index(['Scheme ID','Year'])
 
-
-        scheme = [1,'2a,3a','4a','4b','4c','4d',5,6,'7a','7b','7c','8a','8b','8c',9,10,12,13,14,15,16]
+        scheme = [1,'2a,3a','4a','4b','4c','4d',5,6,'7a','7b','7c','8a','8b','8c',9,10,12,"norm7","norm8"]
 
         df_i = df_i.reindex(scheme, level=0)
 
-        df_i_1 = df_i.iloc[:36,:]
-        df_i_2 = df_i.iloc[36:63,:]
+        df_i_1 = df_i.iloc[:39,:]
+        df_i_2 = df_i.iloc[39:69,:]
         # df_i_3 = df_i.iloc[42:63,:]
 
         latex_1 = df_i_1.to_latex(index = True, multirow = True, escape=False, column_format=the_column_format, label = label_line_1, caption = caption_line, )
@@ -54,41 +61,47 @@ def eff_table(flag):
             tf.write(latex_2)
             # tf.write(latex_3)
         # print(latex)
-
 def build_d_window_dict():
-    for spec in ["mp", "z", "d0k3pi", "dst", "sm"]:
+    for d1_flag in ["mp", "z", "d0k3pi", "dst"]:
+        if d1_flag == "dst":
+            dst_flag = True
+        else:
+            dst_flag = False
 
-        d1_mstart, d1_std  = get_dwindow_values("none", spec, "none", dst_flag = False, rflag = "print")
+        d1_mstart, d1_std  = get_dwindow_values("temp", d1_flag, "z", dst_flag, rflag = "table")
 
         d1minw = d1_mstart - 2*d1_std
         d1maxw = d1_mstart + 2*d1_std
+        d1Lsbmin = d1_mstart - 5*d1_std
+        d1Lsbmax = d1_mstart - 3*d1_std
+        d1Rsbmin = d1_mstart + 3*d1_std
+        d1Rsbmax = d1_mstart + 5*d1_std
 
-        if spec == "mp":
+        if d1_flag == "mp":
             d1_name = "\Dm"
-        if spec == "z":
+        if d1_flag == "z":
             d1_name = "\Dzb"
-        if spec == "dst" :
+        if d1_flag == "dst" :
             d1_name = "\Dstarm - \Dzb"
-        if spec == "sm" :
-            d1_name = "\Dsm"
-        if spec == "d0k3pi":
+        if d1_flag == "d0k3pi":
             d1_name = r"\Dz\rightarrow\kaon\pion\pion\pion"
 
         d1_dict_temp = {
                         'D Candidate': f"${d1_name}$",
-                        'Fit Mean [MeV]': f"${d1_mstart:.3f}$",
-                        'Mass Window [MeV, MeV]': f'$[{d1minw:.3f}, {d1maxw:.3f}]$'
+                        'Fit Mean [MeV]': f"${d1_mstart:.2f}$",
+                        'Signal Window [MeV, MeV]': f'$[{d1minw:.2f}, {d1maxw:.2f}]$',
+                        'Sideband Window [MeV, MeV]': f'$[{d1Lsbmin:.2f}, {d1Lsbmax:.2f}]$ and $[{d1Rsbmin:.2f}, {d1Rsbmax:.2f}]$'
                         }
 
         d1_df = pandas.DataFrame(d1_dict_temp, index=[0])
-        D1_txt = f"d_window_txt_files/{spec}_D1"
+        D1_txt = f"d_window_txt_files/{d1_flag}.txt"
         d1_df.to_csv(D1_txt)
 def build_d_window_latex():
     file_list = glob.glob(f"/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/build_latex_tables/d_window_txt_files/*")
     df = pandas.DataFrame()
 
     for file in file_list:
-        df_cols = ['D Candidate','Fit Mean [MeV]','Mass Window [MeV, MeV]']
+        df_cols = ['D Candidate','Fit Mean [MeV]','Signal Window [MeV, MeV]', 'Sideband Window [MeV, MeV]']
         frame = pandas.read_csv(file, usecols = df_cols)
         df = df.append(frame)
         # index_col.append(iname)
@@ -104,14 +117,15 @@ def build_d_window_latex():
     # df_i = df_i.reindex(sorter,level=0)
     label_line = "tab:dwindows"
 
-    latex = df_i.to_latex(index = True, multirow = True, escape=False, column_format='cccc', caption = caption_line, label = label_line)
-    print(latex)
+    latex = df_i.to_latex(index = True, multirow = True, escape=False, column_format='ccccc', caption = caption_line, label = label_line)
+    with open(f'tex_files/dwin.tex','w') as tf:
+        tf.write(latex)
 def build_lap_latex():
     file_list = glob.glob(f"/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/build_rootfiles/lap_txt_files/*")
     df = pandas.DataFrame()
 
     for file in file_list:
-        df_cols = ['Spec','Year','Candidates in Z_z_z','Candidates in P_z_pst','Number of Duplicate Candidates']
+        df_cols = ['Spec','Year','Candidates in Z_z_z','Candidates in P_z_pst','Shared Candidates Removed from Z_z_z']
         frame = pandas.read_csv(file, usecols = df_cols)
         df = df.append(frame)
         # index_col.append(iname)
@@ -120,14 +134,14 @@ def build_lap_latex():
     # df_i = pandas.MultiIndex.from_frame(df)
     caption_line = "Summary of Canidates removed from ZZ spectrum"
     label_line = "tab:lap"
-    df = df.rename(columns={"Candidates in Z_z_z": "Candidates in ZZ", 'Candidates in P_z_pst': 'Candidates in ST', 'Number of Duplicate Candidates': 'Number of Shared Candidates'})
-
+    df = df.rename(columns={"Candidates in Z_z_z": "Candidates in ZZ", 'Candidates in P_z_pst': 'Candidates in ST', 'Shared Candidates Removed from Z_z_z': 'Number of Shared Candidates Removed from ZZ'})
 
     df_i = df.set_index(['Spec','Year'])
-    df_i = df_i.rename(index={'04_P_z_pst_11198023': '4d', '07_P_z_pst_12197045': '7b', '08_P_z_pst_12197423': '8b'})
+    df_i = df_i.rename(index={"Z_z_z": "Data", '04_Z_z_z_11198023': '4d', '07_Z_z_z_12197045': '7b', '08_Z_z_z_12197423': '8b'})
 
     latex = df_i.to_latex(index = True, multirow = True, escape=False, column_format='ccccc', caption = caption_line, label = label_line)
-
+    with open(f'tex_files/lap.tex','w') as tf:
+        tf.write(latex)
 def build_can_latex():
     file_list = glob.glob(f"/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/mult_can/mult_can_txt_files/*")
     df = pandas.DataFrame()

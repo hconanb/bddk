@@ -20,8 +20,6 @@ dsm = ufloat(0.0539, 0.0015)
 d0bar = ufloat(0.0395, 0.00031)
 d0bar4 = ufloat(0.0823, 0.0014)
 
-
-
 dstmdmpi0 = ufloat(0.323, 0.005)
 dstmd0pim = ufloat(0.677, 0.005)
 
@@ -36,27 +34,26 @@ B_B0_norm8 = ufloat(1.07e-03, 1.10e-04)
 # dws_nds = data_fit_file.Get("test_2_4_nds")
 # fitresult_nds = dws_nds.obj("fitresult_super_fit_Pdf_all_data_sets")
 
-def get_norm_param(norm_id, trigger_flag, year, df):
-
-    norm_id = norm_id.split("_")[0]
-    norm_base_file = ROOT.TFile(f"../normalization_fit/fit_files/{norm_id}_{year}_{trigger_flag}.root")
-    norm_ws = norm_base_file.Get(f"{norm_id}")
-    n_base = norm_ws.var(f"n_{norm_id}_signal")
-    fitresult = norm_ws.obj(f"fitresult_{norm_id}_fit_{norm_id}_data")
-    # errerr = n_base.getPropagatedError(fitresult)
-    # print(errerr, n_base.getError())
-    n_val = ufloat(n_base.getValV(), n_base.getError())
-    df.loc[(norm_id, int(year)),f"Data Yield {trigger_flag}"] = n_val
-    # return [n_val.n, n_val.s, trigger_flag, year]
-
-
-def ufloat_tuple(y, num, scheme_id):
-    bf_nom = num.n
-    bf_err = num.s
-    nom_obj = dws.obj(y)
-    y_nom = nom_obj.getValV()
-    y_err = nom_obj.getPropagatedError(fitresult)
-    return [y_nom, y_err, bf_nom, bf_err, scheme_id]
+# def get_norm_param(norm_id, trigger_flag, year, df):
+#
+#     norm_id = norm_id.split("_")[0]
+#     norm_base_file = ROOT.TFile(f"../normalization_fit/fit_files/{norm_id}_{year}_{trigger_flag}.root")
+#     norm_ws = norm_base_file.Get(f"{norm_id}")
+#     n_base = norm_ws.var(f"n_{norm_id}_signal")
+#     fitresult = norm_ws.obj(f"fitresult_{norm_id}_fit_{norm_id}_data")
+#     # errerr = n_base.getPropagatedError(fitresult)
+#     # print(errerr, n_base.getError())
+#     n_val = ufloat(n_base.getValV(), n_base.getError())
+#     df.loc[(norm_id, int(year)),f"Data Yield {trigger_flag}"] = n_val
+#     # return [n_val.n, n_val.s, trigger_flag, year]
+#
+# def ufloat_tuple(y, num, scheme_id):
+#     bf_nom = num.n
+#     bf_err = num.s
+#     nom_obj = dws.obj(y)
+#     y_nom = nom_obj.getValV()
+#     y_err = nom_obj.getPropagatedError(fitresult)
+#     return [y_nom, y_err, bf_nom, bf_err, scheme_id]
 
 # def ufloat_ds_tuple(y, num, scheme_id):
 #     bf_nom = num.n
@@ -135,47 +132,42 @@ df_gen = df_gen.set_index(['Scheme ID','Year'])
 df_boot = df_boot.set_index(['Scheme ID','Year'])
 df = pandas.concat([df_gen, df_boot], axis=1, join="inner")
 
-n7bf = d0bar * d0bar4
-n8bf = dm*d0bar4
+# n7bf = d0bar * d0bar4
+# n8bf = dm*d0bar4
 
-df["Data Yield T"] = ""
-df["Data Yield nTaT"] = ""
-df["Branching Fraction D1_X_D2"] = ""
-df.loc["norm7","Branching Fraction D1_X_D2"] = n7bf
-df.loc["norm8","Branching Fraction D1_X_D2"] = n8bf
-print(df)
+# df["Data Yield T"] = ""
+# df["Data Yield nTaT"] = ""
+# df["Branching Fraction D1_X_D2"] = ""
+# df.loc["norm7","Branching Fraction D1_X_D2"] = n7bf
+# df.loc["norm8","Branching Fraction D1_X_D2"] = n8bf
 
-
-
-for n in ["norm7","norm8"]:
-    for trigger_flag in ["T", "nTaT"]:
-        for year in ["2016", "2017", "2018"]:
-            get_norm_param(n, trigger_flag, year, df)
-# print(df)
-df_final = pandas.DataFrame()
-# df_group = pandas.DataFrame()
-# # df_final_temp_2 = pandas.DataFrame()
+# for n in ["norm7","norm8"]:
+#     for trigger_flag in ["T", "nTaT"]:
+#         for year in ["2016", "2017", "2018"]:
+#             get_norm_param(n, trigger_flag, year, df)
 #
-df_final["MC_TOS_Yield"] = df['Final Bootstraped TOS Events'].apply(ufloat_fromstr)
-df_final["MC_TIS_Yield"] = df['Final Bootstraped TIS Events'].apply(ufloat_fromstr)
-df_final["Gen Events"] = unumpy.uarray(df['Number Accepted'], df['Number Accepted'].apply(lambda x : np.sqrt(x)/x))
+# df_final = pandas.DataFrame()
 #
-df_final["Gen Eff"] = (df['Generator (%)'].apply(ufloat_fromstr))/100
+# df_final["MC_TOS_Yield"] = df['Final Bootstraped TOS Events'].apply(ufloat_fromstr)
+# df_final["MC_TIS_Yield"] = df['Final Bootstraped TIS Events'].apply(ufloat_fromstr)
+# df_final["Gen Events"] = unumpy.uarray(df['Number Accepted'], df['Number Accepted'].apply(lambda x : np.sqrt(x)/x))
+# #
+# df_final["Gen Eff"] = (df['Generator (%)'].apply(ufloat_fromstr))/100
+# #
+# df_final["TOS Eff"] = (df_final["MC_TOS_Yield"]/df_final["Gen Events"])*df_final["Gen Eff"]
+# df_final["TIS Eff"] = (df_final["MC_TIS_Yield"]/df_final["Gen Events"])*df_final["Gen Eff"]
 #
-df_final["TOS Eff"] = (df_final["MC_TOS_Yield"]/df_final["Gen Events"])*df_final["Gen Eff"]
-df_final["TIS Eff"] = (df_final["MC_TIS_Yield"]/df_final["Gen Events"])*df_final["Gen Eff"]
-
-df_final["TOS Eff n"] = df_final["TOS Eff"].apply(lambda x : x.n)
-df_final["TOS Eff err"] = df_final["TOS Eff"].apply(lambda x : x.s)
-df_final["TIS Eff n"] = df_final["TIS Eff"].apply(lambda x : x.n)
-df_final["TIS Eff err"] = df_final["TIS Eff"].apply(lambda x : x.s)
-
-df_final["TOS Data n"] = df["Data Yield T"].apply(lambda x : x.n)
-df_final["TOS Data err"] = df["Data Yield T"].apply(lambda x : x.s)
-df_final["TIS Data n"] = df["Data Yield nTaT"].apply(lambda x : x.n)
-df_final["TIS Data err"] = df["Data Yield nTaT"].apply(lambda x : x.s)
-df_final["BF D1 x D2 n"] = df["Branching Fraction D1_X_D2"].apply(lambda x : x.n)
-df_final["BF D1 x D2 err"] = df["Branching Fraction D1_X_D2"].apply(lambda x : x.s)
+# df_final["TOS Eff n"] = df_final["TOS Eff"].apply(lambda x : x.n)
+# df_final["TOS Eff err"] = df_final["TOS Eff"].apply(lambda x : x.s)
+# df_final["TIS Eff n"] = df_final["TIS Eff"].apply(lambda x : x.n)
+# df_final["TIS Eff err"] = df_final["TIS Eff"].apply(lambda x : x.s)
+#
+# df_final["TOS Data n"] = df["Data Yield T"].apply(lambda x : x.n)
+# df_final["TOS Data err"] = df["Data Yield T"].apply(lambda x : x.s)
+# df_final["TIS Data n"] = df["Data Yield nTaT"].apply(lambda x : x.n)
+# df_final["TIS Data err"] = df["Data Yield nTaT"].apply(lambda x : x.s)
+# df_final["BF D1 x D2 n"] = df["Branching Fraction D1_X_D2"].apply(lambda x : x.n)
+# df_final["BF D1 x D2 err"] = df["Branching Fraction D1_X_D2"].apply(lambda x : x.s)
 
 # df_final["Eff"] = ((df_final["MC_TOS_Yield"] + df_final["MC_TIS_Yield"])/df_final["Gen Events"])*df_final["Gen Eff"]
 #
@@ -199,8 +191,16 @@ df_final["BF D1 x D2 err"] = df["Branching Fraction D1_X_D2"].apply(lambda x : x
 # norm7_y = df_final.loc["norm7", ["TOS Eff n","TOS Eff err", "TIS Eff n", "TIS Eff err"]]
 # norm8_y = df_final.loc["norm8", ["TOS Eff n","TOS Eff err", "TIS Eff n", "TIS Eff err"]]
 
-with pandas.ExcelWriter("Arvind_Norm_02152022_numbers.xlsx") as writer:
-    df_final.to_excel(writer, sheet_name='Norm Breakdown')
+# with pandas.ExcelWriter("Arvind_Norm_02152022_numbers.xlsx") as writer:
+#     df_final.to_excel(writer, sheet_name='Norm Breakdown')
+#     # df_group[["Final Eff Nom", "Final Eff Err"]].to_excel(writer, sheet_name='MC Effs')
+#     # df_norm7.to_excel(writer, sheet_name='Norm7_fit')
+#     # df_norm8.to_excel(writer, sheet_name='Norm8_fit')
+#     # norm7_y.to_excel(writer, sheet_name='Norm7_eff')
+#     # norm8_y.to_excel(writer, sheet_name='Norm8_eff')
+#
+with pandas.ExcelWriter("Harris_numbers.xlsx") as writer:
+    df.to_excel(writer)
     # df_group[["Final Eff Nom", "Final Eff Err"]].to_excel(writer, sheet_name='MC Effs')
     # df_norm7.to_excel(writer, sheet_name='Norm7_fit')
     # df_norm8.to_excel(writer, sheet_name='Norm8_fit')
