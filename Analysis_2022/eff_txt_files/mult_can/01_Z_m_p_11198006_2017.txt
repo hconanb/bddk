@@ -1,0 +1,2 @@
+,Spectrum,Year,Type,Canidates in Signal OG,Canidates in Sideband OG,Canidates Cut w random selection over All,Events in Sig after Random Selection,Events in SB after Random Selection
+0,01_Z_m_p_11198006,2017,mc,1586,86,43,1551,78

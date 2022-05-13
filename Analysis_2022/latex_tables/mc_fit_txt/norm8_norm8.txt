@@ -1,0 +1,2 @@
+,MC Scheme,Shape,Mean,Fraction of Fit,Width 1,Width 2,Alpha 1,Alpha 2
+0,norm8,DG,5279.97+/-0.09,0.50+/-0.16,6.2+/-0.6,10.1+/-0.8,NA,NA

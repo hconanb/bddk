@@ -1,0 +1,2 @@
+,Scheme ID,Year,$\epsilon_{D} Sig$,$\epsilon_{D} Sb$
+0,ZZ,2018,60.219+/-1.061,6.591+/-0.286

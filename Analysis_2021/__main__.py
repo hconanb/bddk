@@ -38,16 +38,18 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter)
     parser.add_argument('--run_name', default = "test")
-    parser.add_argument('--specs', default = ["Z_m_p","Z_z_z","P_z_p","M_m_z","P_z_pst","Zs_sm_p"], nargs='+')
+    parser.add_argument('--specs', default = ["Z_m_p","Z_z_z","P_z_p","M_m_z","P_z_pst"], nargs='+')
 
     parser.add_argument('--data_build', action='store_true')
     parser.add_argument('--data_plot',action='store_true')
-    parser.add_argument('--split_flag',action='store_true')
 
     parser.add_argument('--data_corr_build', action = 'store_true')
     parser.add_argument('--data_corr_plot', action = 'store_true')
-    parser.add_argument('--data_post_d_plot', action = 'store_true')
 
+    parser.add_argument('--data_charm_fit', action='store_true')
+    parser.add_argument('--data_charm_plot',action='store_true')
+
+    parser.add_argument('--split_flag',action='store_true')
     parser.add_argument('--fit_strat', default = "dp_f")
     parser.add_argument('--gc_onflag', default = 0, type=int)
     parser.add_argument('--fix_flag', action='store_true')
@@ -61,11 +63,9 @@ if __name__ == '__main__':
 
     parser.add_argument('--mc_build_pizy', action='store_true')
 
-
     parser.add_argument('--mc_fit', action='store_true')
     parser.add_argument('--mc_plot',action='store_true')
     parser.add_argument('--mc_res',action='store_true')
-
 
     parser.add_argument('--bdt_rw', action='store_true')
 
@@ -79,10 +79,15 @@ if __name__ == '__main__':
     # data_fit = args.data_fit
     data_plot = args.data_plot
 
+    data_charm_fit = args.data_charm_fit
+    data_charm_plot = args.data_charm_plot
+
     data_corr_build = args.data_corr_build
     data_corr_plot = args.data_corr_plot
 
-    data_post_d_plot = args.data_post_d_plot
+    # sw_data_test = args.sw_data_test
+
+    # data_post_d_plot = args.data_post_d_plot
 
     split_flag = args.split_flag
     fix_flag = args.fix_flag
@@ -102,48 +107,52 @@ if __name__ == '__main__':
     bdt_rw = args.bdt_rw
 
     mc_event_shape_list = [
-        # # spectrum_id, [List of MC files], [List of shapes to fit], "B Mean Guess", "B_Mean_Guess_Window", "B Fit Window"
-        # ["Z_m_p_01", ["01_Z_m_p_11198006"], ["G","DG","BG","GEP","BGEP"], 5280, 10, 25],
-        # # ["Z_m_p_02", ["02_Z_m_p_11198400"], ["G","DG","BG","GEP","BGEP"], 5130, 10, 50],
-        # # ["Z_m_p_03", ["02_Z_m_p_11198400"], ["G","DG","BG","GEP","BGEP"], 5130, 10, 50],
-        # ["Z_m_p_04", ["04_Z_m_p_11198401"], ["G","DG","BG","GEP","BGEP"], 4985, 20, 50],
-        # ["Z_m_p_0203", ["02_Z_m_p_11198400"], ["G","DG","BG","GEP","BGEP"], 5130, 10, 50],
+        # # # spectrum_id, [List of MC files], [List of shapes to fit], "B Mean Guess", "B_Mean_Guess_Window", "B Fit Window"
+        # ["Z_m_p_01", ["01_Z_m_p_11198006"], ["DG"], 5280, 10, 25],
+        # ["Z_m_p_02", ["02_Z_m_p_11198400"], ["BGEP"], 5130, 10, 50],
+        # # # # ["Z_m_p_03", ["02_Z_m_p_11198400"], ["G","DG","BG","GEP","BGEP"], 5130, 10, 50],
+        # ["Z_m_p_04", ["04_Z_m_p_11198401"], ["BGEP"], 4985, 20, 50],
+        # ["Z_m_p_0203", ["02_Z_m_p_11198400"], ["cb1L", "cb1R", "cb2"], 5130, 10, 50],
+        #
+        # ["Z_z_z_04",["04_Z_z_z_11198023"], ["BGEP"], 4975, 10, 50],
 
-            # ["Z_z_z_04",["04_Z_z_z_11198023"], ["G","DG","BG","GEP","BGEP"], 4970, 10, 50],
-            # # ["Z_z_z_07",["07_Z_z_z_12197045"], ["G","DG","BG","GEP","BGEP"], 5125, 15, 50],
-            # ["Z_z_z_08",["08_Z_z_z_12197423"], ["G","DG","BG","GEP","BGEP"], 4980, 10, 65],
-            # # ["Z_z_z_09",["09_Z_z_z_11196019"], ["G","DG","BG","GEP","BGEP"], 5280, 10, 30],
-            # # ["Z_z_z_10",["10_Z_z_z_11196413"], ["GEPAddBG"], 5130, 30, 60],
-            # ["Z_z_z_12",["12_Z_z_z_11196414"], ["G","DG","BG","GEP","BGEP"], 4980, 10, 80],
+        # ["Z_z_z_07",["07_Z_z_z_12197045"], ["BGEP"], 5120, 15, 40],
         # #
-        # ["Z_z_z_0710", ["07_Z_z_z_12197045", "10_Z_z_z_11196413"], ["GAddBGEP"],  5125, 30, 50],
-        # # ["Z_z_z_040812", ["04_Z_z_z_11198023", "08_Z_z_z_12197423", "12_Z_z_z_11196414"], ["G","DG","BG","GEP","BGEP"],  4980, 10, 80],
-        # #
-        # # ["P_z_p_02", ["02_P_z_p_11198005"], ["G","DG","BG","GEP","BGEP"], 5130, 10, 60],
-        # # ["P_z_p_04", ["04_P_z_p_11198410"], ["G","DG","BG","GEP","BGEP"], 4985, 10, 60],
-        # # ["P_z_p_05", ["05_P_z_p_12197023"], ["G","DG","BG","GEP","BGEP"], 5280, 10, 40],
-        # # ["P_z_p_06", ["06_P_z_p_12197410"], ["GEPAddBGEP"], 5130, 15, 80],
-        # # ["P_z_p_07", ["07_P_z_p_12197400"], ["G","DG","BG","GEP","BGEP"], 5130, 15, 60],
-        # # ["P_z_p_08", ["08_P_z_p_12197401"], ["G","DG","BG","GEP","BGEP"], 4985, 20, 70],
-        # # # # #
-        # ["P_z_p_020607", ["02_P_z_p_11198005", "06_P_z_p_12197410", "07_P_z_p_12197400"], ["GAddBGEP"], 5130, 20, 50],
-        # ["P_z_p_0408", ["04_P_z_p_11198410", "08_P_z_p_12197401"], ["GAddBGEP"], 4980, 30, 70],
-        # #
-        # ["M_m_z_03", ["02_P_z_p_11198005"], ["G","DG","BG","GEP","BGEP"], 5130, 10, 60],
-        # ["M_m_z_04", ["04_P_z_p_11198410"], ["G","DG","BG","GEP","BGEP"], 4985, 10, 60],
-        # #
-        # ["P_z_pst_07", ["07_P_z_pst_12197045"], ["G","DG","BG","GEP","BGEP"], 5280, 10, 30],
-        # ["P_z_pst_04", ["04_P_z_pst_11198023"], ["G","DG","BG","GEP","BGEP"], 5130, 30, 50],
-        # ["P_z_pst_08", ["08_P_z_pst_12197423"], ["G","DG","BG","GEP","BGEP"], 5130, 30, 50],
-        # ["P_z_pst_0408", ["04_P_z_pst_11198023", "08_P_z_pst_12197423"], ["GAddBGEP"], 5130, 30, 50],
+        # ["Z_z_z_08",["08_Z_z_z_12197423"], ["GAddBGEP_fr"], 4975, 20, 80],
+        #
+        # ["Z_z_z_09",["09_Z_z_z_11196019"], ["DG"], 5280, 10, 20],
+        # ["Z_z_z_10",["10_Z_z_z_11196413"], ["GEPAddBGEP_fr"], 5130, 40, 80],
+        # ["Z_z_z_12",["12_Z_z_z_11196414"], ["GAddBGEP_fr"], 4980, 10, 80],
 
-        ["Zs_sm_p_13", ["13_Zs_sm_p_13198040"], ["G","DG","BG","GEP","BGEP"], 5367, 30, 25],
-        ["Zs_sm_p_14", ["14_Zs_sm_p_13198200"], ["G","DG","BG","GEP","BGEP"], 5220, 30, 100],
-        ["Zs_sm_p_15", ["15_Zs_sm_p_13198400"], ["G","DG","BG","GEP","BGEP"], 5220, 30, 50],
-        ["Zs_sm_p_16", ["16_Zs_sm_p_13198600"], ["G","DG","BG","GEP","BGEP"], 5075, 20, 100],
+        # ["Z_z_z_0710", ["07_Z_z_z_12197045", "10_Z_z_z_11196413"], ["GAddBG_fr","GEPAddBG","GAddBGEP_fr","GEPAddBGEP_fr"],  5125, 30, 60],
+        # ["Z_z_z_040812", ["04_Z_z_z_11198023", "08_Z_z_z_12197423", "12_Z_z_z_11196414"], ["GAddBG_fr","GEPAddBG","GAddBGEP_fr","GEPAddBGEP_fr"],  4980, 10, 80],
+        #
+        # ["P_z_p_02", ["02_P_z_p_11198005"], ["BGEP"], 5120, 20, 50],
+        # ["P_z_p_04", ["04_P_z_p_11198410"], ["BGEP"], 4975, 10, 50],
+        # ["P_z_p_05", ["05_P_z_p_12197023"], ["DG"], 5280, 10, 40],
+        # ["P_z_p_06", ["06_P_z_p_12197410"], ["GEPAddBGEP_fr"], 5130, 15, 80],
+        # ["P_z_p_07", ["07_P_z_p_12197400"], ["BGEP"], 5125, 15, 40],
+        # ["P_z_p_08", ["08_P_z_p_12197401"], ["GAddBGEP_fr"], 4985, 20, 70],
+        # # # # # #
+        # ["P_z_p_020607", ["02_P_z_p_11198005", "06_P_z_p_12197410", "07_P_z_p_12197400"], ["GAddBG_fr","GEPAddBG","GAddBGEP_fr","GEPAddBGEP_fr",], 5130, 20, 50],
+        # ["P_z_p_0408", ["04_P_z_p_11198410", "08_P_z_p_12197401"], ["GAddBG_fr","GEPAddBG","GAddBGEP_fr","GEPAddBGEP_fr",], 4980, 30, 70],
+        # # # #
+        # ["M_m_z_03", ["02_P_z_p_11198005"], ["BGEP"], 5120, 20, 50],
+        # ["M_m_z_04", ["04_P_z_p_11198410"], ["BGEP"], 4975, 10, 50],
+        # #
+        # ["P_z_pst_07", ["07_P_z_pst_12197045"], ["BGEP"], 5280, 10, 25],
+        # ["P_z_pst_04", ["04_P_z_pst_11198023"], ["BGEP"], 5125, 30, 30],
+        # ["P_z_pst_08", ["08_P_z_pst_12197423"], ["BGEP"], 5130, 30, 60],
 
-        # ["norm7", ["norm7_norm7_12197008"], ["G","DG","BG","GEP","BGEP"], 5280, 30, 50],
-        # ["norm8", ["norm8_norm8_11198007"], ["G","DG","BG","GEP","BGEP"], 5280, 30, 50],
+        ["P_z_pst_0408", ["04_P_z_pst_11198023", "08_P_z_pst_12197423"], ["BGEP","GAddBGEP_fr"], 5130, 30, 50],
+
+        # ["Zs_sm_p_13", ["13_Zs_sm_p_13198040"], ["G","DG","BG","GEP","BGEP"], 5367, 30, 25],
+        # ["Zs_sm_p_14", ["14_Zs_sm_p_13198200"], ["G","DG","BG","GEP","BGEP"], 5220, 30, 100],
+        # ["Zs_sm_p_15", ["15_Zs_sm_p_13198400"], ["G","DG","BG","GEP","BGEP"], 5220, 30, 50],
+        # ["Zs_sm_p_16", ["16_Zs_sm_p_13198600"], ["G","DG","BG","GEP","BGEP"], 5075, 20, 100],
+
+        # ["norm7", ["norm7_norm7_12197008"], ["DG"], 5280, 30, 30],
+        # ["norm8", ["norm8_norm8_11198007"], ["DG"], 5280, 30, 30],
     ]
 
     # Build no correlation fit, no splits
@@ -154,9 +163,17 @@ if __name__ == '__main__':
         for spec in specs:
             data_fit_v1.plot_nn_data(run_name, spec, split_flag)
 
+    if data_charm_fit:
+        for spec in specs:
+            data_fit_v1.build_nn_sw_fit(run_name, spec, split_flag = False, fix_flag = False, smear_flag = False, varoi = "B_M")
+    if data_charm_plot:
+        for spec in specs:
+            data_fit_v1.plot_nn_data(run_name, spec, split_flag, varoi = "B_M")
 
+    # if sw_data_test:
+    #     data_fit_v1.build_test_data_sw(run_name, "Z_m_p", split_flag, fix_flag, smear_flag)
     if data_corr_build:
-        data_fit_v1.build_comp_ws_fit(run_name, ["Z_m_p","Z_z_z","P_z_p","M_m_z","P_z_pst","Zs_sm_p"], split_flag = True, fix_flag = True, smear_flag = True, gc_onflag = 0)
+        data_fit_v1.build_comp_ws_fit(run_name, ["Z_m_p","Z_z_z","P_z_p","M_m_z","P_z_pst"], split_flag = True, fix_flag = True, smear_flag = True, gc_onflag = 1)
     if data_corr_plot:
         data_fit_v1.plot_coor_data(run_name, specs)
         #"Z_z_z","P_z_p","P_z_pst
@@ -181,7 +198,7 @@ if __name__ == '__main__':
             mc_ws_build_script.plot_mc(nms[0], shape_list)
     if mc_build_pizy:
         spec = "Z_z_z_0710"
-        piz_spec_list = ["07_Z_z_z_12197045"]
+        # piz_spec_list = ["07_Z_z_z_12197045"]
         y_spec_list = ["10_Z_z_z_11196413"]
         mc_ws_build_script.build_mc_pizy_ws(spec, piz_spec_list, y_spec_list, 5125, 20, 65)
         spec = "Z_z_z_040812"
@@ -196,54 +213,49 @@ if __name__ == '__main__':
         piz_spec_list = ["02_P_z_p_11198005", "07_P_z_p_12197400"]
         y_spec_list = ["06_P_z_p_12197410"]
         mc_ws_build_script.build_mc_pizy_ws(spec, piz_spec_list, y_spec_list, 5130, 30, 70)
-    # if data_post_d_plot:
-    #     for spec in ["Z_m_p","Z_z_z","P_z_p","M_m_z","P_z_pst","Zs_sm_p"]:
-    #         data_fit_v1.plot_post_d_data(spec)
-    # if norm_build:
-    #     for spec in ["norm7","norm8"]:
-    #         data_fit_v1.build_norm_fit(run_name, spec, split_flag, fix_flag, smear_flag)
-    # if norm_plot:
-    #     for spec in ["norm7","norm8"]:
-    #         data_fit_v1.plot_norm(run_name, spec)
-    # if mc_res:
-    #     mc_res_test.build_tmc_ws([("02_Z_m_p_11198400", 1), ("04_Z_m_p_11198401", 2)])
-    #     # for mc_id, mc_file, mp in zip(["02","04"],["02_Z_m_p_11198400","04_Z_m_p_11198401"],[1,2]):
-    #     #     mc_res_test.create_new_tree("Z_m_p", "01", mc_id, mc_file, mp)
-    #     #     mc_res_test.compare_res("Z_m_p", mc_id, mc_file, mp)
-    #     # mc_res_test.build_tmc_ws([("07_Z_z_z_12197045", 1),
-    #     #                           ("10_Z_z_z_11196413", 1),
-    #     #                           ("04_Z_z_z_11198023", 2),
-    #     #                           ("08_Z_z_z_12197423", 2),
-    #     #                           ("12_Z_z_z_11196414", 2)])
-    #     # for mc_id, mc_file, mp in zip(["07","10","04","08","12"],["07_Z_z_z_12197045","10_Z_z_z_11196413","04_Z_z_z_11198023", "08_Z_z_z_12197423","12_Z_z_z_11196414"],[1,1,2,2,2]):
-    #     #     mc_res_test.create_new_tree("Z_z_z", "09", mc_id, mc_file, mp)
-    #     #     mc_res_test.compare_res("Z_z_z", mc_id, mc_file, mp)
-    #     # mc_res_test.build_tmc_ws([("02_P_z_p_11198005", 1),
-    #     #                           ("06_P_z_p_12197410", 1),
-    #     #                           ("07_P_z_p_12197400", 1),
-    #     #                           ("04_P_z_p_11198410", 2),
-    #     #                           ("08_P_z_p_12197401", 2)])
-    #     # for mc_id, mc_file, mp in zip(["02","06","07","04","08"],["02_P_z_p_11198005","06_P_z_p_12197410","07_P_z_p_12197400","04_P_z_p_11198410","08_P_z_p_12197401"],[1,1,1,2,2]):
-    #     #     mc_res_test.create_new_tree("P_z_p", "05", mc_id, mc_file, mp)
-    #     #     mc_res_test.compare_res("P_z_p", mc_id, mc_file, mp)
-    #     # mc_res_test.build_tmc_ws([("04_P_z_pst_11198023", 1),
-    #     # #                           ("08_P_z_pst_12197423", 1)])
-    #     # for mc_id, mc_file, mp in zip(["04","08"],["04_P_z_pst_11198023", "08_P_z_pst_12197423"],[1,1]):
-    #     #     mc_res_test.create_new_tree("P_z_pst", "07", mc_id, mc_file, mp)
-    #     #     mc_res_test.compare_res("P_z_pst", mc_id, mc_file, mp)
+
+    if mc_res:
+        # mc_res_test.build_tmc_ws([("02_Z_m_p_11198400", 1), ("04_Z_m_p_11198401", 2)])
+        # # for mc_id, mc_file, mp in zip(["02","04"],["02_Z_m_p_11198400","04_Z_m_p_11198401"],[1,2]):
+        # #     mc_res_test.create_new_tree("Z_m_p", "01", mc_id, mc_file, mp)
+        # #     mc_res_test.compare_res("Z_m_p", mc_id, mc_file, mp)
+        # mc_res_test.build_tmc_ws([("07_Z_z_z_12197045", 1),
+        #                           ("10_Z_z_z_11196413", 1),
+        #                           ("04_Z_z_z_11198023", 2),
+        #                           ("08_Z_z_z_12197423", 2),
+        #                           ("12_Z_z_z_11196414", 2)])
+        # # for mc_id, mc_file, mp in zip(["07","10","04","08","12"],["07_Z_z_z_12197045","10_Z_z_z_11196413","04_Z_z_z_11198023", "08_Z_z_z_12197423","12_Z_z_z_11196414"],[1,1,2,2,2]):
+        # #     mc_res_test.create_new_tree("Z_z_z", "09", mc_id, mc_file, mp)
+        # #     mc_res_test.compare_res("Z_z_z", mc_id, mc_file, mp)
+        # mc_res_test.build_tmc_ws([("02_P_z_p_11198005", 1),
+        #                           ("06_P_z_p_12197410", 1),
+        #                           ("07_P_z_p_12197400", 1),
+        #                           ("04_P_z_p_11198410", 2),
+        #                           ("08_P_z_p_12197401", 2)])
+        # for mc_id, mc_file, mp in zip(["02","06","07","04","08"],["02_P_z_p_11198005","06_P_z_p_12197410","07_P_z_p_12197400","04_P_z_p_11198410","08_P_z_p_12197401"],[1,1,1,2,2]):
+        #     mc_res_test.create_new_tree("P_z_p", "05", mc_id, mc_file, mp)
+        #     mc_res_test.compare_res("P_z_p", mc_id, mc_file, mp)
+        mc_res_test.build_tmc_ws([("04_P_z_pst_11198023", 1),
+                                  ("08_P_z_pst_12197423", 1)])
+        # for mc_id, mc_file, mp in zip(["04","08"],["04_P_z_pst_11198023", "08_P_z_pst_12197423"],[1,1]):
+        #     mc_res_test.create_new_tree("P_z_pst", "07", mc_id, mc_file, mp)
+        #     mc_res_test.compare_res("P_z_pst", mc_id, mc_file, mp)
     if bdt_rw:
         # ("Z_m_p", "01")]
         #[("Z_m_p", "02"), ("Z_m_p", "04")]
         #("Z_z_z", "09"),
         #("Z_z_z", "07"), ("Z_z_z", "10")
         #("Z_z_z", "04"), ("Z_z_z", "08"), ("Z_z_z", "12")
-        # mc_list = [("Z_m_p", "01", [20e6, 12e6, 12e6]), ("Z_m_p", "02", [18.5e6, 11e6, 11e6]), ("Z_m_p", "04", [17e6, 10e6, 10e6])]
-        mc_list = [("Z_z_z", "09", [50e6, 50e6, 50e6]), ("Z_z_z", "07", [50e6, 50e6, 50e6]), ("Z_z_z", "10", [50e6, 50e6, 50e6])]
+        #, )
+# , ("Z_m_p", "02", [18.25e6, 11e6, 11e6]), ("Z_m_p", "04", [17.25e6, 10e6, 10e6])
+        # mc_list = [("Z_m_p", "01", [19.75e6, 11.7e6, 11.7e6])]
+        mc_list = [("Z_m_p", "02", [18.25e6, 11e6, 11e6])]
+        # mc_list = [("Z_z_z", "09", [50e6, 50e6, 50e6]), ("Z_z_z", "07", [50e6, 50e6, 50e6]), ("Z_z_z", "10", [50e6, 50e6, 50e6])]
         # mc_list = [("Z_z_z", "04", [50e6, 50e6, 50e6]), ("Z_z_z", "08", [50e6, 50e6, 50e6]), ("Z_z_z", "12", [50e6, 50e6, 50e6])]
         # mc_list = [("Z_m_p", "01", [20e6, 12e6, 12e6]), ("Z_m_p", "02", [18.5e6, 11e6, 11e6]), ("Z_m_p", "04", [17e6, 10e6, 10e6])]
         # mc_list = [("Z_m_p", "01", [20e6, 12e6, 12e6]), ("Z_m_p", "02", [18.5e6, 11e6, 11e6]), ("Z_m_p", "04", [17e6, 10e6, 10e6])]
         # mc_list = [("Z_m_p", "01", [20e6, 12e6, 12e6]), ("Z_m_p", "02", [18.5e6, 11e6, 11e6]), ("Z_m_p", "04", [17e6, 10e6, 10e6])]
         # mc_list = [("Z_m_p", "01", [20e6, 12e6, 12e6]), ("Z_m_p", "02", [18.5e6, 11e6, 11e6]), ("Z_m_p", "04", [17e6, 10e6, 10e6])]
-
-
-        bdt_test.bdt_test(run_name, mc_list, "all")
+        # mc_list = [("norm7","norm7", [50e6, 50e6, 50e6])]
+        bdt_test.bdt_test(run_name, mc_list)
+        # bdt_test.bdt_comp("sw_test_2_18")

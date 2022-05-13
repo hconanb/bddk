@@ -1,0 +1,2 @@
+,Scheme ID,Year,$\epsilon_{trigger} ALL$,$\epsilon_{trigger} H$,$\epsilon_{trigger} HLT1$,$\epsilon_{trigger} HLT2$
+0,6,2018,99.084+/-2.802,93.869+/-2.692,99.920+/-2.833,96.663+/-2.765

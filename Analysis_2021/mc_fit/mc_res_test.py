@@ -8,13 +8,12 @@ RDF = ROOT.ROOT.RDataFrame
 def grab_file_list(id_list):
     file_list = []
     for file_id in id_list:
-        if "Z_m_p" in file_id or "P_z_pst" in file_id or "Zs_sm_p" in file_id or "norm" in file_id:
-            file_list = file_list + glob.glob(f"/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_MC/*/post_d/{file_id}.root")
-        elif "04_Z_z_z" in file_id or "07_Z_z_z" in file_id or "08_Z_z_z" in file_id:
-            file_list = file_list + glob.glob(f"/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_MC/*/nolap/{file_id}.root")
-        elif ("Z_z_z" in file_id or "P_z_p" in file_id):
-            file_list = file_list + glob.glob(f"/mnt/c/Users/Harris/Desktop/rootfiles/2021_filtered_MC/*/post_veto/{file_id}.root")
-    return file_list
+        file_list = file_list + glob.glob(f"/mnt/c/Users/Harris/Desktop/rootfiles/2022_filtered_MC/*/final_sample/{file_id}.root")
+    tchain = ROOT.TChain()
+    for file_name in file_list:
+        tchain.Add(f"{file_name}/DecayTreeTuple_T")
+        tchain.Add(f"{file_name}/DecayTreeTuple_nTaT")
+    return tchain
 
 def build_tmc_ws(spec_list):
 
@@ -25,11 +24,9 @@ def build_tmc_ws(spec_list):
         id_list = [tuple[0]]
         mp = tuple[1]
 
-        tc = ROOT.TChain(f"DecayTreeTuple")
-        fl = grab_file_list(id_list)
+        tc = grab_file_list(id_list)
+
         spec = id_list[0]
-        for file_name in fl:
-            tc.Add(file_name)
 
         mc_rdf = RDF(tc)
         mc_rdf = mc_rdf.Define("truth_m_rec", "B_TrueMass - B_DTF_M")
@@ -42,31 +39,33 @@ def build_tmc_ws(spec_list):
             xmin = 4900
             xmax = 5050
 
-        h_bdtfm = mc_rdf.Histo1D((f"{spec}_B_DTF_M", f"{spec}_B_DTF_M", nbins, 4000, 6000), "B_DTF_M")
-        h_btruem = mc_rdf.Histo1D((f"{spec}_B_TrueMass", f"{spec}_B_TrueMass", nbins, 4000, 6000), "B_TrueMass")
-        h_tmr = mc_rdf.Histo1D((f"{spec}_Btmr", f"{spec}_Btmr", 100, -50, 50), "truth_m_rec")
+        h_bdtfm = mc_rdf.Histo1D((f"{spec}_B_DTF_M", f"{spec}_B_DTF_M", nbins, xmin, xmax), "B_DTF_M")
+        h_btruem = mc_rdf.Histo1D((f"{spec}_B_TrueMass", f"{spec}_B_TrueMass", nbins, xmin, xmax), "B_TrueMass")
+        h_tmr = mc_rdf.Histo1D((f"{spec}_Btmr", f"{spec}_Btmr", 100, -30, 30), "truth_m_rec")
         tmr_list.append(h_tmr.GetPtr())
 
-        c1 = ROOT.TCanvas("c1","c1")
-        h_bdtfm_c = h_bdtfm.DrawCopy("")
-        h_btruem_c = h_btruem.DrawCopy("Same")
+        # c1 = ROOT.TCanvas("c1","c1")
+        # h_bdtfm_c = h_bdtfm.DrawCopy("")
+        # h_btruem_c = h_btruem.DrawCopy("Same")
+        #
+        # h_bdtfm_c.SetLineColor(ROOT.kRed)
+        # h_btruem_c.SetLineColor(ROOT.kBlue)
+        #
+        # legend = ROOT.TLegend(0.70, 0.4, 0.90, 0.93)
+        # #legend.SetHeader(title,"C")
+        # legend.AddEntry(f"{spec}_B_DTF_M",f"{spec}_B_DTF_M","l")
+        # legend.AddEntry(f"{spec}_B_DTF_M",f"{spec}_B_DTF_M","l")
+        #
+        # save_png(c1, f"mc_res_test", f"{spec}_TruthM_BDTFM", rpflag = 0)
 
-        h_bdtfm_c.SetLineColor(ROOT.kRed)
-        h_btruem_c.SetLineColor(ROOT.kBlue)
 
-        legend = ROOT.TLegend(0.70, 0.4, 0.90, 0.93)
-        #legend.SetHeader(title,"C")
-        legend.AddEntry(f"{spec}_B_DTF_M",f"{spec}_B_DTF_M","l")
-        legend.AddEntry(f"{spec}_B_DTF_M",f"{spec}_B_DTF_M","l")
+    for i in tmr_list:
+        i.Scale(tmr_list[0].Integral()/i.Integral())
 
-        save_png(c1, f"mc_res_test", f"{spec}_TruthM_BDTFM", rpflag = 0)
-    #
-    # c2 = ROOT.TCanvas("c2","c2")
-    # c2.cd()
-    # for i in tmr_list:
-    #     i = i.Scale(tmr_list[0].Integral()/i.Integral())
-    # hs = DrawStack(ROOT.gPad, tmr_list, legend=(0.20, 0.5, 0.40, 0.9), drawopts="nostack plc pmc")
-    # save_png(c2, f"mc_res_test", f"{spec}_Tmr", rpflag = 0)
+    c2 = ROOT.TCanvas("c2","c2")
+    c2.cd()
+    hs = DrawStack(ROOT.gPad, tmr_list, legend=(0.20, 0.5, 0.40, 0.9), drawopts="nostack plc pmc")
+    save_png(c2, f"mc_res_test", f"{spec}_Tmr", rpflag = 0)
 
 def create_new_tree(spec, data_id, mc_id, mc_file, mp):
 
@@ -75,7 +74,6 @@ def create_new_tree(spec, data_id, mc_id, mc_file, mp):
         fws = data_fr_file.Get(f"fit_test_noFix_noSplit")
         fit_pdf = fws.pdf(f"{spec}_{data_id}_fit")
         fit_var = fws.var("B_DTF_M")
-
 
         # print(fit_pdf, fit_var)
         real_data_set = fit_pdf.generate(ROOT.RooArgSet(fit_var), int(20000))

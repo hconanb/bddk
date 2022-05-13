@@ -1,0 +1,2 @@
+,Spectrum,Year,Type,Canidates in Signal OG,Canidates in Sideband OG,Canidates Cut w random selection over All,Events in Sig after Random Selection,Events in SB after Random Selection
+0,P_z_p,2018,data,3800,809,179,3677,753
