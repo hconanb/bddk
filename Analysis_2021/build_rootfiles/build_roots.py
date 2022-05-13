@@ -4,16 +4,28 @@ from essentials import *
 from createXFD import *
 
 RDF = ROOT.ROOT.RDataFrame
-opts = ROOT.ROOT.RDF.RSnapshotOptions()
-opts.fMode = "UPDATE"
+# opts = ROOT.ROOT.RDF.RSnapshotOptions()
+# opts.fMode = "UPDATE"
 
 trigger_TOS = "(B_L0HadronDecision_TOS == 1 || B_L0MuonDecision_TOS == 1 ||  B_L0ElectronDecision_TOS == 1 ||  B_L0PhotonDecision_TOS == 1)"
+trigger_TOS_2 = "(B_L0HadronDecision_TOS == 1)"
+trigger_TOS_3 = "(B_L0HadronDecision_TOS == 1 || B_L0MuonDecision_TOS == 1)"
+
 trigger_TIS = "(B_L0HadronDecision_TIS == 1 || B_L0MuonDecision_TIS == 1 ||  B_L0ElectronDecision_TIS == 1 ||  B_L0PhotonDecision_TIS == 1)"
+
 trigger_HLT1 = "(B_Hlt1TrackMVADecision_TOS == 1 || B_Hlt1TwoTrackMVADecision_TOS == 1)"
 trigger_HLT2 = "(B_Hlt2Topo2BodyDecision_TOS == 1 || B_Hlt2Topo3BodyDecision_TOS == 1 || B_Hlt2Topo4BodyDecision_TOS == 1)"  # "B_Hlt2Global_TOS == 1"
-loose_filters = "abs(KST_M - 895) < 50 && D1H1_ProbNNk > 0.3 && D2H1_ProbNNk > 0.3 && KSTH1_ProbNNk > 0.3"
-loose_filters_Ds = "D1H2_ProbNNk > 0.3"
-loose_filters_norm = "D1H1_ProbNNk > 0.3 && D2H1_ProbNNk > 0.3 && K_ProbNNk > 0.3"
+
+loose_filters_Kst_Window = "(abs(KST_M - 895) < 50)"
+loose_filters_Kaon = "(D1H1_ProbNNk > 0.3 && D2H1_ProbNNk > 0.3 && KSTH1_ProbNNk > 0.3)"
+loose_filters_Kaon_norm = loose_filters_Kaon.replace("KSTH1","K")
+
+loose_filters_ghost_base = "(D1H1_ProbNNghost < 0.3 && D1H2_ProbNNghost < 0.3 && D2H1_ProbNNghost < 0.3 && D2H2_ProbNNghost < 0.3 && KSTH1_ProbNNghost < 0.3 && KSTH2_ProbNNghost < 0.3)"
+loose_filters_ghost_d1m = f"{loose_filters_ghost_base} && (D1H3_ProbNNghost < 0.3)"
+loose_filters_ghost_d2p = f"{loose_filters_ghost_base} && (D2H3_ProbNNghost < 0.3)"
+loose_filters_ghost_d12mp = f"{loose_filters_ghost_base} && (D1H3_ProbNNghost < 0.3) && (D2H3_ProbNNghost < 0.3)"
+loose_filters_ghost_norm7 = "(D1H1_ProbNNghost < 0.3 && D1H2_ProbNNghost < 0.3 && D2H1_ProbNNghost < 0.3 && D2H2_ProbNNghost < 0.3 && D2H3_ProbNNghost < 0.3 && D2H4_ProbNNghost < 0.3 && K_ProbNNghost < 0.3 && KSTH2_ProbNNghost < 0.3)"
+loose_filters_ghost_norm8 = "(D1H1_ProbNNghost < 0.3 && D1H2_ProbNNghost < 0.3 && D1H3_ProbNNghost < 0.3 && D2H1_ProbNNghost < 0.3 && D2H2_ProbNNghost < 0.3 && D2H3_ProbNNghost < 0.3 && D2H4_ProbNNghost < 0.3 && K_ProbNNghost < 0.3 && KSTH2_ProbNNghost < 0.3)"
 
 PE_mcdtt = "(pow(D1_TRUEP_E + D2_TRUEP_E + KST_TRUEP_E,2))"
 PX_mcdtt = "(pow(D1_TRUEP_X + D2_TRUEP_X + KST_TRUEP_X,2))"
@@ -24,6 +36,7 @@ True_BM = f"sqrt({M2_mcdtt})"
 
 fl_dict = {
     "ToT": f"({trigger_TOS} || {trigger_TIS}) && {trigger_HLT1} && {trigger_HLT2}",
+    "ToT_2":f"({trigger_TOS_2} || {trigger_TIS}) && {trigger_HLT1} && {trigger_HLT2}",
     # "nTaT": f"(!{trigger_TOS} && {trigger_TIS}) && {trigger_HLT1} && {trigger_HLT2}",
     # "T": f"({trigger_TOS}) && {trigger_HLT1} && {trigger_HLT2}",
 }
@@ -44,14 +57,14 @@ data_spec_list = [
     ]
 
 mc_spec_list = [
-    # "01_Z_m_p_11198006",
+    "01_Z_m_p_11198006",
     # "02_Z_m_p_11198400",
     # "02_P_z_p_11198005",
     # "04_Z_m_p_11198401",
     # "04_P_z_p_11198410",
     # "04_Z_z_z_11198023",
     # "04_P_z_pst_11198023",
-    # "05_P_z_p_12197023",
+    "05_P_z_p_12197023",
     # "06_P_z_p_12197410",
     # "07_P_z_p_12197400",
     # "07_Z_z_z_12197045",
@@ -59,14 +72,10 @@ mc_spec_list = [
     # "08_P_z_p_12197401",
     # "08_Z_z_z_12197423",
     # "08_P_z_pst_12197423",
-    # "09_Z_z_z_11196019",
+    "09_Z_z_z_11196019",
     # "10_Z_z_z_11196413",
     # "12_Z_z_z_11196414",
-    # "13_Zs_sm_p_13198040",
-    # "14_Zs_sm_p_13198200",
-    # "15_Zs_sm_p_13198400",
-    # "16_Zs_sm_p_13198600",
-    # "norm7_norm7_12197008",
+    "norm7_norm7_12197008",
     "norm8_norm8_11198007",
 ]
 
@@ -149,50 +158,68 @@ class rdf_numbers():
         next_rdf_stuff = rdf_numbers(next_rdf, filter_name)
         next_rdf_stuff.old_stuff = self
         return next_rdf_stuff
-def zz_olap(rdf_zz, file_list, spec, year, type):
+def build_truth_base(b_spec, c1_spec, c2_spec, norm_flag = 0, st_flag = 0):
+    truth_MC = f"abs(B_TRUEID) == {b_spec}"
+    truth_MC = f"{truth_MC} && abs(D1H1_TRUEID) == {k_ID}"
+    truth_MC = f"{truth_MC} && abs(D1H2_TRUEID) == {pi_ID}"
+    if c1_spec == Dp_ID:
+        truth_MC = f"{truth_MC} && abs(D1H3_TRUEID) == {pi_ID}"
+    truth_MC = f"{truth_MC} && abs(D2H1_TRUEID) == {k_ID}"
+    truth_MC = f"{truth_MC} && abs(D2H2_TRUEID) == {pi_ID}"
+    if c2_spec == Dp_ID:
+        truth_MC = f"{truth_MC} && abs(D2H3_TRUEID) == {pi_ID}"
+    if norm_flag == 1:
+        truth_MC = f"{truth_MC} && abs(D2H4_TRUEID) == {pi_ID}"
+        truth_MC = f"{truth_MC} && abs(K_TRUEID) == {k_ID}"
+    if norm_flag == 0:
+        truth_MC = f"{truth_MC} && abs(KSTH1_TRUEID) == {k_ID}"
+        truth_MC = f"{truth_MC} && abs(KSTH2_TRUEID) == {pi_ID}"
+    return truth_MC
+def build_truth_mom(b_spec, c1_spec, c2_spec, norm_flag = 0, st_flag = 0):
+    truth_MC = f"abs(D1_TRUEID) == {c1_spec}"
+    truth_MC = f"{truth_MC} && abs(D2_TRUEID) == {c2_spec}"
+    if norm_flag == 0:
+        truth_MC = f"{truth_MC} && abs(KST_TRUEID) == {kst0_ID}"
+    return truth_MC
+def zz_olap(rdf_zz, spec, year, type):
 
-    if type == "MC":
-        tree_name = f"{spec}/DecayTreeTuple".replace("Z_z_z","P_z_pst")
-    if type == "DATA":
-        tree_name = f"data_{spec}_Data/DecayTreeTuple".replace("Z_z_z","P_z_pst")
-
-    tree_chain = ROOT.TChain(tree_name)
-    new_file_list = []
-    for file_name in file_list:
-        tempo = ROOT.TFile(file_name)
-        dirlist = [b.GetTitle() for b in tempo.GetListOfKeys()]
-        if tree_name.split("/")[0] in dirlist:
-            new_file_list.append(file_name)
-        tempo.Close()
-    for next_file_name in new_file_list:
-        tree_chain.Add(next_file_name)
+    if type == "data":
+        tree_name = f"DecayTreeTuple"
+        tree_chain = ROOT.TChain(tree_name)
+        new_file_list = glob.glob(f"/mnt/c/Users/Harris/Desktop/rootfiles/2022_filtered_data/{year}/pre_d/P_z_pst.root")
+        for next_file_name in new_file_list:
+            tree_chain.Add(next_file_name)
+    if type == "mc":
+        tree_name = f"DecayTreeTuple"
+        tree_chain = ROOT.TChain(tree_name)
+        new_file_list = glob.glob(f"/mnt/c/Users/Harris/Desktop/rootfiles/2022_filtered_mc/{year}/*/{spec}.root".replace("Z_z_z_", "P_z_pst_"))
+        for next_file_name in new_file_list:
+            tree_chain.Add(next_file_name)
 
     rdf_st = RDF(tree_chain)
 
     np_zz = rdf_zz.AsNumpy(columns=["eventNumber", "runNumber"])
     np_st = rdf_st.AsNumpy(columns=["eventNumber", "runNumber"])
 
-    eolap = np.intersect1d(np_zz["eventNumber"], np_st["eventNumber"])
+    # eolap = np.intersect1d(np_zz["eventNumber"], np_st["eventNumber"])
 
-    # print(len(np_zz["eventNumber"]),len(np_st["eventNumber"]),len(eolap))
-    #
     zz_en_base = np.char.mod('%d', np_zz["eventNumber"])
-    # zz_nCan_base = np.char.mod('%d', np_zz["runNumber"])
+    zz_nCan_base = np.char.mod('%d', np_zz["runNumber"])
 
     st_en_base = np.char.mod('%d', np_st["eventNumber"])
-    # st_nCan_base = np.char.mod('%d', np_st["runNumber"])
+    st_nCan_base = np.char.mod('%d', np_st["runNumber"])
 
-    # zz_all = np.core.defchararray.add(np.core.defchararray.add(zz_en_base, "_"),zz_nCan_base)
-    # st_all = np.core.defchararray.add(np.core.defchararray.add(st_en_base, "_"),st_nCan_base)
+    zz_all = np.core.defchararray.add(np.core.defchararray.add(zz_en_base, "_"),zz_nCan_base)
+    st_all = np.core.defchararray.add(np.core.defchararray.add(st_en_base, "_"),st_nCan_base)
 
-    found = [i for i in zz_en_base if i in st_en_base]
+    found = [i for i in zz_all if i in st_all]
 
     fline = "B_DTF_M > 0"
 
     for olap_entry in found:
-
         eno = olap_entry.split("_")[0]
-        fline = f"{fline} && !(eventNumber == {eno})"
+        cno = olap_entry.split("_")[1]
+        fline = f"{fline} && !(eventNumber == {eno} && runNumber == {cno})"
 
     rdf_zz_next = rdf_zz.Filter(f"{fline}")
 
@@ -201,19 +228,19 @@ def zz_olap(rdf_zz, file_list, spec, year, type):
     print(len(found))
 
     dict_lap = {
-        "Spec": type,
+        "Spec": spec,
         "Year": year,
         "Type": type,
         "Candidates in Z_z_z" : rdf_zz.Count().GetValue(),
-        "Candidates in P_z_pst": rdf_st.Count().GetValue(),
-        "Number of Duplicate Candidates": len(found),
+        "Candidates in P_z_pst" : rdf_st.Count().GetValue(),
+        "Shared Candidates Removed from Z_z_z": len(found),
     }
 
     eff_df = pandas.DataFrame(dict_lap , index=[0])
-    eff_df.to_csv(f"lap_txt_files/lap_{type}_{year}_txt")
+    eff_df.to_csv(f"lap_txt_files/lap_{spec}_{type}_{year}_txt")
 
     # clist = rdf_zz_next.GetColumnNames()
-
+    #
     # newfilename = zzz.replace("post_veto", "nolap").replace("postveto","nolap")
     #
     # if os.path.exists(newfilename):
@@ -225,24 +252,6 @@ def zz_olap(rdf_zz, file_list, spec, year, type):
     # rdfsnap = rdf_zz_next.Snapshot("DecayTreeTuple", newfilename, clist)
 
     return rdf_zz_next
-def mult_can_checks(rdf):
-
-    npy_temp = rdf.AsNumpy(columns=["eventNumber","runNumber"])
-    df_temp = pandas.DataFrame(npy_temp)
-    unique_events = df_temp[~df_temp.duplicated()].value_counts()
-
-    n_unique_events = unique_events.size
-    n_unique_events_err = math.sqrt(n_unique_events)
-    n_unique_events_ufloat = ufloat(n_unique_events, n_unique_events_err)
-
-    nodups = df_temp[~df_temp.duplicated(keep=False)].value_counts()
-    dups = df_temp[df_temp.duplicated(keep=False)].value_counts()
-    both = nodups.append(dups)
-    can_per_event = both.mean()
-    can_per_event_err = both.std()
-    cen_per_event_ufloat = ufloat(can_per_event, can_per_event_err)
-
-    return n_unique_events_ufloat, can_per_event_ufloat
 def build_ufloat_a_eff(base_rdf, filter_line, sr_flag = 0):
 
     base_count = base_rdf.Count().GetValue()
@@ -300,7 +309,6 @@ def get_gen_eff(spec, year):
     gen_info_Up = ufloat(df[f'gen_eff_{year}_Up'][nkey], df[f'err_gen_eff_{year}_Up'][nkey])
     gen_info_Down = ufloat(df[f'gen_eff_{year}_Down'][nkey], df[f'err_gen_eff_{year}_Down'][nkey])
     return ((gen_info_Up + gen_info_Down) / 2)
-
 def filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 1):
 
     ### Build Base Tree ####
@@ -316,6 +324,7 @@ def filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 1):
             tempo.Close()
         for next_file_name in new_file_list:
             tree_chain.Add(next_file_name)
+        #For now 2021
         outputfile = f"/mnt/c/Users/Harris/Desktop/rootfiles/2022_filtered_data/{year}/pre_d/{spec}.root"
 
         ### Prep Final Destination ###
@@ -329,7 +338,6 @@ def filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 1):
         rdf_base = RDF(tree_chain)
         rdf_rec = rdf_base.Define("B_DTF_M", "B_dtf_M[0]")
         ##############################
-
     if type == "MC":
 
         tree_name = f"{spec}/DecayTreeTuple"
@@ -375,12 +383,15 @@ def filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 1):
             d2_flag = "mp"
         if tspec == "norm7":
             d1_flag = "z"
-            d2_flag = "d0k3pi"
+            # d2_flag = "d0k3pi"
+            d2_flag = "z"
         if tspec == "norm8":
             d1_flag = "mp"
-            d2_flag = "d0k3pi"
-        D_Window_Cut = get_dwindow_values(tspec, d1_flag, d2_flag, dst_flag)
-        print(D_Window_Cut)
+            # d2_flag = "d0k3pi"
+            d2_flag = "z"
+
+        # D_Window_Cut = get_dwindow_values(tspec, d1_flag, d2_flag, dst_flag)
+        # print(D_Window_Cut)
         ########################################################################
 
         rdf_base = RDF(tree_chain)
@@ -388,7 +399,40 @@ def filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 1):
         if "norm" in spec:
             rdf_rec = rdf_rec.Define("B_TrueMass", True_BM.replace("KST","K"))
         else:
-            rdf_rec = rdf_rec.Define("B_TrueMass", True_BM)
+            if "_pst_" in spec:
+                rdf_rec = rdf_rec.Define("B_TrueMass", True_BM.replace("D2_","D2st_"))
+            else:
+                rdf_rec = rdf_rec.Define("B_TrueMass", True_BM)
+    ####################################################################
+    ### Add Submass Branches ####
+    nlist = [2, 3, 4, 5]
+    if "norm" not in spec:
+        tl = ["D1H1", "D1H2", "D2H1", "D2H2", "KSTH1", "KSTH2"]
+        nlist = [2, 3, 4, 5]
+    if "norm7" in spec:
+        tl = ["D1H1", "D1H2", "D2H1", "D2H2", "D2H3", "D2H4","K"]
+        nlist = nlist + [6]
+    if "norm8" in spec:
+        tl = ["D1H1", "D1H2", "D1H3", "D2H1", "D2H2", "D2H3", "D2H4","K"]
+        nlist = nlist + [6, 7]
+    if "Z_m_p" in spec:
+        tl = tl + ["D1H3", "D2H3"]
+        nlist = nlist + [6, 7]
+    if "P_z_p" in spec:
+        tl = tl + ["D2H3"]
+        nlist = nlist + [6]
+    if "M_m_z" in spec:
+        tl = tl + ["D1H3"]
+        nlist = nlist + [6]
+    for n in nlist:
+        # Final_n_List = []
+        all_n_combinations = itertools.combinations(tl, n)
+        tupflag = 0
+        for tup in all_n_combinations:
+            tname = convertTuple(tup, spec)
+            rdf_temp = rdf_rec.Define(tname, invmass(tup))
+            rdf_rec = rdf_temp
+    #############################
 
     #### Create Correct DIRA Variables for soft pion reconstruction ###
     #### add accessible dtf variable ###
@@ -408,37 +452,14 @@ def filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 1):
     if "norm" not in spec:
         rdf_rec = rdf_rec.Define("B_VtxChi2_013_fix","if (KSTH1_ID > 0) return B_VtxChi2_013; else return B_VtxChi2_023;") \
                          .Define("B_VtxChi2_023_fix","if (KSTH1_ID > 0) return B_VtxChi2_023; else return B_VtxChi2_013;") \
-                         .Define("KSTPI_IPCHI2", "log(B_ENDVERTEX_CHI2 - B_VtxChi2_013_fix)")
+                         .Define("KSTPI_IPCHI2", "log(B_ENDVERTEX_CHI2 - B_VtxChi2_013_fix)") \
+                         .Define("DSTM_DM",'D1H1D1H2KSTH2 - D1H1D1H2')
 
-    ####################################################################
-    ### Add Submass Branches ####
-    if "norm" not in spec:
-        tl = ["D1H1", "D1H2", "D2H1", "D2H2", "KSTH1", "KSTH2"]
-    if "norm" in spec:
-        tl = ["D1H1", "D1H2", "D2H1", "D2H2", "D2H3", "D2H4","K"]
-    nlist = [2, 3, 4, 5]
-    if "Z_m_p" in spec:
-        tl = tl + ["D1H3", "D2H3"]
-        nlist = nlist + [6, 7]
-    if "P_z_p" in spec:
-        tl = tl + ["D2H3"]
-        nlist = nlist + [6]
-    for n in nlist:
-        # Final_n_List = []
-        all_n_combinations = itertools.combinations(tl, n)
-        tupflag = 0
-        for tup in all_n_combinations:
-            tname = convertTuple(tup, spec)
-            rdf_temp = rdf_rec.Define(tname, invmass(tup))
-            rdf_rec = rdf_temp
-    #############################
     ### Get Loose Cuts ###
-    if "norm" not in spec:
-        loose_cut = loose_filters
-        if "Zs" in spec:
-            loose_cut = f"{loose_filters} && {loose_filters_Ds}"
-    if "norm" in spec:
-        loose_cut = loose_filters_norm
+    # if "norm" not in spec:
+    #     loose_cut = loose_filters
+    # if "norm" in spec:
+    #     loose_cut = loose_filters_norm
     ######################
 
     ##### Dira Cuts ################################
@@ -452,23 +473,57 @@ def filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 1):
         dira_cut = "(D1_DIRA_ORIVX_FIXED > 0 && D2_DIRA_ORIVX_FIXED > 0)"
     #################################################
 
+    ###### Set Windows of DTF_M
     tot_trigger_cut = fl_dict["ToT"]
     if "norm" not in spec:
         b_dtf_window_cut = "B_DTF_M <= 5600 && B_DTF_M >= 4800"
     if "norm" in spec:
         b_dtf_window_cut = "B_DTF_M <= 5330 && B_DTF_M >= 5230"
     ###################
-    all_cuts_string = (
-        f"{loose_cut} && {tot_trigger_cut} && {dira_cut} && {b_dtf_window_cut}"
-    )
+
+    #####Ghost Cuts ########
+    if "Z_m_p" in spec:
+        ghost_cut = loose_filters_ghost_d12mp
+    if "Z_z_z" in spec:
+        ghost_cut = loose_filters_ghost_base
+    if "P_z_p" in spec:
+        ghost_cut = loose_filters_ghost_d2p
+    if "M_m_z" in spec:
+        ghost_cut = loose_filters_ghost_d1m
+    if "norm7" in spec:
+        ghost_cut = loose_filters_ghost_norm7
+    if "norm8" in spec:
+        ghost_cut = loose_filters_ghost_norm8
+
+    if spec == "Z_z_z" or spec == "P_z_p":
+        veto_cut = "(DSTM_DM > 150)"
+    else:
+        veto_cut = "(B_DTF_M > -10000)"
 
     #### Apply All Cuts except d_window to Data #######
     if type == "DATA":
+        if "norm" not in spec:
+            no_veto_string = f"({tot_trigger_cut}) && ({dira_cut}) && ({b_dtf_window_cut}) && ({loose_filters_Kst_Window}) && ({loose_filters_Kaon})" #({ghost_cut})
+            all_cuts_string = f"({veto_cut} && ({no_veto_string}))"
+        else:
+            all_cuts_string = f"(({tot_trigger_cut}) && {veto_cut} && ({dira_cut}) && ({b_dtf_window_cut}) && ({loose_filters_Kaon_norm}))"
+
+        if spec == "Z_z_z":
+            print(f"Starting snapshot for  for no veto")
+            rdf_nv_final = rdf_rec.Filter(no_veto_string)
+            rdf_nv_final = zz_olap(rdf_nv_final, spec, year, type)
+            clist = rdf_nv_final.GetColumnNames()
+            rdfsnapnv = rdf_nv_final.Snapshot(f"DecayTreeTuple", outputfile.replace("pre_d","nveto"), clist)
+            print(f"finished snapshot for for no veto")
+
+
         rdf_final = rdf_rec.Filter(all_cuts_string)
         clist = rdf_final.GetColumnNames()
+
         print(f"Starting snapshot for {outputfile}")
-        rdfsnap = rdf_final.Snapshot(f"DecayTreeTuple", outputfile, clist, opts)
+        rdfsnap = rdf_final.Snapshot(f"DecayTreeTuple", outputfile, clist)
         print(f"finished snapshot for {outputfile}")
+
     ###################################################
     #### Apply all cuts including d_window to MC ######
     if type == "MC":
@@ -482,107 +537,234 @@ def filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 1):
         rdf_GEN = rdf_numbers(rdf_MC_GEN, "GEN")
         rdf_REC = rdf_numbers(rdf_rec, "REC")
 
+        ###Possible truth matching
+        ### MC specs with b0 moms
+
+        b0_mom_list = ["01_","02_","04_","09_", "10_", "12_", "norm8"]
+        bp_mom_list = ["05_","06_","07_","08_", "norm7_"]
+        norm_flag = 0
+        if any(ele in spec for ele in b0_mom_list):
+            b_mom = B0_ID
+        if any(ele in spec for ele in bp_mom_list):
+            b_mom = Bp_ID
+        if "_m_p_" in spec:
+            d1_id = Dp_ID
+            d2_id = Dp_ID
+        if "_z_p_" in spec:
+            d1_id = D0_ID
+            d2_id = Dp_ID
+        if "_z_z_" in spec or "_z_pst_" in spec or "norm7" in spec:
+            d1_id = D0_ID
+            d2_id = D0_ID
+        if "norm8" in spec:
+            d1_id = Dp_ID
+            d2_id = D0_ID
+        if "norm" in spec:
+            norm_flag = 1
+
+        truth_base_string = build_truth_base(b_mom, d1_id, d2_id, norm_flag)
+        truth_mom_string = build_truth_mom(b_mom, d1_id, d2_id, norm_flag)
+
+        print(f"({truth_base_string}) && ({truth_mom_string})")
+
         if spec == "04_Z_z_z_11198023" or spec == "07_Z_z_z_12197045" or spec == "08_Z_z_z_12197423":
             print(spec, "remove olap")
-            rdf_REC.rdf = zz_olap(rdf_REC.rdf, file_list, spec, year, type)
+            print(type)
+            rdf_REC.rdf = zz_olap(rdf_REC.rdf, spec, year, "mc")
             print("done removing olap")
         rdf_REC.old_stuff = rdf_GEN
 
-        rdf_off = rdf_REC.apply_filter(all_cuts_string, f"all_before_d_{spec}")
-        rdf_ToT = rdf_off.apply_filter(D_Window_Cut, f"d_for_{spec}")
-        # rdf_T = rdf_ToT.apply_filter(fl_dict["T"], "T Trigger Cut")
-        # rdf_nTaT = rdf_ToT.apply_filter(fl_dict["nTaT"],"nTaT Trigger Cut")
+        ###For charmless tests
+        d1_mstart, d1_std, d2_mstart, d2_std = get_dwindow_values(tspec, d1_flag, d2_flag, dst_flag, rflag = "print")
 
-        if eff_flag == 1:
+        # print(d1_mstart, d2_mstart, d1_std, d2_std)
 
-            print('All stats:')
-            allCutsReport = rdf_base.Report()
-            allCutsReport.Print()
+        d1_sig_max = 2*d1_std
+        d2_sig_max = 2*d2_std
 
-            gen_info = get_gen_eff(spec, year)
+        d1_sb_min = 3*d1_std
+        d2_sb_min = 3*d2_std
 
-            eff_dict_gen_temp = {
-                "Scheme ID" : mc_spec_dict[spec],
-                "Year": year,
-                "Number Accepted": f"{rdf_GEN.base_count_ufloat.n}",
-                "$\epsilon_{geometrical}$": f"{gen_info*100.000:.3f}",
-                # "$\epsilon_{stripping}$": f"{rdf_REC.base_count_ufloat/rdf_GEN.base_count_ufloat*100.000:.3f}",
-            }
+        d1_sb_max = 5*d1_std
+        d2_sb_max = 5*d2_std
 
-            eff_dict_event_temp = {
-                "Scheme ID" : mc_spec_dict[spec],
-                "Year": year,
-                "$\epsilon_{stripping}$": f"{rdf_REC.calc_event_eff()*100.000:.3f}",
-                "$\epsilon_{offline}$": f"{rdf_off.calc_event_eff()*100.000:.3f}",
-                "$\epsilon_{D Window}$": f"{rdf_ToT.calc_event_eff()*100.000:.3f}",
-            }
+        d1_sb_min_line = f"(abs({d1_mstart} - D1_M) > {d1_sb_min})"
+        d2_sb_min_line = f"(abs({d2_mstart} - D2_M) > {d2_sb_min})"
 
-            eff_dict_can_temp = {
-                "Scheme ID" : mc_spec_dict[spec],
-                "Year": year,
-                "$\epsilon_{stripping}$": f"{rdf_REC.calc_can_eff()*100.000:.3f}",
-                "$\epsilon_{offline}$": f"{rdf_off.calc_can_eff()*100.000:.3f}",
-                "$\epsilon_{D Window}$": f"{rdf_ToT.calc_can_eff()*100.000:.3f}",
-            }
+        d1_sb_max_line = f"(abs({d1_mstart} - D1_M) < {d1_sb_max})"
+        d2_sb_max_line = f"(abs({d2_mstart} - D2_M) < {d2_sb_max})"
 
-            # eff_dict_trigger = {
-            #     "Scheme ID" : mc_spec_dict[spec],
-            #     "Year": year,
-            #     "$\epsilon_{T}$": f"{rdf_T.calc_can_eff()*100.000:.3f}",
-            #     "$\epsilon_{nTaT}$":f"{rdf_nTaT.calc_can_eff()*100.000:.3f}"
-            # }
+        d1_sb_line = f"({d1_sb_min_line} && {d1_sb_max_line})"
+        d2_sb_line = f"({d2_sb_min_line} && {d2_sb_max_line})"
 
-            # now = datetime.datetime.now()
-            folder_path = '/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/mc_efficiencies/build_root_effs'
-            # if not os.path.exists(folder_path):
-            #     os.makedirs(folder_path)
+        d1_sig_line = f"(abs({d1_mstart} - D1_M) < {d1_sig_max})"
+        d2_sig_line = f"(abs({d2_mstart} - D2_M) < {d2_sig_max})"
 
-            eff_df = pandas.DataFrame(eff_dict_gen_temp , index=[0])
-            eff_df.to_csv(f"{folder_path}/{spec}_{year}_gen_eff_txt")
+        sig_sig_line = f"({d1_sig_line} && {d2_sig_line})"
+        sig_sb_line = f"({d1_sig_line} && {d2_sb_line})"
+        sb_sig_line = f"({d1_sb_line} && {d2_sig_line})"
+        sb2_line = f"({sig_sb_line} || {sb_sig_line})"
 
-            eff_df = pandas.DataFrame(eff_dict_can_temp , index=[0])
-            eff_df.to_csv(f"{folder_path}/{spec}_{year}_can_eff_txt")
+        # rdf_REC_tmc = rdf_REC.apply_filter(f"({truth_base_string}) && ({truth_mom_string})", f"full truth")
 
-            eff_df = pandas.DataFrame(eff_dict_event_temp , index=[0])
-            eff_df.to_csv(f"{folder_path}/{spec}_{year}_event_eff_txt")
+        # rdf_trigger_tos_1 = rdf_REC.apply_filter(trigger_TOS , f"trigger_line_TOS_ALL_tmc")
+        # rdf_trigger_tos_2 = rdf_REC.apply_filter(trigger_TOS_2 , f"trigger_line_TOS_Had_tmc")
+
+        rdf_bwindow = rdf_REC.apply_filter(b_dtf_window_cut, f"b_window")
+        #
+        rdf_dira = rdf_bwindow.apply_filter(dira_cut, "DIRA CUT")
+
+        rdf_dwindow = rdf_dira.apply_filter(sig_sig_line, "sig_dwasjdf")
+
+        if "norm" not in spec:
+            rdf_kstwindow = rdf_dwindow.apply_filter(loose_filters_Kst_Window, "Kst Window")
+        if "norm" in spec:
+            rdf_kstwindow = rdf_dwindow
+        #
+        # # rdf_ghost = rdf_kstwindow.apply_filter(ghost_cut, "ghost Prob NN cut")
+        #
+        if "norm" not in spec:
+            rdf_kaon = rdf_kstwindow.apply_filter(loose_filters_Kaon, "Kaon ProbNN cut")
+        if "norm" in spec:
+            rdf_kaon = rdf_kstwindow.apply_filter(loose_filters_Kaon_norm, "Kaon ProbNN cut")
+        #
+        rdf_tt = rdf_kaon.apply_filter(f"({trigger_TIS}) && ({trigger_HLT1}) &&({trigger_HLT2})")
+        #
+        # if "norm" not in spec:
+        #     mc_all_cuts_string = f"(({tot_trigger_cut}) && {veto_cut} && ({dira_cut}) && ({b_dtf_window_cut}) && ({loose_filters_Kaon} && ({loose_filters_Kst_Window})))"
+        # if "norm" in spec:
+        #     mc_all_cuts_string = f"(({tot_trigger_cut}) && {veto_cut} && ({dira_cut}) && ({b_dtf_window_cut}) && ({loose_filters_Kaon_norm}))"
+
+        rdf_trigger_tos_1 = rdf_tt.apply_filter(trigger_TOS, f"trigger_line_TOS_ALL_tmc")
+        rdf_trigger_tos_2 = rdf_tt.apply_filter(trigger_TOS_2, f"trigger_line_TOS_Had_tmc")
+        rdf_trigger_tos_3 = rdf_tt.apply_filter(trigger_TOS_3, f"trigger_line_TOS_HadMu_tmc")
+
+        print(rdf_trigger_tos_1.calc_event_eff(), rdf_trigger_tos_2.calc_event_eff(), rdf_trigger_tos_3.calc_event_eff())
+
+        # rdf_ToT_dsig = rdf_REC.apply_filter(f"({mc_all_cuts_string}) && ({sig_sig_line})", f"d_for_{spec}")
+        # rdf_ToT_dsb = rdf_REC.apply_filter(f"({mc_all_cuts_string}) && ({sb2_line})", f"sb_for_{spec}")
+        # rdf_ToT_r23 = rdf_REC.apply_filter(f"({mc_all_cuts_string}) && !({sig_sig_line}) && !({sb2_line})", f"r23_for_{spec}")
+        # # rdf_ToT_dsigdsb = rdf_off.apply_filter(f"({D_Window_Cut}) || ({sb2_line})",f"d_and_sb_for_{spec}")
+        #
+        # print(rdf_off.calc_event_eff())
+
+        print('All stats:')
+        allCutsReport = rdf_base.Report()
+        allCutsReport.Print()
+
+
+        # eff_dict_ctest_temp = {
+        #     "Scheme ID" : mc_spec_dict[spec],
+        #     "Year": year,
+        #     "D_WIN": f"{rdf_ToT_dsig.calc_can_eff()*100.000:.3f}",
+        #     "not in D_WIN": f"{rdf_ToT_dsb.calc_can_eff()*100.000:.3f}",
+        #     "D_WIN or not in DWIN": f"{rdf_ToT_dsigdsb.calc_can_eff()*100.000:.3f}",
+        # }
+        # eff_dict_etest_temp = {
+        #     "Scheme ID" : mc_spec_dict[spec],
+        #     "Year": year,
+        #     "D_WIN": f"{rdf_ToT_dsig.calc_event_eff()*100.000:.3f}",
+        #     "not in D_WIN": f"{rdf_ToT_dsb.calc_event_eff()*100.000:.3f}",
+        #     "D_WIN or not in DWIN": f"{rdf_ToT_dsigdsb.calc_event_eff()*100.000:.3f}",
+        # }
+        # eff_dict_trigger = {
+        #     "Scheme ID" : mc_spec_dict[spec],
+        #     "Year": year,
+        #     "$\epsilon_{T}$": f"{rdf_T.calc_can_eff()*100.000:.3f}",
+        #     "$\epsilon_{nTaT}$":f"{rdf_nTaT.calc_can_eff()*100.000:.3f}"
+        # }
+        # if eff_flag == 1:
+        #     gen_info = get_gen_eff(spec, year)
+        #     eff_dict_gen_temp = {
+        #         "Scheme ID" : mc_spec_dict[spec],
+        #         "Year": year,
+        #         "Number Accepted": f"{rdf_GEN.base_count_ufloat.n}",
+        #         "$\epsilon_{geometrical}$": f"{gen_info*100.000:.3f}",
+        #         # "$\epsilon_{stripping}$": f"{rdf_REC.base_count_ufloat/rdf_GEN.base_count_ufloat*100.000:.3f}",
+        #     }
+        #     eff_dict_event_temp = {
+        #         "Scheme ID" : mc_spec_dict[spec],
+        #         "Year": year,
+        #         "$\epsilon_{stripping}$": f"{rdf_REC.calc_event_eff()*100.000:.3f}",
+        #         "$\epsilon_{offline}$": f"{rdf_off.calc_event_eff()*100.000:.3f}",
+        #         "$\epsilon_{D Windo w}$": f"{rdf_ToT_dsig.calc_event_eff()*100.000:.3f}",
+        #     }
+        #     eff_dict_can_temp = {
+        #         "Scheme ID" : mc_spec_dict[spec],
+        #         "Year": year,
+        #         "$\epsilon_{stripping}$": f"{rdf_REC.calc_can_eff()*100.000:.3f}",
+        #         "$\epsilon_{offline}$": f"{rdf_off.calc_can_eff()*100.000:.3f}",
+        #         "$\epsilon_{D Window}$": f"{rdf_ToT_dsig.calc_can_eff()*100.000:.3f}",
+        #     }
+        #     # now = datetime.datetime.now()
+        #     folder_path = '/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/mc_efficiencies/build_root_effs'
+        #     # if not os.path.exists(folder_path):
+        #     #     os.makedirs(folder_path)
+        #
+        #     eff_df = pandas.DataFrame(eff_dict_gen_temp , index=[0])
+        #     eff_df.to_csv(f"{folder_path}/{spec}_{year}_gen_eff_txt")
+        #
+        #     eff_df = pandas.DataFrame(eff_dict_can_temp , index=[0])
+        #     eff_df.to_csv(f"{folder_path}/{spec}_{year}_can_eff_txt")
+        #
+        #     eff_df = pandas.DataFrame(eff_dict_event_temp , index=[0])
+        #     eff_df.to_csv(f"{folder_path}/{spec}_{year}_event_eff_txt")
+
+            # eff_df = pandas.DataFrame(eff_dict_ctest_temp , index=[0])
+            # eff_df.to_csv(f"{folder_path}/charmt/{spec}_{year}_can_dwin_t_txt")
+            #
+            # eff_df = pandas.DataFrame(eff_dict_etest_temp , index=[0])
+            # eff_df.to_csv(f"{folder_path}/charmt/{spec}_{year}_event_dwin_t_txt")
 
             # trig_df = pandas.DataFrame(eff_dict_trigger , index=[0])
             # trig_df.to_csv(f"eff_txt_files/{now.month}_{now.day}/{spec}_{year}_trigger_txt")
 
         if snap_flag == 1:
-            outputfile = f"/mnt/c/Users/Harris/Desktop/rootfiles/2022_filtered_mc/{year}/post_d/{spec}.root"
-            outputfile_pred = outputfile.replace("post_d","pre_d")
 
-            ofpd = outputfile_pred.split(f"{spec}.root")[0]
-            of = outputfile.split(f"{spec}.root")[0]
+            outputfile_dsig = f"/mnt/c/Users/Harris/Desktop/rootfiles/2022_filtered_mc/{year}/sig_d/{spec}.root"
+            outputfile_dsb = f"/mnt/c/Users/Harris/Desktop/rootfiles/2022_filtered_mc/{year}/sb_d/{spec}.root"
+            outputfile_r23 = f"/mnt/c/Users/Harris/Desktop/rootfiles/2022_filtered_mc/{year}/r23/{spec}.root"
 
-            if not os.path.isdir(ofpd):
-                os.makedirs(ofpd)
-            if not os.path.isdir(of):
-                os.makedirs(of)
+            of_dsig = outputfile_dsig.split(f"{spec}.root")[0]
+            of_dsb = outputfile_dsb.split(f"{spec}.root")[0]
+            of_r23 = outputfile_r23.split(f"{spec}.root")[0]
 
-            if os.path.exists(outputfile_pred):
-                os.remove(outputfile_pred)
-                print("First deleting old ", outputfile_pred)
+            if not os.path.isdir(of_dsig):
+                os.makedirs(of_dsig)
+            if not os.path.isdir(of_dsb):
+                os.makedirs(of_dsb)
+            if not os.path.isdir(of_r23):
+                os.makedirs(of_r23)
+
+            if os.path.exists(outputfile_dsig):
+                os.remove(outputfile_dsig)
+                print("First deleting old ", outputfile_dsig)
             else:
-                print("making ", outputfile_pred)
-            if os.path.exists(outputfile):
-                os.remove(outputfile)
-                print("First deleting old ", outputfile)
+                print("making ", outputfile_dsig)
+            if os.path.exists(outputfile_dsb):
+                os.remove(outputfile_dsb)
+                print("First deleting old ", outputfile_dsb)
             else:
-                print("making ", outputfile)
+                print("making ", outputfile_dsb)
+            if os.path.exists(outputfile_r23):
+                os.remove(outputfile_r23)
+                print("First deleting old ", outputfile_r23)
+            else:
+                print("making ", outputfile_r23)
 
-            # clist_p = rdf_off.rdf.GetColumnNames()
-            # rdfsnap_pre_d = rdf_off.rdf.Snapshot(f"DecayTreeTuple", outputfile_pred, clist_p, opts)
-            clist = rdf_ToT.rdf.GetColumnNames()
-            print(f"Starting snapshot for {outputfile}")
-            rdfsnap_tot = rdf_ToT.rdf.Snapshot(f"DecayTreeTuple", outputfile, clist, opts)
-            print(f"finished snapshot for {outputfile}")
+            clist = rdf_off.rdf.GetColumnNames()
+            print(f"Starting snapshot for {outputfile_dsig} and {outputfile_dsb} and {outputfile_r23}")
+
+            rdfsnap_dsig = rdf_ToT_dsig.rdf.Snapshot(f"DecayTreeTuple", outputfile_dsig, clist)
+            rdfsnap_dsb = rdf_ToT_dsb.rdf.Snapshot(f"DecayTreeTuple", outputfile_dsb, clist)
+            rdfsnap_r23 = rdf_ToT_r23.rdf.Snapshot(f"DecayTreeTuple", outputfile_r23, clist)
+
+            print(f"finished snapshot for {outputfile_dsig} and {outputfile_dsb}")
     ###################################################
 
-
+#
 # for spec in data_spec_list:
-#     for year in ["2016","2017","2018"]:
+#     for year in ["2016", "2017", "2018"]:
 #         file_list = glob.glob(f"/mnt/c/Users/Harris/Desktop/rootfiles/2021_base_data/{year}/*/*/ntuple.root")
 #         type = "DATA"
 #         filter(file_list, spec, year, type)
@@ -595,6 +777,5 @@ for spec in mc_spec_list:
             string = string.replace("_P_z_pst","_Z_z_z")
             file_list = glob.glob(string)
         type = "MC"
-        filter(file_list, spec, year, type, snap_flag = 1)
-    #     break
-    # break
+        filter(file_list, spec, year, type, eff_flag = 1, snap_flag = 0)
+        break

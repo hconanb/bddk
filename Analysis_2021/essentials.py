@@ -1,7 +1,7 @@
 import ROOT, os, sys
 import datetime
 
-from uncertainties import ufloat, covariance_matrix,correlation_matrix
+from uncertainties import ufloat, covariance_matrix, correlation_matrix
 from uncertainties import unumpy
 
 import glob
@@ -15,7 +15,7 @@ from pandas.api.types import CategoricalDtype
 import numpy as np
 import math as math
 from array import array
-from rootutils import *
+# from rootutils import *
 
 import root_pandas as rp
 import itertools
@@ -95,13 +95,85 @@ k_ID = 321
 pi_ID = 211
 kst0_ID = 313
 
+def MakeSWeights(outfilename, outtreename, data, model, yields):
+
+    """Determine s-weights from fit.
+
+    arguments:
+    outfilename -- name of .root file to create with `outtreename`
+    outtreename -- name of TTree with s-weights to save in `outfilename`
+    data -- RooDataSet to which `model` was fitted
+    model -- fitted RooAbsPdf
+    yields -- RooArgList of RooRealVars extracted from fitting `model` to `data`
+    """
+    from array import array
+
+    print(f"using data '{data.GetName()}'")
+    print(f"using model '{model.GetName()}'")
+    print(f"using yields '{[x.GetName() for x in yields]}'")
+
+    # ROOT.RooMsgService.instance().Print()
+    # rme = ROOT.RooMsgService.instance().setGlobalKillBelow(ROOT.RooFit.INFO)
+    # ROOT.RooMsgService.instance().addStream(ROOT.RooFit.DEBUG, ROOT.RooFit.Topic(ROOT.RooFit.Contents), ROOT.RooFit.OutputFile("rfsmear_debug.log"))
+    #projDeps = ROOT.RooArgSet(), useWeights = False, copyDataSet = True, newName = "test", fitToarg5 =  ROOT.RooFit.PrintLevel(3)
+
+    sData = ROOT.RooStats.SPlot("sData","An SPlot", data, model, yields)
+    print("npds")
+
+    # print("Check SWeights:")
+    # for y in yields:
+    #     oval = y.getVal()
+    #     sval = sData.GetYieldFromSWeight(y.GetName())
+    #     print(f"Yield of {y.GetName()} is {oval}")
+    #     print(f"from sWeights it is {sval}")
+    #     if not (0.9995 < oval / sval < 1.0005):
+    #         raise Exception("sWeighted yield should match")
+    # for i in range(10):
+    #     for y in yields:
+    #         print(f"    {y.GetName()} Weight {sData.GetSWeight(i, y.GetName())}")
+    #     totw = sData.GetSumOfEventSWeight(i)
+    #     print(f"Total Weight {totw}")
+    #     if not (0.9995 < totw < 1.0005):
+    #         raise Exception("sum of sWeight should be 1")
+    swnames = sorted([f"{x.GetName()}_sw" for x in yields])
+    print(f"weights: {swnames}")
+    # create output file
+    nf = ROOT.TFile.Open(outfilename, "recreate")
+    # create directory hierarchy
+    nd = nf
+    if len(outtreename.split("/")) > 1:
+        for d in outtreename.split("/")[:-1]:
+            nd = nd.mkdir(d)
+    nd.cd()
+    # create output TTree
+    nt = ROOT.TTree(outtreename.split("/")[-1], outtreename.split("/")[-1])
+    # declare output branches
+    swvals = [array("f", [0]) for x in swnames]
+    for val, nm in zip(swvals, swnames):
+        nt.Branch(nm, val, f"{nm}/F")
+    # loop data
+    for i in range(data.numEntries()):
+        # get vars
+        swvars = sorted(
+            [x for x in data.get(i) if x.GetName() in swnames],
+            key=lambda x: x.GetName(),
+        )
+        assert [x.GetName() for x in swvars] == swnames  # check sorting worked
+        # set values
+        for val, var in zip(swvals, swvars):
+            val[0] = var.getVal()
+        # fill values
+        nt.Fill()
+    nt.Write()
+    nf.Close()
+
 def DrawStack(
     pad,
     hlist,
     legend=(0.3, 0.21, 0.3, 0.21),
     XaxisTitle=True,
     YaxisTitle=True,
-    drawopts="nostack plc pmc",
+    drawopts="nostack PMC PLC",
     legfillstyle=0,
     legfillcoloralpha=None,
 ):
@@ -122,6 +194,7 @@ def DrawStack(
 
     pad.cd()
     hs = ROOT.THStack()
+    ROOT.gStyle.SetPalette(ROOT.kPastel)
     for h in hlist:
         hs.Add(h)
     hs.Draw(drawopts)
@@ -144,14 +217,21 @@ def DrawStack(
     return hs
 
 
-def save_pdf(thing, folder, name, rpflag):
+def save_pdf(thing, folder, name, rpflag = 0):
+    import datetime
+
     now = datetime.datetime.now()
     if not os.path.exists(f'plots/{now.month}_{now.day}/{folder}/'):
         os.makedirs(f'plots/{now.month}_{now.day}/{folder}/')
-    thing.SaveAs(f"plots/{now.month}_{now.day}/{folder}/{name}.pdf")
+    if rpflag == 1:
+        thing.save(f"plots/{now.month}_{now.day}/{folder}/{name}.pdf")
+    else:
+        thing.SaveAs(f"plots/{now.month}_{now.day}/{folder}/{name}.pdf")
     print(f"saved: {name}.pdf in plots/{now.month}_{now.day}/{folder}/")
 
 def save_png(thing, folder, name, rpflag = 0):
+    import datetime
+
     now = datetime.datetime.now()
     if not os.path.exists(f'plots/{now.month}_{now.day}/{folder}/'):
         os.makedirs(f'plots/{now.month}_{now.day}/{folder}/')
@@ -163,103 +243,88 @@ def save_png(thing, folder, name, rpflag = 0):
 
 
 def get_dwindow_values(spec, d1_flag, d2_flag, dst_flag = False, rflag = "apply"):
+
+
+    d1window_file = ROOT.TFile(f"/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/build_rootfiles/d_window_root_files/d_{d1_flag}_mass_fits.root", "READ")
+    d1window_ws = d1window_file.Get(f"d_{d1_flag}_mass_fits")
+    d2window_file = ROOT.TFile(f"/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/build_rootfiles/d_window_root_files/d_{d2_flag}_mass_fits.root", "READ")
+    d2window_ws = d2window_file.Get(f"d_{d2_flag}_mass_fits")
+
+    d1_mstart = d1window_ws.var(f"mean").getValV()
+    # d1_a_std = d1window_ws.var(f"width_a").getValV()
+    # d1_b_std = d1window_ws.var(f"width_b").getValV()
+    #
+    # d1_y_frac = d1window_ws.var(f"D1_a_frac").getValV()
+
+    d2_mstart = d2window_ws.var(f"mean").getValV()
+    # d2_a_std = d2window_ws.var(f"width_a").getValV()
+    # d2_b_std = d2window_ws.var(f"width_b").getValV()
+    #
+    # d2_y_frac = d2window_ws.var(f"D1_a_frac").getValV()
+
+
+    # if (d1_a_std > d1_b_std):
+    #     d1_std = d1_a_std
+    # else:
+    #     d1_std = d1_b_std
+    #
+    # if (d2_a_std > d2_b_std):
+    #     d2_std = d2_a_std
+    # else:
+    #     d2_std = d2_b_std
+
+
+    if d1_flag == "d0k3pi":
+        d1_std = 7.5
+    else:
+        d1_std = 9
+
+
+    if d2_flag == "d0k3pi":
+        d2_std = 7.5
+    else:
+        d2_std = 9
+
+    if dst_flag:
+        dstwindow_file = ROOT.TFile(f"/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/build_rootfiles/d_window_root_files/d_dst_mass_fits.root", "READ")
+        dstwindow_ws = dstwindow_file.Get(f"d_dst_mass_fits")
+        dst_mstart = dstwindow_ws.var(f"mean").getValV()
+        # dst_a_std = dstwindow_ws.var(f"width_a").getValV()
+        # dst_b_std = dstwindow_ws.var(f"width_b").getValV()
+        # if (dst_a_std > dst_b_std):
+        #     dst_std = dst_a_std
+        # else:
+        #     dst_std = dst_b_std
+        dst_std = 2
+        dstwindow = dst_std * 2
+
+    d1window = d1_std * 2
+    d2window = d2_std * 2
+
+    if spec == "P_z_pst":
+        mass_cut = f"(abs(D1_M - {d1_mstart}) < {d1window} && abs(D2_M - {d2_mstart}) < {d2window} && abs(D2stmD_M - {dst_mstart}) < {dstwindow}) "
+    else:
+        mass_cut = f"(abs(D1_M - {d1_mstart}) < {d1window} && abs(D2_M - {d2_mstart}) < {d2window})"
+
     if rflag == "print":
-        d1window_file = ROOT.TFile(f"../build_rootfiles/d_window_root_files/d_{d1_flag}_mass_fits.root", "READ")
-        d1window_ws = d1window_file.Get(f"d_{d1_flag}_mass_fits")
-
-        d1_mstart = d1window_ws.var(f"mean").getValV()
-        d1_a_std = d1window_ws.var(f"width_a").getValV()
-        d1_b_std = d1window_ws.var(f"width_b").getValV()
-
-        if (d1_a_std > d1_b_std):
-            d1_std = d1_a_std
-        else:
-            d1_std = d1_b_std
+        return (d1_mstart, d1_std, d2_mstart, d2_std)
+    if rflag == "table" and not dst_flag:
         return (d1_mstart, d1_std)
-
+    if rflag == "table" and dst_flag:
+        return (dst_mstart, dst_std)
     if rflag == "apply":
-        d1window_file = ROOT.TFile(f"d_window_root_files/d_{d1_flag}_mass_fits.root", "READ")
-        d1window_ws = d1window_file.Get(f"d_{d1_flag}_mass_fits")
-        d2window_file = ROOT.TFile(f"d_window_root_files/d_{d2_flag}_mass_fits.root", "READ")
-        d2window_ws = d2window_file.Get(f"d_{d2_flag}_mass_fits")
+        return(mass_cut)
 
-        d1_mstart = d1window_ws.var(f"mean").getValV()
-        d1_a_std = d1window_ws.var(f"width_a").getValV()
-        d1_b_std = d1window_ws.var(f"width_b").getValV()
-
-        # d1_y = d1window_ws.var(f"n_D_signal").getValV()
-        d1_y_frac = d1window_ws.var(f"D1_a_frac").getValV()
-        # d1_a = d1_y*d1_y_frac
-        # d1_b = d1_y*(1 - d1_y_frac)
-
-        d2_mstart = d2window_ws.var(f"mean").getValV()
-        d2_a_std = d2window_ws.var(f"width_a").getValV()
-        d2_b_std = d2window_ws.var(f"width_b").getValV()
-
-        # d2_y = d2window_ws.var(f"n_D_signal").getValV()
-        d2_y_frac = d2window_ws.var(f"D1_a_frac").getValV()
-        # d2_a = d2_y*d2_y_frac
-        # d2_b = d2_y*(1 - d2_y_frac)
-
-        # d1_std = d1_a_std*d1_y_frac + d1_b_std*(1-d1_y_frac)
-        # d2_std = d2_a_std*d2_y_frac + d2_b_std*(1-d2_y_frac)
-
-        if (d1_a_std > d1_b_std):
-            d1_std = d1_a_std
-        else:
-            d1_std = d1_b_std
-
-        if (d2_a_std > d2_b_std):
-            d2_std = d2_a_std
-        else:
-            d2_std = d2_b_std
-        # if d1_flag == "mp" and d2_flag == "d0k3pi":
-        #     d1_mstart = d1window_ws.var(f"mean").getValV()
-        #     d1_a_std = d1window_ws.var(f"width_a").getValV()
-        #
-        #     d2_mstart = d2window_ws.var(f"mean").getValV()
-        #     d2_a_std = d2window_ws.var(f"width_a").getValV()
-        #     d2_b_std = d2window_ws.var(f"width_b").getValV()
-        #     if (d2_a_std > d2_b_std):
-        #         d2_std = d2_a_std
-        #     else:
-        #         d2_std = d2_b_std
-        #     d1_std = d1_a_std
-
-        if dst_flag:
-            dstwindow_file = ROOT.TFile(f"d_window_root_files/d_dst_mass_fits.root", "READ")
-            dstwindow_ws = dstwindow_file.Get(f"d_dst_mass_fits")
-            dst_mstart = dstwindow_ws.var(f"mean").getValV()
-            dst_a_std = dstwindow_ws.var(f"width_a").getValV()
-            dst_b_std = dstwindow_ws.var(f"width_b").getValV()
-            if (dst_a_std > dst_b_std):
-                dst_std = dst_a_std
-            else:
-                dst_std = dst_b_std
-            dstwindow = dst_std * 2
-
-        d1window = d1_std * 2
-        d2window = d2_std * 2
-
-        if spec == "P_z_pst" or spec == "Z_m_pst":
-            mass_cut = f"(abs(D1_M - {d1_mstart}) < {d1window} && abs(D2_M - {d2_mstart}) < {d2window} && abs(D2stmD_M - {dst_mstart}) < {dstwindow}) "
-        else:
-            mass_cut = f"(abs(D1_M - {d1_mstart}) < {d1window} && abs(D2_M - {d2_mstart}) < {d2window})"
-
-        return mass_cut
-
-
-
-def get_shapes_bkg(spec, flag, ws):
+def get_shapes_bkg(spec, flag, ws, varoi = "B_DTF_M"):
     if flag == "Exponential":
-        ws.factory(f"Exponential:{spec}_spectrum_bkg(B_DTF_M, c0_{spec}[0, -0.01, 0.01])")
+        ws.factory(f"Exponential:{spec}_spectrum_bkg({varoi}, c0_{spec}[0, -0.01, 0.01])")
     if flag == "Chebychev":
         ws.factory(
-            f"Chebychev:{spec}_spectrum_bkg(B_DTF_M,{{c0_{spec}[0.,-3,3],c1_{spec}[0.,-3,3]}})"
+            f"Chebychev:{spec}_spectrum_bkg({varoi},{{c0_{spec}[0.,-3,3],c1_{spec}[0.,-3,3]}})"
         )
     if flag == "Bernstein":
         ws.factory(
-            f"Bernstein:{spec}_spectrum_bkg(B_DTF_M,{{c0_{spec}[1,0,10], c1_{spec}[1,0,10], c2_{spec}[1,0,10], c3_{spec}[1,0,10]}})"
+            f"Bernstein:{spec}_spectrum_bkg({varoi},{{c0_{spec}[1,0,10], c1_{spec}[1,0,10], c2_{spec}[1,0,10], c3_{spec}[1,0,10]}})"
         )
 
 def get_free_shapes(ws, spec, fit_strat, shape_flag, mean_start, mean_window):
@@ -277,78 +342,159 @@ def get_free_shapes(ws, spec, fit_strat, shape_flag, mean_start, mean_window):
         )
     if shape_flag == "DG":
         ws.factory(
-            f"Gaussian::{spec}_a(B_DTF_M, mean_{spec}[{mean_start},{b_low},{b_high}], width_a_{spec}[10, 0.1, 40.0])"
+            f"Gaussian::{spec}_fit_a(B_DTF_M, mean_{spec}[{mean_start},{b_low},{b_high}], width_a_{spec}[10, 0.1, 40.0])"
         )
         ws.factory(
-            f"Gaussian::{spec}_b(B_DTF_M, mean_{spec}, width_b_{spec}[20.0, 0.1, 40.0])"
+            f"Gaussian::{spec}_fit_b(B_DTF_M, mean_{spec}, width_b_{spec}[20.0, 0.1, 40.0])"
         )
-        ws.factory(f"SUM::{spec}_fit({spec}_a_frac[0.8,0,1]*{spec}_a, {spec}_b)")
+        ws.factory(f"SUM::{spec}_fit({spec}_a_frac[0.8,0,1]*{spec}_fit_a, {spec}_fit_b)")
     if shape_flag == "GEP":
         ws.factory(
             f"RooGaussExp::{spec}_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_{spec}[10,4.0,30.0],alpha_{spec}[3,0.05,7.0])"
         )
     if shape_flag == "BGEP":
         ws.factory(
-            f"RooBifurGaussExp::{spec}_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_L_{spec}[10,1.0,30.0],width_R_{spec}[5,1.0,30.0],alpha_1_{spec}[2,0.00,10.0],alpha_2_{spec}[8,0.00,10.0])"
+            f"RooBifurGaussExp::{spec}_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_L_{spec}[10,1.0,30.0],width_R_{spec}[5,1.0,30.0],alpha_1_{spec}[2,0.01,3.0],alpha_2_{spec}[2,0.01,3.0])"
         )
     if shape_flag == "BG":
         ws.factory(
             f"BifurGauss::{spec}_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_1_{spec}[20,0.01,50.0],width_2_{spec}[5,0.01,50.0])"
         )
+    #Gaussian + BifurGauss Shared Mean Floating Ratio
+    if shape_flag == "GAddBG_fr":
+        ws.factory(
+            f"BifurGauss::{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_1_{spec}_a[20,0.01,50.0],width_2_{spec}_a[5,0.01,50.0])"
+        )
+        ws.factory(
+            f"Gaussian:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[10,1.0,40.0])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647, 0.1, 0.9]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian w exp tail + BifurGauss Shared Mean Floating Ratio
+    if shape_flag == "GEPAddBG_fr":
+        ws.factory(
+            f"BifurGauss::{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_1_{spec}_a[20,0.01,50.0],width_2_{spec}_a[5,0.01,50.0])"
+        )
+        ws.factory(
+            f"RooGaussExp:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[10,1.0,40.0],alpha_{spec}_b[3,0.05,7.0])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647, 0.1, 0.9]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian + BifurGauss w exp tail Shared Mean Floating Ratio
+    if shape_flag == "GAddBGEP_fr":
+        ws.factory(
+            f"RooBifurGaussExp:{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_L_{spec}_a[10,0.01,25.0],width_R_{spec}_a[15,0.01,25.0],alpha_1_{spec}_a[2,0.001,4],alpha_2_{spec}_a[3,0.001,4])"
+        )
+        ws.factory(
+            f"Gaussian::{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[25.0,10.0,40.0])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647, 0.1, 0.9]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian w exp tail+ BifurGauss w exp tail Shared Mean Floating Ratio
+    if shape_flag == "GEPAddBGEP_fr":
+        ws.factory(
+            f"RooBifurGaussExp:{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_L_{spec}_a[10,1.0,20.0],width_R_{spec}_a[15,1.0,20.0],alpha_1_{spec}_a[2,0.05,5],alpha_2_{spec}_a[3,0.05,5])"
+        )
+        ws.factory(
+            f"RooGaussExp:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[25,20,50.0],alpha_{spec}_b[3,0.01,4])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647, 0.1, 0.9]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian + BifurGauss Shared Mean
     if shape_flag == "GAddBG":
         ws.factory(
             f"BifurGauss::{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_1_{spec}_a[20,0.01,50.0],width_2_{spec}_a[5,0.01,50.0])"
         )
         ws.factory(
-            f"Gaussian:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[10,1.0,30.0])"
+            f"Gaussian:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[10,1.0,40.0])"
         )
-        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647,0.5,0.75]*{spec}_fit_a, {spec}_fit_b)")
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian w exp tail + BifurGauss Shared Mean
     if shape_flag == "GEPAddBG":
         ws.factory(
             f"BifurGauss::{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_1_{spec}_a[20,0.01,50.0],width_2_{spec}_a[5,0.01,50.0])"
         )
         ws.factory(
-            f"RooGaussExp:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[10,1.0,30.0],alpha_{spec}_b[3,0.05,7.0])"
+            f"RooGaussExp:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[10,1.0,40.0],alpha_{spec}_b[3,0.05,7.0])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian + BifurGauss w exp tail Shared Mean
+    if shape_flag == "GAddBGEP":
+        ws.factory(
+            f"RooBifurGaussExp:{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_L_{spec}_a[10,0.01,25.0],width_R_{spec}_a[15,0.01,25.0],alpha_1_{spec}_a[2,0.001,10.0],alpha_2_{spec}_a[3,0.001,10.0])"
+        )
+        ws.factory(
+            f"Gaussian::{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[25.0,20.0,40.0])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian w exp tail+ BifurGauss w exp tail Shared Mean
+    if shape_flag == "GEPAddBGEP":
+        ws.factory(
+            f"RooBifurGaussExp:{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_L_{spec}_a[10,1.0,25.0],width_R_{spec}_a[20,1.0,25.0],alpha_1_{spec}_a[2,0.05,7.0],alpha_2_{spec}_a[3,0.05,7.0])"
+        )
+        ws.factory(
+            f"RooGaussExp:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[25,20,50.0],alpha_{spec}_b[3,0.05,7.0])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian + BifurGauss Diff Mean
+    if shape_flag == "GAddBG_dm":
+        ws.factory(
+            f"BifurGauss::{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_1_{spec}_a[15,0.01,20.0],width_2_{spec}_a[5,0.01,20.0])"
+        )
+        ws.factory(
+            f"Gaussian:{spec}_fit_b(B_DTF_M, ean_{spec}_b[{mean_start},{b_low},{b_high}], width_{spec}_b[25,20.0,30.0])"
         )
         ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647,0.5,0.75]*{spec}_fit_a, {spec}_fit_b)")
-    if shape_flag == "GAddBGEP":
+    #Gaussian + BifurGauss w exp tail Diff Mean
+    if shape_flag == "GAddBGEP_dm":
         ws.factory(
             f"RooBifurGaussExp:{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_L_{spec}_a[10,0.01,30.0],width_R_{spec}_a[20,0.01,30.0],alpha_1_{spec}_a[2,0.001,10.0],alpha_2_{spec}_a[3,0.001,10.0])"
         )
         ws.factory(
-            f"Gaussian::{spec}_fit_b(B_DTF_M, mean_{spec}_b[{mean_start},{b_low},{b_high}], width_{spec}_b[5.0,0.1,30.0])"
+            f"Gaussian::{spec}_fit_b(B_DTF_M, mean_{spec}_b[{mean_start},{b_low},{b_high}], width_{spec}_b[25.0,20.0,30.0])"
         )
         ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647,0.1,0.9]*{spec}_fit_a, {spec}_fit_b)")
-    if shape_flag == "GEPAddBGEP":
+    #Gaussian w exp tail + BifurGauss Diff Mean
+    if shape_flag == "GEPAddBG_dm":
+        ws.factory(
+            f"BifurGauss::{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_1_{spec}_a[15,0.01,20.0],width_2_{spec}_a[5,0.01,20.0])"
+        )
+        ws.factory(
+            f"RooGaussExp:{spec}_fit_b(B_DTF_M, mean_{spec}_b[{mean_start},{b_low},{b_high}],width_{spec}_b[25,20,30.0],alpha_{spec}_b[3,0.01,7.0])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647,0.1,0.95]*{spec}_fit_a, {spec}_fit_b)")
+    #Gaussian w exp tail + BifurGauss w exp tail Diff Mean
+    if shape_flag == "GEPAddBGEP_dm":
         ws.factory(
             f"RooBifurGaussExp:{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_L_{spec}_a[10,1.0,30.0],width_R_{spec}_a[20,4.0,30.0],alpha_1_{spec}_a[2,0.05,7.0],alpha_2_{spec}_a[3,0.05,7.0])"
         )
         ws.factory(
-            f"RooGaussExp:{spec}_fit_b(B_DTF_M, mean_{spec}_a,width_{spec}_b[10,1.0,30.0],alpha_{spec}_b[3,0.05,7.0])"
+            f"RooGaussExp:{spec}_fit_b(B_DTF_M, mean_{spec}_b[{mean_start},{b_low},{b_high}],width_{spec}_b[25,20,30.0],alpha_{spec}_b[3,0.05,7.0])"
         )
-        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647,0.5,0.75]*{spec}_fit_a, {spec}_fit_b)")
-
-
-
-
-    # if shape_flag == "cb1R":
-    #     ws.factory(
-    #         f"CBShape::{spec}_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_{spec}[10,0,50],alpha_{spec}[-5,-10,-0.0], n_{spec}[5,0,10])"
-    #     )
-    # if shape_flag == "cb1L":
-    #     ws.factory(
-    #         f"CBShape::{spec}_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_{spec}[10,0,50], alpha_{spec}[5,0.0,10.0], n_{spec}[5,0,10])"
-    #     )
-    # if shape_flag == "cb2":
-    #     ws.factory(
-    #         f"CBShape::{spec}_a_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_{spec}[10,0,100],alpha_l_{spec}[-1,-20,-0.0],  n1_{spec}[20,0,1000])"
-    #     )
-    #     ws.factory(
-    #         f"CBShape::{spec}_b_fit(B_DTF_M,mean_{spec},                                                  width_{spec},         alpha_r_{spec}[1,0.0,20.0],   n2_{spec}[20,0,1000])"
-    #     )
-    #     ws.factory(
-    #     )
-    #         f"SUM::{spec}_fit({spec}_a_frac[0.5,0,1]*{spec}_a_fit, {spec}_b_fit)"
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.647,0.1,0.95]*{spec}_fit_a, {spec}_fit_b)")
+    if shape_flag == "BGAddGAddG_3":
+        ws.factory(
+            f"BifurGauss::{spec}_fit_a(B_DTF_M, mean_{spec}_a[{mean_start},{b_low},{b_high}],width_1_{spec}_a[10,0.01,20],width_2_{spec}_a[15,0.01,20.0])"
+        )
+        ws.factory(
+            f"Gaussian:{spec}_fit_b(B_DTF_M, mean_{spec}_a, width_{spec}_b[21,20.0,40.0])"
+        )
+        ws.factory(
+            f"Gaussian:{spec}_fit_c(B_DTF_M, mean_{spec}_a, width_{spec}_c[25,20.0,40.0])"
+        )
+        ws.factory(f"SUM:{spec}_fit({spec}_a_frac[0.418609]*{spec}_fit_a, {spec}_b_frac[0.456782]*{spec}_fit_b, {spec}_fit_c)")
+    if shape_flag == "cb1R":
+        ws.factory(
+            f"CBShape::{spec}_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_{spec}[10,0.01,20],alpha_{spec}[-3,-5,-0.00001], n_{spec}[5,0,50])"
+        )
+    if shape_flag == "cb1L":
+        ws.factory(
+            f"CBShape::{spec}_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_{spec}[10,0.01,20], alpha_{spec}[2,0.01,4.0], n_{spec}[5,0,50])"
+        )
+    if shape_flag == "cb2":
+        ws.factory(
+            f"CBShape::{spec}_a_fit(B_DTF_M,mean_{spec}[{mean_start},{b_low},{b_high}],width_{spec}[10,0,100],alpha_l_{spec}[1,0.001,5.0],  n1_{spec}[20,0,50])"
+        )
+        ws.factory(
+            f"CBShape::{spec}_b_fit(B_DTF_M,mean_{spec},width_{spec},alpha_r_{spec}[-1,-5,-0.00001],n2_{spec}[20,0,50])"
+        )
+        ws.factory(f"SUM::{spec}_fit({spec}_a_frac[0.5,0,1]*{spec}_a_fit, {spec}_b_fit)")
 # mc_spec_list = [
 #     # "01_Z_m_p_11198006",
 #     # "02_Z_m_p_11198400",

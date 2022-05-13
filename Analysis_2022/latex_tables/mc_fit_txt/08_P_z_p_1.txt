@@ -1,0 +1,2 @@
+,MC Scheme,Shape,Mean,Fraction of Fit,Width 1,Width 2,Alpha 1,Alpha 2
+0,8a,GEP,4985.7+/-1.0,0.54+/-0.04,25.9+/-0.8,NA,1.47+/-0.12,NA

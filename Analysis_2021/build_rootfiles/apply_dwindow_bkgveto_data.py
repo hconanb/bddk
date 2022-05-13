@@ -3,13 +3,12 @@ sys.path.append("/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021/")
 from essentials import *
 
 data_spec_list = [
-#     # "Z_m_p",
-#     # "Zs_sm_p",
-#     "Z_z_z",
-#     "P_z_p",
-#     # "M_m_z",
-#     # "P_z_pst",
-    "norm7",
+    # "Z_m_p",
+    # "Z_z_z",
+    # "P_z_p",
+    # "M_m_z",
+    # "P_z_pst",
+    # "norm7",
     "norm8"
     ]
 mc_spec_list = [
@@ -66,26 +65,75 @@ def apply_dwindow_cuts(spec, inputfile, outputfile):
             d2_flag = "mp"
         if spec == "norm7":
             d1_flag = "z"
-            d2_flag = "d0k3pi"
+            # d2_flag = "d0k3pi"
+            d2_flag = "z"
         if spec == "norm8":
             d1_flag = "mp"
-            d2_flag = "d0k3pi"
+            # d2_flag = "d0k3pi"
+            d2_flag = "z"
 
-        dwindow_cut = get_dwindow_values(spec, d1_flag, d2_flag, dst_flag)
 
-        print(dwindow_cut)
+        d1_mstart, d1_std, d2_mstart, d2_std = get_dwindow_values(spec, d1_flag, d2_flag, dst_flag, rflag = "print")
 
-        rdf_post_dcuts = rdf_base.Filter(dwindow_cut)
+        d1_sig_max = 2*d1_std
+        d2_sig_max = 2*d2_std
 
-        clist = rdf_post_dcuts.GetColumnNames()
+        d1_sb_min = 3*d1_std
+        d2_sb_min = 3*d2_std
 
-        if os.path.exists(outputfile):
-            os.remove(outputfile)
-            print("First deleting old ", outputfile)
+        d1_sb_max = 5*d1_std
+        d2_sb_max = 5*d2_std
+
+        d1_sb_min_line = f"(abs({d1_mstart} - D1_M) > {d1_sb_min})"
+        d2_sb_min_line = f"(abs({d2_mstart} - D2_M) > {d2_sb_min})"
+
+        d1_sb_max_line = f"(abs({d1_mstart} - D1_M) < {d1_sb_max})"
+        d2_sb_max_line = f"(abs({d2_mstart} - D2_M) < {d2_sb_max})"
+
+        d1_sb_line = f"({d1_sb_min_line} && {d1_sb_max_line})"
+        d2_sb_line = f"({d2_sb_min_line} && {d2_sb_max_line})"
+
+        d1_sig_line = f"(abs({d1_mstart} - D1_M) < {d1_sig_max})"
+        d2_sig_line = f"(abs({d2_mstart} - D2_M) < {d2_sig_max})"
+
+        sig_sig_line = f"({d1_sig_line} && {d2_sig_line})"
+        sig_sb_line = f"({d1_sig_line} && {d2_sb_line})"
+        sb_sig_line = f"({d1_sb_line} && {d2_sig_line})"
+        sb2_line = f"({sig_sb_line} || {sb_sig_line})"
+        print(sig_sig_line)
+        rdf_ToT_dsig = rdf_base.Filter(sig_sig_line, f"d_for_{spec}")
+        rdf_ToT_dsb = rdf_base.Filter(sb2_line, f"sb_for_{spec}")
+
+        # dwindow_cut = get_dwindow_values(spec, d1_flag, d2_flag, dst_flag)
+
+        outputfile_dsig = outputfile
+        outputfile_dsb = outputfile.replace("post_d","sb_d")
+
+        of_dsig = outputfile_dsig.split(f"{spec}.root")[0]
+        of_dsb = outputfile_dsb.split(f"{spec}.root")[0]
+
+        if not os.path.isdir(of_dsig):
+            os.makedirs(of_dsig)
+        if not os.path.isdir(of_dsb):
+            os.makedirs(of_dsb)
+
+        if os.path.exists(outputfile_dsig):
+            os.remove(outputfile_dsig)
+            print("First deleting old ", outputfile_dsig)
         else:
-            print("making ", outputfile)
+            print("making ", outputfile_dsig)
+        if os.path.exists(outputfile_dsb):
+            os.remove(outputfile_dsb)
+            print("First deleting old ", outputfile_dsb)
+        else:
+            print("making ", outputfile_dsb)
 
-        rdfsnap = rdf_post_dcuts.Snapshot(f"DecayTreeTuple", outputfile, clist)
+        clist = rdf_base.GetColumnNames()
+        print(f"Starting snapshot for {outputfile_dsig} and {outputfile_dsb}")
+
+        rdfsnap_dsig = rdf_ToT_dsig.Snapshot(f"DecayTreeTuple", outputfile_dsig, clist)
+        rdfsnap_dsb = rdf_ToT_dsb.Snapshot(f"DecayTreeTuple", outputfile_dsb, clist)
+        print(f"finished snapshot for {outputfile_dsig} and {outputfile_dsb}")
 
 def apply_bkgveto_cuts(spec, inputfile, outputfile, flag = "None"):
 

@@ -4,8 +4,8 @@ import os
 # '11198022',
 # Old MC
 
-# typelist_run2 = [
-# # '11198006',
+typelist_run2 = [
+'11198006',
 # # '11198005',
 # #### August 24th 2021
 # #### January 12 2022
@@ -36,18 +36,18 @@ import os
 # "12197045",
 # "11198023",
 # #### September 16th 2021
-# ]
-pollist = ['Up']#'Down'
-yearlist_run2 = ['2016']
-#,'2017','2018']
-# for type in typelist_run2:
-#     for year in yearlist_run2:
-#         for pol in pollist:
-#             os.system("ganga gangajob_BDDK.py --TYPE {0} --YEAR {1} --POL {2} --TESTING no".format(type,year,pol))
+]
+pollist = ['Up','Down']
+yearlist_run2 = ['2016','2017','2018']
 
-for year in yearlist_run2:
-    for pol in pollist:
-        os.system(f"ganga bddk/gangajob_BDDK.py --TYPE Data --YEAR {year} --POL {pol} --TESTING no")
+for type in typelist_run2:
+    for year in yearlist_run2:
+        for pol in pollist:
+            os.system("ganga gangajob_BDDK.py --TYPE {0} --YEAR {1} --POL {2} --TESTING no".format(type,year,pol))
+
+# for year in yearlist_run2:
+#     for pol in pollist:
+#         os.system(f"ganga bddk/gangajob_BDDK.py --TYPE Data --YEAR {year} --POL {pol} --TESTING no")
 
 
 os.system("ganga -i")

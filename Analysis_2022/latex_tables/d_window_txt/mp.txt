@@ -1,0 +1,2 @@
+,D Candidate,Fit Mean [MeV],"Signal Window [MeV, MeV]","Sideband Window [MeV, MeV]"
+0,$\Dm$,$1869.83$,"$[1852.83, 1886.83]$","$[1827.33, 1844.33]$ and $[1895.33, 1912.33]$"

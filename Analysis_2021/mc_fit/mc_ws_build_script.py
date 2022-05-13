@@ -1,5 +1,6 @@
 import ROOT as ROOT
 from Analysis_2021.essentials import get_free_shapes, save_png
+from Analysis_2021 import rootutils
 import glob as glob
 analysis_path = "/mnt/c/Users/Harris/Google Drive/LHCb/bddk/Analysis_2021"
 
@@ -35,7 +36,6 @@ def build_mc_ws(spec, id_list, shape_list, mean_guess, mean_window, fit_window, 
         data_args = ROOT.RooArgSet(b_dtf_m)
         data_set_T = ROOT.RooDataSet(f"{spec}_events_T", f"{spec}_events_T", tc_T, data_args)
         data_set_nTaT = ROOT.RooDataSet(f"{spec}_events_nTaT", f"{spec}_events_nTat", tc_nTaT, data_args)
-
 
         data_set_T.append(data_set_nTaT)
         data_set_T.SetNameTitle(f"{spec}_events", f"{spec}_events")
@@ -156,7 +156,7 @@ def run_mc_fit(spec, shape_list):
         base_output_file = f"{analysis_path}/mc_fit/fit_mc_files/{spec}_fit_{shape}.root"
         fitws.writeToFile(base_output_file)
 
-def plot_mc(spec, shape_list, pullflag = 0):
+def plot_mc(spec, shape_list, pullflag = 1):
 
     for shape in shape_list:
 
@@ -186,8 +186,11 @@ def plot_mc(spec, shape_list, pullflag = 0):
         #
         #     real_data_set = ROOT.RooDataSet("real_data", "real_data", tchain, ROOT.RooArgSet(b_dtf_m, sw_var), cuts = "", wgtVarName = "nny_1_sw")
         # #, ROOT.RooFit.Bins(p_bbins)
-
-        frame = b_dtf_m.frame(ROOT.RooFit.Title(spec))
+        if "P_z_pst" in spec:
+            bbb = 50
+        else:
+            bbb = 100
+        frame = b_dtf_m.frame(ROOT.RooFit.Title(spec), ROOT.RooFit.Bins(bbb))
 
         spectrum = frame.GetTitle()
         sspectrum = spectrum.split("_")[0]
@@ -198,12 +201,9 @@ def plot_mc(spec, shape_list, pullflag = 0):
         fit_pdf = fws.pdf(f"{spec}_fit")
         fit_pdf.plotOn(frame, ROOT.RooFit.Components(f"{spec}_fit"), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kGreen), ROOT.RooFit.Name("total_fit") )
 
-        if shape == "DG":
-            fit_pdf.plotOn(frame, ROOT.RooFit.Components(f"{spec}_a"), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kRed), ROOT.RooFit.Name("dg_a") )
-            fit_pdf.plotOn(frame, ROOT.RooFit.Components(f"{spec}_b"), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kBlue), ROOT.RooFit.Name("dg_b") )
-        if shape == "GAddBGEP" or shape == "GEPAddBG" or shape == "GEPAddBGEP":
-            fit_pdf.plotOn(frame, ROOT.RooFit.Components(f"{spec}_fit_a"), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kRed), ROOT.RooFit.Name("dg_a") )
-            fit_pdf.plotOn(frame, ROOT.RooFit.Components(f"{spec}_fit_b"), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kBlue), ROOT.RooFit.Name("dg_b") )
+        if shape in ["DG", "GAddBGEP","GEPAddBG","GEPAddBGEP"] or "_fr" in shape:
+            fit_pdf.plotOn(frame, ROOT.RooFit.Components(f"{spec}_fit_a"), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kRed), ROOT.RooFit.Name("fa") )
+            fit_pdf.plotOn(frame, ROOT.RooFit.Components(f"{spec}_fit_b"), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kBlue), ROOT.RooFit.Name("fb") )
 
         d_chi2 = frame.chiSquare("total_fit", "data")
         print(d_chi2)
@@ -211,7 +211,7 @@ def plot_mc(spec, shape_list, pullflag = 0):
         if spec == "Z_m_p_01":
             bsp = "B^{0}"
             le = "B^{0} #rightarrow D^{-} D^{+} K^{*0}"
-        if spec == "Z_m_p_02":
+        if spec == "Z_m_p_02" or spec == "Z_m_p_0203":
             bsp = "B^{0}"
             le = "B^{0} #rightarrow D^{*-} D^{+} K^{*0} / D^{-} D^{*+} K^{*0}"
         if spec == "Z_m_p_04":
@@ -219,23 +219,61 @@ def plot_mc(spec, shape_list, pullflag = 0):
             le = "B^{0} #rightarrow D^{*-} D^{*+} K^{*0}"
         if spec == "Z_z_z_04":
             bsp = "B^{0}"
-            le = "B^{0} #rightarrow (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) (D^{*+} #rightarrow D^{0} #pi^{+})"
-        if spec == "Z_z_z_07":
+            le = "B^{0} #rightarrow (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) (D^{*+} #rightarrow D^{0} #pi^{+}) K^{*0}"
+        if spec == "Z_z_z_07" or spec == "Z_z_z_0710" or spec == "Z_z_z_040812":
             bsp = "B^{+}"
-            le = "B^{+} #rightarrow #bar{D^{0}} (D^{*+} #rightarrow D^{0} #pi^{+})"
+            le = "B^{+} #rightarrow #bar{D^{0}} (D^{*+} #rightarrow D^{0} #pi^{+}) K^{*0}"
         if spec == "Z_z_z_08":
             bsp = "B^{+}"
-            le = "B^{+} #rightarrow (#bar{D^{0}} #rightarrow #bar{D^{0}} #bar{#pi^{0}}) (D^{*+} #rightarrow D^{0} #pi^{+})"
+            le = "B^{+} #rightarrow (#bar{D^{0}} #rightarrow #bar{D^{0}} #pi^{0}/#gamma)) (D^{*+} #rightarrow D^{0} #pi^{+}) K^{*0}"
         if spec == "Z_z_z_09":
             bsp = "B^{0}"
-            le = "B^{0} #rightarrow #bar{D^{0}} D^{0}"
+            le = "B^{0} #rightarrow #bar{D^{0}} D^{0} K^{*0}"
         if spec == "Z_z_z_10":
             bsp = "B^{0}"
-            le = "B^{0} #rightarrow (D^{*0} #rightarrow #bar{D^{0}} #pi^{-}) (D^{*+} #rightarrow D^{0} #pi^{+})"
+            le = "B^{0} #rightarrow(#bar{D^{*0}} #rightarrow #bar{D^{0}} #pi^{0}/#gamma) D^{0} K^{*0}"
         if spec == "Z_z_z_12":
             bsp = "B^{0}"
-            le = "B^{0} #rightarrow (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) (D^{*+} #rightarrow D^{0} #pi^{+})"
-
+            le = "B^{0} #rightarrow (#bar{D^{*0}} #rightarrow #bar{D^{0}} #pi^{0}/#gamma) (D^{*0} #rightarrow D^{0} #pi^{0}/#gamma) K^{*0}"
+        if spec == "P_z_p_02" or spec == "P_z_p_0408" or spec == "P_z_p_020607":
+            bsp = "B^{0}"
+            le = "B^{0} #rightarrow (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) D^{+} K^{*0}"
+        if spec == "P_z_p_04":
+            bsp = "B^{0}"
+            le = "B^{0} #rightarrow (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) (D^{*+} #rightarrow D^{+} #pi^{0}/#gamma) K^{*0}"
+        if spec == "P_z_p_05":
+            bsp = "B^{+}"
+            le = "B^{+} #rightarrow #bar{D^{0}} D^{+} K^{*0}"
+        if spec == "P_z_p_06":
+            bsp = "B^{+}"
+            le = "B^{+} #rightarrow (#bar{D^{*0}} #rightarrow #bar{D^{0}} #pi^{0}/#gamma) D^{+} K^{*0}"
+        if spec == "P_z_p_07":
+            bsp = "B^{+}"
+            le = "B^{+} #rightarrow #bar{D^{0}} (D^{*+} #rightarrow D^{+} #pi^{0}/#gamma) K^{*0}"
+        if spec == "P_z_p_08":
+            bsp = "B^{+}"
+            le = "B^{+} #rightarrow (#bar{D^{*0}} #rightarrow #bar{D^{0}} #pi^{0}/#gamma) (D^{*+} #rightarrow D^{+} #pi^{0}/#gamma) K^{*0}"
+        if spec == "M_m_z_03":
+            bsp = "B^{0}"
+            le = "B^{0} #rightarrow D^{-} (D^{*+} #rightarrow D^{0} #pi^{+}) K^{*0}"
+        if spec == "M_m_z_04":
+            bsp = "B^{0}"
+            le = "B^{0} #rightarrow (D^{*-} #rightarrow D^{-} #pi^{0}/#gamma) (D^{*+} #rightarrow D^{0} #pi^{+}) K^{*0}"
+        if spec == "P_z_pst_04":
+            bsp = "B^{0}"
+            le = "B^{0} #rightarrow D^{*-} D^{*+} K^{*0}"
+        if spec == "P_z_pst_07" or spec == "P_z_pst_0408":
+            bsp = "B^{+}"
+            le = "B^{+} #rightarrow #bar{D^{0}} (D^{*+} #rightarrow D^{+} #pi^{0}/#gamma) K^{*0}"
+        if spec == "P_z_pst_08":
+            bsp = "B^{+}"
+            le = "B^{+} #rightarrow #bar{D^{*0}} (D^{*+} #rightarrow D^{+} #pi^{0}/#gamma) K^{*0}"
+        if "norm7" in spec:
+            bsp = "B^{+}"
+            le = "B^{+} #rightarrow #bar{D^{0}} (D^{0} #rightarrow K#pi#pi#pi) K+"
+        if "norm8" in spec:
+            bsp = "B^{+}"
+            le = "B^{0} #rightarrow D^{-} (D^{0} #rightarrow K#pi#pi#pi) K+"
 
         dtpave = ROOT.TPaveText(0.20, 0.65, 0.40, 0.85, "NB NDC")
         dtpave.SetFillStyle(0)
@@ -245,7 +283,7 @@ def plot_mc(spec, shape_list, pullflag = 0):
 
         if pullflag == 1:
 
-            p = residualPlot()
+            p = rootutils.residualPlot()
             p.pt.cd()
             xaxis = frame.GetXaxis()
             xaxis.SetTickLength(0)
@@ -257,9 +295,9 @@ def plot_mc(spec, shape_list, pullflag = 0):
             legend = ROOT.TLegend(0.70, 0.4, 0.90, 0.93)
             #legend.SetHeader(title,"C")
             legend.AddEntry("total_fit","total_fit","l")
-            if shape == "DG":
-                legend.AddEntry("dg_a","g_a","l")
-                legend.AddEntry("dg_b","g_b","l")
+            if shape in ["DG", "GAddBGEP","GEPAddBG","GEPAddBGEP"] or "_fr" in shape:
+                legend.AddEntry("fa","fa","l")
+                legend.AddEntry("fb","fb","l")
 
             legend.AddEntry("data","data","lep")
             legend.SetTextSize(0.050)
@@ -284,14 +322,7 @@ def plot_mc(spec, shape_list, pullflag = 0):
             pull.GetYaxis().SetRangeUser(-3,3)
             pull.GetYaxis().CenterTitle()
             pull.Draw("AP")
-            pull.GetXaxis().SetTitle(f"{bsp} [MeV]")
-
-            dtpave_dec = ROOT.TPaveText(0.05, 0.05, 0.7, 0.15, "NB NDC")
-            dtpave_dec.SetFillStyle(0)
-            dtpave_dec.AddText(f"MC: {le}")
-            dtpave_dec.SetBorderSize(0)
-            dtpave_dec.Draw()
-            frame.addObject(dtpave_dec)
+            pull.GetXaxis().SetTitle(f"{le} [MeV]")
 
         if pullflag == 0:
 
@@ -301,53 +332,4 @@ def plot_mc(spec, shape_list, pullflag = 0):
             # frame.GetXaxis().SetTitle(f" {le} : m({bsp}) [MeV]")
             frame.Draw()
 
-        save_png(p, f"mc_fits", f"{spec}_{shape}", rpflag = 0)
-
-# def plot_mc_fit_test(name, shape, nf, wflag):
-#
-#     name_valist = list(range(0,wflag))
-#     framelist = []
-#
-#     p = ROOT.TCanvas("p1","p1")
-#     p.Divide(4,4)
-#     p.cd(0)
-#     wslist = []
-#     dslist = []
-#     framelist = []
-#     bvarlist = []
-#     filelist = []
-#     fit_pdflist = []
-#
-#     chi2_list = []
-#
-#     for nid in name_valist:
-#
-#         filelist.append(ROOT.TFile(f"fit_ws_root_files/fit_{name}_{nid}.root"))
-#         wslist.append(filelist[nid].Get(f"fit_{name}_{nid}"))
-#         bvarlist.append(wslist[nid].var("B_DTF_M"))
-#         framelist.append(bvarlist[nid].frame(ROOT.RooFit.Title(f"{name}_{nid}"), ROOT.RooFit.Bins(p_bbins)))
-#
-#         spectrum = framelist[nid].GetTitle()
-#         sspectrum = spectrum.split("_")[0]
-#
-#         dslist.append(wslist[nid].data(f"{name}_events_{nid}"))
-#         dslist[nid].plotOn(framelist[nid], ROOT.RooFit.Name(f"data_{nid}"))
-#
-#         p.cd(nid+1)
-#
-#         fit_pdflist.append(wslist[nid].pdf(f"{name}_{nf}_fit"))
-#         fit_pdflist[nid].plotOn(framelist[nid], ROOT.RooFit.Components(f"{name}_{nf}_fit"), ROOT.RooFit.LineStyle(ROOT.kDashed), ROOT.RooFit.LineColor(ROOT.kGreen), ROOT.RooFit.Name(f"total_fit_{nid}") )
-#
-#         d_chi2 = framelist[nid].chiSquare(f"total_fit_{nid}", f"data_{nid}")
-#         chi2_list.append((nid, d_chi2))
-#
-#         print(nid, d_chi2)
-#
-#         dtpave = ROOT.TPaveText(0.20, 0.65, 0.40, 0.85, "NB NDC")
-#         dtpave.SetFillStyle(0)
-#         dtpave.AddText(f"#chi^{{2}}: {round(d_chi2, 3)}")
-#         dtpave.Draw()
-#         framelist[nid].addObject(dtpave)
-#         framelist[nid].Draw()
-#
-#     save_png(p, f"mc_fits_tests", f"{name}_{shape}", rpflag = 0)
+        save_png(p, f"mc_fits", f"{spec}_{shape}", rpflag = 1)

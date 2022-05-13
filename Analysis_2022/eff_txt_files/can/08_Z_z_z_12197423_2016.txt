@@ -1,0 +1,2 @@
+,Scheme ID,Year,$\epsilon_{stripping}$,$\epsilon_{offline}$
+0,8b,2016,0.883+/-0.017,92.240+/-3.345

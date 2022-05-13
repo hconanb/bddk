@@ -14,13 +14,13 @@ RDF = ROOT.ROOT.RDataFrame
 mc_spec_dict = {
     # "01_Z_m_p_11198006" : ("1", "B^{0} #rightarrow D^{-} D^{+} K^{*0}"),
     # "02_Z_m_p_11198400" : ("2a,3a", "B^{0} #rightarrow D^{*-} D^{+} K^{*0} / D^{-} D^{*+} K^{*0}"),
-    # # "02_P_z_p_11198005" : ("2b,3b","B^{0} #rightarrow  (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) D^{+} K^{*0} "),
+    # "02_P_z_p_11198005" : ("2b,3b","B^{0} #rightarrow  (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) D^{+} K^{*0} "),
     # "04_Z_m_p_11198401" : ("4a","B^{0} #rightarrow D^{*-} D^{*+} K^{*0}"),
     # "04_P_z_p_11198410" : ("4b","B^{0} #rightarrow (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) (D^{*+} #rightarrow D^{+} #pi^{0})"),
     # "04_Z_z_z_11198023" : ("4c","B^{0} #rightarrow (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) (D^{*+} #rightarrow D^{0} #pi^{+})"),
     # "04_P_z_pst_11198023" : ("4d","B^{0} #rightarrow (D^{*-} #rightarrow #bar{D^{0}} #pi^{-}) (D^{*+} #rightarrow D^{0} #pi^{+})"),
-    # # "05_P_z_p_12197023" : ("5","B^{+} #rightarrow #bar{D^{0}} D^{+} K^{*0}"),
-    # # "06_P_z_p_12197410" : ("6","B^{+} #rightarrow #bar{D^{*0}} D^{+} K^{*0}"),
+    # "05_P_z_p_12197023" : ("5","B^{+} #rightarrow #bar{D^{0}} D^{+} K^{*0}"),
+    # "06_P_z_p_12197410" : ("6","B^{+} #rightarrow #bar{D^{*0}} D^{+} K^{*0}"),
     # "07_P_z_p_12197400" : ("7a","B^{+} #rightarrow #bar{D^{0}} D^{*+} K^{*0}"),
     # "07_Z_z_z_12197045": ("7b","B^{+} #rightarrow #bar{D^{0}} (D^{*+} #rightarrow D^{0} #pi^{+})"),
     # "07_P_z_pst_12197045": ("7c","B^{+} #rightarrow #bar{D^{*0}} D^{*+} K^{*0}"),
@@ -102,10 +102,6 @@ for key in mc_spec_dict:
                     }
 
         print(dict_temp)
-
-        # now = datetime.datetime.now()
-        # if not os.path.exists(f'boot_txt_files/{now.month}_{now.day}/'):
-        #     os.makedirs(f'boot_txt_files/{now.month}_{now.day}/')
 
         df_dict = pandas.DataFrame(dict_temp, index=[0])
         outefftxt = f"boot_effs/{file_id}_{year}"

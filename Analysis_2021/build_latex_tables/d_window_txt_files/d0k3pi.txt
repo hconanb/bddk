@@ -1,0 +1,2 @@
+,D Candidate,Fit Mean [MeV],"Signal Window [MeV, MeV]","Sideband Window [MeV, MeV]"
+0,$\Dz\rightarrow\kaon\pion\pion\pion$,$1865.17$,"$[1850.17, 1880.17]$","$[1827.67, 1842.67]$ and $[1887.67, 1902.67]$"
